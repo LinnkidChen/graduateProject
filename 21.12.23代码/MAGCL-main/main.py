@@ -18,6 +18,7 @@ from scipy.sparse.linalg import eigs, eigsh
 
 from torch_geometric.utils import get_laplacian, to_scipy_sparse_matrix
 from simple_param.sp import SimpleParam
+from itertools import product
 from pGRACE.model import Encoder, GRACE, NewGConv, NewEncoder, NewGRACE
 from pGRACE.functional import (
     drop_feature,
@@ -51,17 +52,17 @@ def process_data():
     # train_20 train类别每个label有20个节点
 
     # feat_path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/p_feat.npz'
-    # feat_path = "../data/acm/p_feat.npz"
-    feat_path = "./data/acm/p_feat.npz"  # paper feature (x)
+    feat_path = "../data/acm/p_feat.npz"
+    # feat_path = "./data/acm/p_feat.npz"  # paper feature (x)
     # path_1 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/pap_idx.npy'
-    # path_1 = "../data/acm/pap_idx.npy"
-    path_1 = "./data/acm/pap_idx.npy"  # metapath pap 临接
+    path_1 = "../data/acm/pap_idx.npy"
+    # path_1 = "./data/acm/pap_idx.npy"  # metapath pap 临接
     # path_2 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/psp_idx.npy'
-    path_2 = "./data/acm/psp_idx.npy"  # metapath psp 临接
-    # path_2 = "../data/acm/psp_idx.npy"
+    # path_2 = "./data/acm/psp_idx.npy"  # metapath psp 临接
+    path_2 = "../data/acm/psp_idx.npy"
     # path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/'
-    path = "./data/acm/"
-    # path = "../data/acm/"
+    # path = "./data/acm/"
+    path = "../data/acm/"
     pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
     psp = torch.from_numpy(np.load(path_2))  # paper subject paper
     # 目的是预测paper的类别
@@ -126,45 +127,8 @@ def test(final=False):
 
     return acc  # , acc_1, acc_2
 
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    # parser.add_argument("--device", type=str, default="cuda:5")
-    parser.add_argument("--device", type=str, default="cpu")
-    parser.add_argument("--dataset", type=str, default="ACM")
-    parser.add_argument("--config", type=str, default="param.yaml")
-    parser.add_argument("--seed", type=int, default=0)
-    parser.add_argument("--verbose", type=str, default="train,eval,final")
-    parser.add_argument("--save_split", type=str, nargs="?")
-    parser.add_argument("--load_split", type=str, nargs="?")
-    args = parser.parse_args()
-    print(os.getcwd())
-    # config = yaml.load(open(args.config), Loader=SafeLoader)[args.dataset]
-    config = yaml.load(open("./MAGCL-main/param.yaml"), Loader=SafeLoader)[args.dataset]
-
-    torch.manual_seed(args.seed)
-    random.seed(0)
-    np.random.seed(args.seed)
-    use_nni = args.config == "nni"
-    learning_rate = config["learning_rate"]  # para2
-    num_hidden = config["num_hidden"]
-    num_proj_hidden = config["num_proj_hidden"]
-    activation = config["activation"]
-    base_model = config["base_model"]
-    num_layers = config["num_layers"]
-    dataset = args.dataset
-    drop_edge_rate_1 = config["drop_edge_rate_1"]
-    drop_edge_rate_2 = config["drop_edge_rate_2"]
-    drop_feature_rate_1 = config["drop_feature_rate_1"]
-    drop_feature_rate_2 = config["drop_feature_rate_2"]
-    drop_scheme = config["drop_scheme"]
-    tau = config["tau"]
-    num_epochs = 10  # para1
-    weight_decay = config["weight_decay"]
-    rand_layers = config["rand_layers"]
-
-    device = torch.device(args.device)
-
+def my_train(learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_layers,drop_edge_rate_1,drop_edge_rate_2,drop_feature_rate_1,drop_feature_rate_2,tau,num_epochs,weight_decay,drop_scheme,rand_layers):
+    global edge_list,features,label,split
     edge_list, features, label, train_idx, val, test_idx = process_data()
     # edge_list[0].shape=[57853,2]
     # edge_list[1].shape= [4338213,2]
@@ -173,9 +137,10 @@ if __name__ == "__main__":
     # train_idx.shape=([60])
     # val.shape=([1000])
     # test_idx.shape=([1000])
+    
     edge_list = [idx.t().to(device) for idx in edge_list]
     # t()=transpose()
-
+    print("weightdecay",weight_decay)
     features = features.float().to(device)
     split = {"train": train_idx, "val": val, "test": test_idx}
     # if args.dataset == 'Cora' or args.dataset == 'CiteSeer' or  args.dataset == 'PubMed': split = (data.train_mask, data.val_mask, data.test_mask)
@@ -184,15 +149,17 @@ if __name__ == "__main__":
         1902, num_hidden, get_activation(activation), base_model=NewGConv, k=num_layers
     ).to(device)
     adj = 0
+    global model
     model = NewGRACE(encoder, adj, num_hidden, num_proj_hidden, tau).to(
         device
     )  # 对比学习的模型 loss在这个里边
-
+    global optimizer
     optimizer = torch.optim.Adam(
         model.parameters(), lr=learning_rate, weight_decay=weight_decay
     )
 
     log = args.verbose.split(",")
+    global edge_index_1,edge_index_2
     edge_index_1 = edge_list[0]
     edge_index_2 = edge_list[1]
     print("running..")
@@ -207,6 +174,53 @@ if __name__ == "__main__":
                 print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc}")
 
     acc = test(final=True)
-
+    with open("result.yaml" ,"a") as f:
+        print("printing to resultç")
+        tmpstring=" - ".join([str(i) for i in (learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_layers,drop_edge_rate_1,drop_edge_rate_2,drop_feature_rate_1,drop_feature_rate_2,tau,num_epochs,weight_decay,drop_scheme,rand_layers)])
+        yaml.dump({tmpstring:{"acc":acc,"loss":loss}},f)
     if "final" in log:
         print(f"{acc}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    # parser.add_argument("--device", type=str, default="cuda:5")
+    parser.add_argument("--device", type=str, default="cuda:0")
+    parser.add_argument("--dataset", type=str, default="ACM")
+    parser.add_argument("--config", type=str, default="param.yaml")
+    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--verbose", type=str, default="train,eval,final")
+    parser.add_argument("--save_split", type=str, nargs="?")
+    parser.add_argument("--load_split", type=str, nargs="?")
+    args = parser.parse_args()
+    print(os.getcwd())
+    config = yaml.load(open(args.config), Loader=SafeLoader)[args.dataset]
+    # config = yaml.load(open("./MAGCL-main/param.yaml"), Loader=SafeLoader)[args.dataset]
+    dataset = args.dataset
+    device = args.device
+    torch.manual_seed(args.seed)
+    random.seed(0)
+    np.random.seed(args.seed)
+    use_nni = args.config == "nni"
+    learning_rate = config["learning_rate"]  # para2
+    num_hidden = config["num_hidden"]
+    num_proj_hidden = config["num_proj_hidden"]
+    activation = config["activation"]
+    base_model = config["base_model"]
+    num_layers = config["num_layers"]
+    drop_edge_rate_1 = config["drop_edge_rate_1"]
+    drop_edge_rate_2 = config["drop_edge_rate_2"]
+    drop_feature_rate_1 = config["drop_feature_rate_1"]
+    drop_feature_rate_2 = config["drop_feature_rate_2"]
+    drop_scheme = config["drop_scheme"]
+    tau = config["tau"]
+    num_epochs = 10  # para1
+    weight_decay = config["weight_decay"]
+    rand_layers = config["rand_layers"]
+    parameter_value = [v for v in config.values()]
+    for item in product(*parameter_value):
+        my_train(*item)
+    
+    
+    device = torch.device(args.device)
+
+    

@@ -4,3 +4,4 @@ For example, to run MA-GCL under Cora, execute:
 
     python main.py --device cuda:0 --dataset Cora
     
+    python main.py --dataset ACM --device cuda:0 >> acmLog.txt  
