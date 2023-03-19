@@ -15,7 +15,7 @@ from torch_geometric.utils import dropout_adj, degree, to_undirected, get_laplac
 import torch.nn.functional as F
 import networkx as nx
 from scipy.sparse.linalg import eigs, eigsh
-
+from pytorchtools import EarlyStopping
 from torch_geometric.utils import get_laplacian, to_scipy_sparse_matrix
 from simple_param.sp import SimpleParam
 from itertools import product
@@ -50,21 +50,34 @@ from utils import (
 def process_data():
     # 用heco的baseline
     # train_20 train类别每个label有20个节点
-
-    # feat_path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/p_feat.npz'
-    feat_path = "../data/acm/p_feat.npz"
-    # feat_path = "./data/acm/p_feat.npz"  # paper feature (x)
-    # path_1 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/pap_idx.npy'
-    path_1 = "../data/acm/pap_idx.npy"
-    # path_1 = "./data/acm/pap_idx.npy"  # metapath pap 临接
-    # path_2 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/psp_idx.npy'
-    # path_2 = "./data/acm/psp_idx.npy"  # metapath psp 临接
-    path_2 = "../data/acm/psp_idx.npy"
-    # path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/'
-    # path = "./data/acm/"
-    path = "../data/acm/"
-    pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
-    psp = torch.from_numpy(np.load(path_2))  # paper subject paper
+    #ACM
+    # # feat_path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/p_feat.npz'
+    # feat_path = "../data/acm/p_feat.npz"
+    # # feat_path = "./data/acm/p_feat.npz"  # paper feature (x)
+    # # path_1 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/pap_idx.npy'
+    # path_1 = "../data/acm/pap_idx.npy"
+    # # path_1 = "./data/acm/pap_idx.npy"  # metapath pap 临接
+    # # path_2 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/psp_idx.npy'
+    # # path_2 = "./data/acm/psp_idx.npy"  # metapath psp 临接
+    # path_2 = "../data/acm/psp_idx.npy"
+    # # path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/'
+    # # path = "./data/acm/"
+    # path = "../data/acm/"
+    # pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
+    # psp = torch.from_numpy(np.load(path_2))  # paper subject paper
+    
+    #Aminer
+    feat_path="/root/graduateProject/21.12.23代码/data/dblp/a_feat.npz"
+    path_1="/root/graduateProject/21.12.23代码/data/dblp/apa.npz"
+    path_2="/root/graduateProject/21.12.23代码/data/dblp/apcpa.npz"
+    path_3="/root/graduateProject/21.12.23代码/data/dblp/aptpa.npz"
+    path="/root/graduateProject/21.12.23代码/data/dblp/"
+    apa = torch.from_numpy(np.load(path_1)) 
+    apcpa = torch.from_numpy(np.load(path_2)) 
+    aptpa = torch.from_numpy(np.load(path_3)) 
+    
+    
+    
     # 目的是预测paper的类别
     features = sp.load_npz(feat_path)
     features = torch.from_numpy(features.todense())
@@ -73,7 +86,7 @@ def process_data():
     test = torch.from_numpy(np.load(path + "test_" + "20" + ".npy"))
     val = torch.from_numpy(np.load(path + "val_" + "20" + ".npy"))
 
-    return [pap, psp], features, label, train, val, test
+    return [apa, apcpa,aptpa], features, label, train, val, test
     # edge_list, features, label, train_idx, val, test_idx
 
 
@@ -84,21 +97,25 @@ def train():
     # edge_index_2 = dropout_adj(data.edge_index, p=drop_edge_rate_2)[0] #adjacency with edge droprate 2
     edge_index_1 = edge_list[0].to(device)  # 邻接矩阵 扰动
     edge_index_2 = edge_list[1].to(device)
+    edge_index_3 = edge_list[2].to(device)
     # edge_index_1 = dropout_adj(edge_index_1, p=drop_edge_rate_1)[0]
     # edge_index_2 = dropout_adj(edge_index_2, p=drop_edge_rate_2)[0]
     # x_1 = drop_feature(features, drop_feature_rate_1)#3
     # x_2 = drop_feature(features, drop_feature_rate_2)#4
     x_1 = features  # 特征矩阵 没有扰动
     x_2 = features
+    x_3 = features
     m = random.randint(2, 6)
     z1 = model(
         x_1, edge_index_1, [2, 4]
     )  # a(axW1)W2, --> a^4(a^2xW1)W2 ->GCN(encoder)  W1,W2两层的参数 A=邻接矩阵 X=特征矩阵
     z2 = model(x_2, edge_index_2, [8, 4])
-
-    loss = model.loss(  # GRACE infoNce
+    z3=model(x_3,edge_index_3,[16,4])
+    loss = model.loss(  # GRACE infoNce 
+                      #TODO 改到这里了，loss函数还要改
         z1,
         z2,
+        z3,
         batch_size=64
         if args.dataset == "Coauthor-Phy" or args.dataset == "ogbn-arxiv"
         else None,
@@ -137,7 +154,7 @@ def my_train(learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_
     # train_idx.shape=([60])
     # val.shape=([1000])
     # test_idx.shape=([1000])
-    
+    early=EarlyStopping(patience=patience,verbose=True)
     edge_list = [idx.t().to(device) for idx in edge_list]
     # t()=transpose()
     print("weightdecay",weight_decay)
@@ -163,6 +180,7 @@ def my_train(learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_
     edge_index_1 = edge_list[0]
     edge_index_2 = edge_list[1]
     print("running..")
+    
     for epoch in range(1, num_epochs + 1):
         print("start of epoch ", epoch)
         loss = train()
@@ -172,6 +190,10 @@ def my_train(learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_
             acc = test()
             if "eval" in log:
                 print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc}")
+        early(loss,model)
+        if early.early_stop:
+            print("Early stopping")
+            break
 
     acc = test(final=True)
     with open("result.yaml" ,"a") as f:
@@ -216,9 +238,10 @@ if __name__ == "__main__":
     num_epochs = 10  # para1
     weight_decay = config["weight_decay"]
     rand_layers = config["rand_layers"]
+    patience = config["patience"]
     parameter_value = [v for v in config.values()]
     for item in product(*parameter_value):
-        my_train(*item)
+        loss = my_train(*item)
     
     
     device = torch.device(args.device)
