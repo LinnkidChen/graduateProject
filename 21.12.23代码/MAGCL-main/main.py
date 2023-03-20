@@ -55,7 +55,7 @@ def process_data():
     # feat_path = "../data/acm/p_feat.npz"
     # # feat_path = "./data/acm/p_feat.npz"  # paper feature (x)
     # # path_1 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/pap_idx.npy'
-    # path_1 = "../data/acm/pap_idx.npy"
+    path_1 = "../data/acm/pap_idx.npy"
     # # path_1 = "./data/acm/pap_idx.npy"  # metapath pap 临接
     # # path_2 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/psp_idx.npy'
     # # path_2 = "./data/acm/psp_idx.npy"  # metapath psp 临接
@@ -63,7 +63,7 @@ def process_data():
     # # path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/'
     # # path = "./data/acm/"
     # path = "../data/acm/"
-    # pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
+    pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
     # psp = torch.from_numpy(np.load(path_2))  # paper subject paper
     
     #Aminer
@@ -72,10 +72,15 @@ def process_data():
     path_2="/root/graduateProject/21.12.23代码/data/dblp/apcpa.npz"
     path_3="/root/graduateProject/21.12.23代码/data/dblp/aptpa.npz"
     path="/root/graduateProject/21.12.23代码/data/dblp/"
-    apa = torch.from_numpy(np.load(path_1)) 
-    apcpa = torch.from_numpy(np.load(path_2)) 
-    aptpa = torch.from_numpy(np.load(path_3)) 
-    
+    # apa = torch.from_numpy(np.load(path_1)) 
+    # apcpa = torch.from_numpy(np.load(path_2)) 
+    # aptpa = torch.from_numpy(np.load(path_3)) 
+    apa = sp.load_npz(path_1)
+    apcpa = sp.load_npz(path_2)
+    aptpa = sp.load_npz(path_3)
+    apa = torch.from_numpy(apa.todense())
+    apcpa = torch.from_numpy(apcpa.todense())
+    aptpa = torch.from_numpy(aptpa.todense())
     
     
     # 目的是预测paper的类别
@@ -112,7 +117,7 @@ def train():
     z2 = model(x_2, edge_index_2, [8, 4])
     z3=model(x_3,edge_index_3,[16,4])
     loss = model.loss(  # GRACE infoNce 
-                      #TODO 改到这里了，loss函数还要改
+                     
         z1,
         z2,
         z3,
@@ -131,7 +136,8 @@ def test(final=False):
     model.eval()
     z1 = model(features, edge_index_1, [1, 1], final=True)
     z2 = model(features, edge_index_2, [1, 1], final=True)
-    z = z1 + z2
+    z3 = model(features, edge_index_3, [1, 1], final=True)
+    z = z1 + z2+z3
 
     evaluator = MulticlassEvaluator()
 
@@ -176,9 +182,10 @@ def my_train(learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_
     )
 
     log = args.verbose.split(",")
-    global edge_index_1,edge_index_2
+    global edge_index_1,edge_index_2,edge_index_3
     edge_index_1 = edge_list[0]
     edge_index_2 = edge_list[1]
+    edge_index_3 = edge_list[2]
     print("running..")
     
     for epoch in range(1, num_epochs + 1):
@@ -239,7 +246,8 @@ if __name__ == "__main__":
     weight_decay = config["weight_decay"]
     rand_layers = config["rand_layers"]
     patience = config["patience"]
-    parameter_value = [v for v in config.values()]
+    excludes=["patience"]
+    parameter_value = [config[k] for k in config.keys() if k not in excludes]
     for item in product(*parameter_value):
         loss = my_train(*item)
     

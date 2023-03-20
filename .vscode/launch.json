@@ -15,7 +15,7 @@
                 "--device",
                 "cuda:0"
             ],
-            "cwd": "${file}/.."
+            "cwd": "${file}/"
         }
     ]
 }
