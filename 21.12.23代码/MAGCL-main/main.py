@@ -50,12 +50,12 @@ from utils import (
 def process_data():
     # 用heco的baseline
     # train_20 train类别每个label有20个节点
-    #ACM
+    # ACM
     # # feat_path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/p_feat.npz'
     # feat_path = "../data/acm/p_feat.npz"
     # # feat_path = "./data/acm/p_feat.npz"  # paper feature (x)
     # # path_1 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/pap_idx.npy'
-    path_1 = "../data/acm/pap_idx.npy"
+    # path_1 = "../data/acm/pap_idx.npy"
     # # path_1 = "./data/acm/pap_idx.npy"  # metapath pap 临接
     # # path_2 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/psp_idx.npy'
     # # path_2 = "./data/acm/psp_idx.npy"  # metapath psp 临接
@@ -63,26 +63,28 @@ def process_data():
     # # path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/'
     # # path = "./data/acm/"
     # path = "../data/acm/"
-    pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
+    # pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
     # psp = torch.from_numpy(np.load(path_2))  # paper subject paper
-    
-    #Aminer
-    feat_path="/root/graduateProject/21.12.23代码/data/dblp/a_feat.npz"
-    path_1="/root/graduateProject/21.12.23代码/data/dblp/apa.npz"
-    path_2="/root/graduateProject/21.12.23代码/data/dblp/apcpa.npz"
-    path_3="/root/graduateProject/21.12.23代码/data/dblp/aptpa.npz"
-    path="/root/graduateProject/21.12.23代码/data/dblp/"
-    # apa = torch.from_numpy(np.load(path_1)) 
-    # apcpa = torch.from_numpy(np.load(path_2)) 
-    # aptpa = torch.from_numpy(np.load(path_3)) 
-    apa = sp.load_npz(path_1)
-    apcpa = sp.load_npz(path_2)
-    aptpa = sp.load_npz(path_3)
-    apa = torch.from_numpy(apa.todense())
-    apcpa = torch.from_numpy(apcpa.todense())
-    aptpa = torch.from_numpy(aptpa.todense())
-    
-    
+
+    # Aminer
+    # feat_path = "/root/graduateProject/21.12.23代码/data/dblp/a_feat.npz"
+    # path_1 = "/root/graduateProject/21.12.23代码/data/dblp/apa_idx.npz"
+    # path_2 = "/root/graduateProject/21.12.23代码/data/dblp/apcpa_idx.npz"
+    # path_3 = "/root/graduateProject/21.12.23代码/data/dblp/aptpa_idx.npz"
+    # path = "/root/graduateProject/21.12.23代码/data/dblp/"
+    # Aminer
+    feat_path = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/a_feat.npz"
+    path_1 = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/apa_idx.npy"
+    path_2 = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/apcpa_idx.npy"
+    path_3 = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/aptpa_idx.npy"
+    path = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/"
+    # apa = torch.from_numpy(np.load(path_1))
+    # apcpa = torch.from_numpy(np.load(path_2))
+    # aptpa = torch.from_numpy(np.load(path_3))
+    apa = torch.from_numpy(np.load(path_1))
+    apcpa = torch.from_numpy(np.load(path_2))
+    aptpa = torch.from_numpy(np.load(path_3))
+
     # 目的是预测paper的类别
     features = sp.load_npz(feat_path)
     features = torch.from_numpy(features.todense())
@@ -91,7 +93,7 @@ def process_data():
     test = torch.from_numpy(np.load(path + "test_" + "20" + ".npy"))
     val = torch.from_numpy(np.load(path + "val_" + "20" + ".npy"))
 
-    return [apa, apcpa,aptpa], features, label, train, val, test
+    return [apa, apcpa, aptpa], features, label, train, val, test
     # edge_list, features, label, train_idx, val, test_idx
 
 
@@ -115,9 +117,8 @@ def train():
         x_1, edge_index_1, [2, 4]
     )  # a(axW1)W2, --> a^4(a^2xW1)W2 ->GCN(encoder)  W1,W2两层的参数 A=邻接矩阵 X=特征矩阵
     z2 = model(x_2, edge_index_2, [8, 4])
-    z3=model(x_3,edge_index_3,[16,4])
-    loss = model.loss(  # GRACE infoNce 
-                     
+    z3 = model(x_3, edge_index_3, [8, 4])
+    loss = model.loss(  # GRACE infoNce
         z1,
         z2,
         z3,
@@ -137,7 +138,7 @@ def test(final=False):
     z1 = model(features, edge_index_1, [1, 1], final=True)
     z2 = model(features, edge_index_2, [1, 1], final=True)
     z3 = model(features, edge_index_3, [1, 1], final=True)
-    z = z1 + z2+z3
+    z = z1 + z2 + z3
 
     evaluator = MulticlassEvaluator()
 
@@ -150,8 +151,25 @@ def test(final=False):
 
     return acc  # , acc_1, acc_2
 
-def my_train(learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_layers,drop_edge_rate_1,drop_edge_rate_2,drop_feature_rate_1,drop_feature_rate_2,tau,num_epochs,weight_decay,drop_scheme,rand_layers):
-    global edge_list,features,label,split
+
+def my_train(
+    learning_rate,
+    num_hidden,
+    num_proj_hidden,
+    activation,
+    base_model,
+    num_layers,
+    drop_edge_rate_1,
+    drop_edge_rate_2,
+    drop_feature_rate_1,
+    drop_feature_rate_2,
+    tau,
+    num_epochs,
+    weight_decay,
+    drop_scheme,
+    rand_layers,
+):
+    global edge_list, features, label, split
     edge_list, features, label, train_idx, val, test_idx = process_data()
     # edge_list[0].shape=[57853,2]
     # edge_list[1].shape= [4338213,2]
@@ -160,10 +178,10 @@ def my_train(learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_
     # train_idx.shape=([60])
     # val.shape=([1000])
     # test_idx.shape=([1000])
-    early=EarlyStopping(patience=patience,verbose=True)
+    early = EarlyStopping(patience=patience, verbose=True)
     edge_list = [idx.t().to(device) for idx in edge_list]
     # t()=transpose()
-    print("weightdecay",weight_decay)
+    # print("weightdecay", weight_decay)
     features = features.float().to(device)
     split = {"train": train_idx, "val": val, "test": test_idx}
     # if args.dataset == 'Cora' or args.dataset == 'CiteSeer' or  args.dataset == 'PubMed': split = (data.train_mask, data.val_mask, data.test_mask)
@@ -182,12 +200,12 @@ def my_train(learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_
     )
 
     log = args.verbose.split(",")
-    global edge_index_1,edge_index_2,edge_index_3
+    global edge_index_1, edge_index_2, edge_index_3
     edge_index_1 = edge_list[0]
     edge_index_2 = edge_list[1]
     edge_index_3 = edge_list[2]
     print("running..")
-    
+
     for epoch in range(1, num_epochs + 1):
         print("start of epoch ", epoch)
         loss = train()
@@ -197,18 +215,40 @@ def my_train(learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_
             acc = test()
             if "eval" in log:
                 print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc}")
-        early(loss,model)
+        early(loss, model)
         if early.early_stop:
             print("Early stopping")
             break
 
     acc = test(final=True)
-    with open("result.yaml" ,"a") as f:
+    with open("result.yaml", "a") as f:
         print("printing to resultç")
-        tmpstring=" - ".join([str(i) for i in (learning_rate,num_hidden,num_proj_hidden,activation,base_model,num_layers,drop_edge_rate_1,drop_edge_rate_2,drop_feature_rate_1,drop_feature_rate_2,tau,num_epochs,weight_decay,drop_scheme,rand_layers)])
-        yaml.dump({tmpstring:{"acc":acc,"loss":loss}},f)
+        tmpstring = " - ".join(
+            [
+                str(i)
+                for i in (
+                    learning_rate,
+                    num_hidden,
+                    num_proj_hidden,
+                    activation,
+                    base_model,
+                    num_layers,
+                    drop_edge_rate_1,
+                    drop_edge_rate_2,
+                    drop_feature_rate_1,
+                    drop_feature_rate_2,
+                    tau,
+                    num_epochs,
+                    weight_decay,
+                    drop_scheme,
+                    rand_layers,
+                )
+            ]
+        )
+        yaml.dump({tmpstring: {"acc": acc, "loss": loss}}, f)
     if "final" in log:
         print(f"{acc}")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -246,12 +286,9 @@ if __name__ == "__main__":
     weight_decay = config["weight_decay"]
     rand_layers = config["rand_layers"]
     patience = config["patience"]
-    excludes=["patience"]
+    excludes = ["patience"]
     parameter_value = [config[k] for k in config.keys() if k not in excludes]
     for item in product(*parameter_value):
         loss = my_train(*item)
-    
-    
-    device = torch.device(args.device)
 
-    
+    device = torch.device(args.device)
