@@ -263,6 +263,8 @@ class NewGConv(MessagePassing):
             )
 
         fill_value = 1 if not improved else 2
+        print(edge_index, edge_index.shape)
+        print(edge_weight, edge_weight.shape)
         edge_index, edge_weight = add_remaining_self_loops(
             edge_index, edge_weight, fill_value, num_nodes
         )
@@ -458,11 +460,11 @@ class NewGRACE(torch.nn.Module):
     ):
         h1 = z1
         h2 = z2
-        h3=z3
+        h3 = z3
         if batch_size is None:
-            l = self.semi_loss(h1, h2) + self.semi_loss(h1,h3)
+            l = self.semi_loss(h1, h2) + self.semi_loss(h1, h3)
         else:
-            l = self.semi_loss(h1, h2) + self.semi_loss(h1,h3)
+            l = self.semi_loss(h1, h2) + self.semi_loss(h1, h3)
 
         ret = l
         # ret = l1
