@@ -454,17 +454,15 @@ class NewGRACE(torch.nn.Module):
         self,
         z1: torch.Tensor,
         z2: torch.Tensor,
-        z3: torch.Tensor,
         mean: bool = True,
         batch_size: Optional[int] = None,
     ):
         h1 = z1
         h2 = z2
-        h3 = z3
         if batch_size is None:
-            l = self.semi_loss(h1, h2) + self.semi_loss(h1, h3)
+            l = self.semi_loss(h1, h2)
         else:
-            l = self.semi_loss(h1, h2) + self.semi_loss(h1, h3)
+            l = self.semi_loss(h1, h2)
 
         ret = l
         # ret = l1

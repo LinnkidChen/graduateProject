@@ -52,40 +52,20 @@ def process_data():
     # train_20 train类别每个label有20个节点
     # ACM
     # # feat_path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/p_feat.npz'
-    # feat_path = "../data/acm/p_feat.npz"
+    feat_path = "../data/freebase/p_feat.npz"
     # # feat_path = "./data/acm/p_feat.npz"  # paper feature (x)
     # # path_1 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/pap_idx.npy'
-    # path_1 = "../data/acm/pap_idx.npy"
+    path_1 = "../data/acm/pap_idx.npy"
     # # path_1 = "./data/acm/pap_idx.npy"  # metapath pap 临接
     # # path_2 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/psp_idx.npy'
     # # path_2 = "./data/acm/psp_idx.npy"  # metapath psp 临接
-    # path_2 = "../data/acm/psp_idx.npy"
+    path_2 = "../data/acm/psp_idx.npy"
     # # path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/'
     # # path = "./data/acm/"
-    # path = "../data/acm/"
-    # pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
-    # psp = torch.from_numpy(np.load(path_2))  # paper subject paper
+    path = "../data/acm/"
+    pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
+    psp = torch.from_numpy(np.load(path_2))  # paper subject paper
 
-    # Aminer
-    feat_path = "/root/graduateProject/21.12.23代码/data/dblp/a_feat.npz"
-    path_1 = "/root/graduateProject/21.12.23代码/data/dblp/apa_idx.npy"
-    path_2 = "/root/graduateProject/21.12.23代码/data/dblp/apcpa_idx.npy"
-    path_3 = "/root/graduateProject/21.12.23代码/data/dblp/aptpa_idx.npy"
-    path = "/root/graduateProject/21.12.23代码/data/dblp/"
-    # Aminer
-    # feat_path = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/a_feat.npz"
-    # path_1 = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/apa_idx.npy"
-    # path_2 = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/apcpa_idx.npy"
-    # path_3 = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/aptpa_idx.npy"
-    # path = "/Users/tongchen/Library/Mobile Documents/com~apple~CloudDocs/毕业设计/graduateProject/21.12.23代码/data/dblp/"
-    # apa = torch.from_numpy(np.load(path_1))
-    # apcpa = torch.from_numpy(np.load(path_2))
-    # aptpa = torch.from_numpy(np.load(path_3))
-    apa = torch.from_numpy(np.load(path_1)).type(torch.LongTensor)
-    apcpa = torch.from_numpy(np.load(path_2)).type(torch.LongTensor)
-    aptpa = torch.from_numpy(np.load(path_3)).type(torch.LongTensor)
-
-    # 目的是预测paper的类别
     features = sp.load_npz(feat_path)
     features = torch.from_numpy(features.todense())
     label = np.load(path + "labels.npy").astype("int32")  # Y
@@ -93,7 +73,7 @@ def process_data():
     test = torch.from_numpy(np.load(path + "test_" + "20" + ".npy"))
     val = torch.from_numpy(np.load(path + "val_" + "20" + ".npy"))
 
-    return [apa, apcpa, aptpa], features, label, train, val, test
+    return [pap, psp], features, label, train, val, test
     # edge_list, features, label, train_idx, val, test_idx
 
 
@@ -104,23 +84,21 @@ def train():
     # edge_index_2 = dropout_adj(data.edge_index, p=drop_edge_rate_2)[0] #adjacency with edge droprate 2
     edge_index_1 = edge_list[0].to(device)  # 邻接矩阵 扰动
     edge_index_2 = edge_list[1].to(device)
-    edge_index_3 = edge_list[2].to(device)
     # edge_index_1 = dropout_adj(edge_index_1, p=drop_edge_rate_1)[0]
     # edge_index_2 = dropout_adj(edge_index_2, p=drop_edge_rate_2)[0]
     # x_1 = drop_feature(features, drop_feature_rate_1)#3
     # x_2 = drop_feature(features, drop_feature_rate_2)#4
     x_1 = features  # 特征矩阵 没有扰动
     x_2 = features
-    x_3 = features
+    m = random.randint(2, 6)
+    # print(edge_index_1.shape)
     z1 = model(
         x_1, edge_index_1, [2, 4]
     )  # a(axW1)W2, --> a^4(a^2xW1)W2 ->GCN(encoder)  W1,W2两层的参数 A=邻接矩阵 X=特征矩阵
     z2 = model(x_2, edge_index_2, [8, 4])
-    z3 = model(x_3, edge_index_3, [8, 4])
     loss = model.loss(  # GRACE infoNce
         z1,
         z2,
-        z3,
         batch_size=64
         if args.dataset == "Coauthor-Phy" or args.dataset == "ogbn-arxiv"
         else None,
@@ -136,8 +114,7 @@ def test(final=False):
     model.eval()
     z1 = model(features, edge_index_1, [1, 1], final=True)
     z2 = model(features, edge_index_2, [1, 1], final=True)
-    z3 = model(features, edge_index_3, [1, 1], final=True)
-    z = z1 + z2 + z3
+    z = z1 + z2
 
     evaluator = MulticlassEvaluator()
 
@@ -168,34 +145,6 @@ def my_train(
     drop_scheme,
     rand_layers,
 ):
-    tmpstring = " - ".join(
-            [
-                str(i)
-                for i in (
-                    learning_rate,
-                    num_hidden,
-                    num_proj_hidden,
-                    activation,
-                    base_model,
-                    num_layers,
-                    drop_edge_rate_1,
-                    drop_edge_rate_2,
-                    drop_feature_rate_1,
-                    drop_feature_rate_2,
-                    tau,
-                    num_epochs,
-                    weight_decay,
-                    drop_scheme,
-                    rand_layers,
-                )
-            ]
-        )
-    print(tmpstring)
-    with open("result.yaml") as f:
-        res=yaml.load(f,Loader=SafeLoader)
-        res=list(res.keys())
-        if tmpstring in res:
-            return 
     global edge_list, features, label, split
     edge_list, features, label, train_idx, val, test_idx = process_data()
     # edge_list[0].shape=[57853,2]
@@ -234,7 +183,6 @@ def my_train(
     global edge_index_1, edge_index_2, edge_index_3
     edge_index_1 = edge_list[0]
     edge_index_2 = edge_list[1]
-    edge_index_3 = edge_list[2]
     print("running..")
 
     for epoch in range(1, num_epochs + 1):
@@ -254,7 +202,28 @@ def my_train(
     acc = test(final=True)
     with open("result.yaml", "a") as f:
         print("printing to resultç")
-        
+        tmpstring = " - ".join(
+            [
+                str(i)
+                for i in (
+                    learning_rate,
+                    num_hidden,
+                    num_proj_hidden,
+                    activation,
+                    base_model,
+                    num_layers,
+                    drop_edge_rate_1,
+                    drop_edge_rate_2,
+                    drop_feature_rate_1,
+                    drop_feature_rate_2,
+                    tau,
+                    num_epochs,
+                    weight_decay,
+                    drop_scheme,
+                    rand_layers,
+                )
+            ]
+        )
         yaml.dump({tmpstring: {"acc": acc, "loss": loss}}, f)
     if "final" in log:
         print(f"{acc}")
@@ -295,7 +264,7 @@ if __name__ == "__main__":
     num_epochs = 10  # para1
     weight_decay = config["weight_decay"]
     rand_layers = config["rand_layers"]
-    patience = config["patience"][0]
+    patience = config["patience"]
     excludes = ["patience"]
     parameter_value = [config[k] for k in config.keys() if k not in excludes]
     for item in product(*parameter_value):

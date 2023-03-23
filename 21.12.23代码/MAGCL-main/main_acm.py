@@ -91,7 +91,7 @@ def train():
     x_1 = features  # 特征矩阵 没有扰动
     x_2 = features
     m = random.randint(2, 6)
-    print(edge_index_1.shape)
+    # print(edge_index_1.shape)
     z1 = model(
         x_1, edge_index_1, [2, 4]
     )  # a(axW1)W2, --> a^4(a^2xW1)W2 ->GCN(encoder)  W1,W2两层的参数 A=邻接矩阵 X=特征矩阵
