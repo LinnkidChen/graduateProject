@@ -249,6 +249,7 @@ def my_train(
         early(loss, model)
         if early.early_stop:
             print("Early stopping")
+            num_epochs=epoch
             break
 
     acc = test(final=True)

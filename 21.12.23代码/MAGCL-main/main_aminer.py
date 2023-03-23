@@ -93,7 +93,7 @@ def process_data():
 
     # 目的是预测paper的类别
     features=sp.eye(6564)
-    features = torch.FloatTensor(preprocess_features(features))
+    features = torch.FloatTensor(preprocess_features(features)).to(args.device)
     label = np.load(path + "labels.npy").astype("int32")  # Y
     train = torch.from_numpy(np.load(path + "train_" + "20" + ".npy"))
     test = torch.from_numpy(np.load(path + "test_" + "20" + ".npy"))
@@ -115,8 +115,8 @@ def train():
     # edge_index_2 = dropout_adj(edge_index_2, p=drop_edge_rate_2)[0]
     # x_1 = drop_feature(features, drop_feature_rate_1)#3
     # x_2 = drop_feature(features, drop_feature_rate_2)#4
-    x_1 = features  # 特征矩阵 没有扰动
-    x_2 = features
+    x_1 = features.to(device)  # 特征矩阵 没有扰动
+    x_2 = features.to(device)
 
     z1 = model(
         x_1, edge_index_1, [2, 4]
@@ -253,6 +253,7 @@ def my_train(
         early(loss, model)
         if early.early_stop:
             print("Early stopping")
+            num_epochs=epoch
             break
 
     acc = test(final=True)
