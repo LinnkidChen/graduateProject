@@ -263,8 +263,10 @@ class NewGConv(MessagePassing):
             )
 
         fill_value = 1 if not improved else 2
-        # print(edge_index, edge_index.shape)
-        # print(edge_weight, edge_weight.shape)
+        # print(edge_index, edge_index.shape,edge_index.type())
+        # print(edge_weight, edge_weight.shape,edge_weight.type())
+        # print(fill_value)
+        # print(num_nodes)
         edge_index, edge_weight = add_remaining_self_loops(
             edge_index, edge_weight, fill_value, num_nodes
         )
@@ -297,6 +299,7 @@ class NewGConv(MessagePassing):
                 edge_index, norm = self.norm(
                     edge_index,
                     x.size(self.node_dim),
+                    
                     edge_weight,
                     self.improved,
                     x.dtype,
@@ -336,6 +339,7 @@ class NewEncoder(nn.Module):
         base_model=GATConv,
         k: int = 2,
         skip=False,
+        normalize=True
     ):
         # skip meaning?
         super(NewEncoder, self).__init__()
@@ -347,15 +351,15 @@ class NewEncoder(nn.Module):
         self.out = out_channels
         hi = 1
         if k == 1:
-            self.conv = [base_model(in_channels, out_channels).jittable()]
+            self.conv = [base_model(in_channels, out_channels,normalize=normalize).jittable()]
             # jittable：将conv转化为messagePassing可以接受的模式
             self.conv = nn.ModuleList(self.conv)
             self.activation = activation
         elif not self.skip:
-            self.conv = [base_model(in_channels, hi * out_channels)]
+            self.conv = [base_model(in_channels, hi * out_channels,normalize=normalize)]
             for _ in range(1, k - 1):
-                self.conv.append(base_model(hi * out_channels, hi * out_channels))
-            self.conv.append(base_model(hi * out_channels, out_channels))
+                self.conv.append(base_model(hi * out_channels, hi * out_channels,normalize=normalize))
+            self.conv.append(base_model(hi * out_channels, out_channels,normalize=normalize))
             self.conv = nn.ModuleList(self.conv)
 
             self.activation = activation
@@ -392,6 +396,7 @@ class NewGRACE(torch.nn.Module):
         num_hidden: int,
         num_proj_hidden: int,
         tau: float = 0.5,
+        normalize=True
     ):
         super(NewGRACE, self).__init__()
         self.encoder: NewEncoder = encoder

@@ -65,9 +65,8 @@ def process_data():
     path = "../data/acm/"
     pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
     psp = torch.from_numpy(np.load(path_2))  # paper subject paper
-
-    features = sp.load_npz(feat_path)
-    features = torch.from_numpy(features.todense())
+    feat_m = sp.eye(3492)
+    features = torch.from_numpy(feat_m.todense())
     label = np.load(path + "labels.npy").astype("int32")  # Y
     train = torch.from_numpy(np.load(path + "train_" + "20" + ".npy"))
     test = torch.from_numpy(np.load(path + "test_" + "20" + ".npy"))

@@ -19,7 +19,7 @@ from pytorchtools import EarlyStopping
 from torch_geometric.utils import get_laplacian, to_scipy_sparse_matrix
 from simple_param.sp import SimpleParam
 from itertools import product
-from pGRACE.model import Encoder, GRACE, NewGConv, NewEncoder, NewGRACE
+from pGRACE.model_2 import Encoder, GRACE, NewGConv, NewEncoder, NewGRACE
 from pGRACE.functional import (
     drop_feature,
     drop_edge_weighted,

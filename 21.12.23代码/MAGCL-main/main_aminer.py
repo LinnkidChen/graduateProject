@@ -46,7 +46,14 @@ from utils import (
     Rank,
 )
 
-
+def preprocess_features(features):
+    """Row-normalize feature matrix and convert to tuple representation"""
+    rowsum = np.array(features.sum(1))
+    r_inv = np.power(rowsum, -1).flatten()
+    r_inv[np.isinf(r_inv)] = 0.
+    r_mat_inv = sp.diags(r_inv)
+    features = r_mat_inv.dot(features)
+    return features.todense()
 def process_data():
     # 用heco的baseline
     # train_20 train类别每个label有20个节点
@@ -80,19 +87,19 @@ def process_data():
     # apa = torch.from_numpy(np.load(path_1))
     # apcpa = torch.from_numpy(np.load(path_2))
     # aptpa = torch.from_numpy(np.load(path_3))
-    apa = torch.from_numpy(np.load(path_1)).type(torch.LongTensor)
-    apcpa = torch.from_numpy(np.load(path_2)).type(torch.LongTensor)
+    pap= torch.from_numpy(np.load(path_1)).type(torch.LongTensor)
+    prp = torch.from_numpy(np.load(path_2)).type(torch.LongTensor)
 
 
     # 目的是预测paper的类别
-    features = sp.load_npz(feat_path)
-    features = torch.from_numpy(features.todense())
+    features=sp.eye(6564)
+    features = torch.FloatTensor(preprocess_features(features))
     label = np.load(path + "labels.npy").astype("int32")  # Y
     train = torch.from_numpy(np.load(path + "train_" + "20" + ".npy"))
     test = torch.from_numpy(np.load(path + "test_" + "20" + ".npy"))
     val = torch.from_numpy(np.load(path + "val_" + "20" + ".npy"))
 
-    return [apa, apcpa], features, label, train, val, test
+    return [pap, prp], features, label, train, val, test
     # edge_list, features, label, train_idx, val, test_idx
 
 
@@ -216,11 +223,11 @@ def my_train(
         num_hidden,
         get_activation(activation),
         base_model=NewGConv,
-        k=num_layers,
+        k=num_layers,normalize=True
     ).to(device)
     adj = 0
     global model
-    model = NewGRACE(encoder, adj, num_hidden, num_proj_hidden, tau).to(
+    model = NewGRACE(encoder, adj, num_hidden, num_proj_hidden, tau,normalize=False).to(
         device
     )  # 对比学习的模型 loss在这个里边
     global optimizer

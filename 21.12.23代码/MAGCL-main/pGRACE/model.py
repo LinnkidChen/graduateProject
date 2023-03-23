@@ -263,8 +263,8 @@ class NewGConv(MessagePassing):
             )
 
         fill_value = 1 if not improved else 2
-        # print(edge_index, edge_index.shape)
-        # print(edge_weight, edge_weight.shape)
+        print(edge_index, edge_index.shape,edge_index.type())
+        print(edge_weight, edge_weight.shape,edge_weight.type())
         edge_index, edge_weight = add_remaining_self_loops(
             edge_index, edge_weight, fill_value, num_nodes
         )
