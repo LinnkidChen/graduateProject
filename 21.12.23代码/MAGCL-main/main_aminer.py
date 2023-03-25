@@ -93,7 +93,7 @@ def process_data():
 
     # 目的是预测paper的类别
     features=sp.eye(6564)
-    features = torch.FloatTensor(preprocess_features(features)).to(args.device)
+    features = torch.LongTensor(preprocess_features(features)).to(args.device)
     label = np.load(path + "labels.npy").astype("int32")  # Y
     train = torch.from_numpy(np.load(path + "train_" + "20" + ".npy"))
     test = torch.from_numpy(np.load(path + "test_" + "20" + ".npy"))

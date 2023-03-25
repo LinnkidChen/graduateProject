@@ -45,34 +45,43 @@ from utils import (
     load_adj_neg,
     Rank,
 )
-
+def preprocess_features(features):
+    """Row-normalize feature matrix and convert to tuple representation"""
+    rowsum = np.array(features.sum(1))
+    r_inv = np.power(rowsum, -1).flatten()
+    r_inv[np.isinf(r_inv)] = 0.
+    r_mat_inv = sp.diags(r_inv)
+    features = r_mat_inv.dot(features)
+    return features.todense()
 
 def process_data():
     # 用heco的baseline
     # train_20 train类别每个label有20个节点
     # ACM
     # # feat_path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/p_feat.npz'
-    feat_path = "../data/freebase/p_feat.npz"
+    # feat_path = "../data/freebase/p_feat.npz"
     # # feat_path = "./data/acm/p_feat.npz"  # paper feature (x)
     # # path_1 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/pap_idx.npy'
-    path_1 = "../data/acm/pap_idx.npy"
+    path_1 = "/root/graduateProject/21.12.23代码/data/freebase/mam_idx.npy"
     # # path_1 = "./data/acm/pap_idx.npy"  # metapath pap 临接
     # # path_2 = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/psp_idx.npy'
     # # path_2 = "./data/acm/psp_idx.npy"  # metapath psp 临接
-    path_2 = "../data/acm/psp_idx.npy"
+    path_2 = "/root/graduateProject/21.12.23代码/data/freebase/mdm_idx.npy"
+    path_3 = "/root/graduateProject/21.12.23代码/data/freebase/mwm_idx.npy"
     # # path = '/nfs_baoding_ai/xumeng/run_emb/HeCo/data/acm/'
     # # path = "./data/acm/"
-    path = "../data/acm/"
-    pap = torch.from_numpy(np.load(path_1))  # paper author paper 将pa ap 两条边合成一条片p-p
-    psp = torch.from_numpy(np.load(path_2))  # paper subject paper
-    feat_m = sp.eye(3492)
-    features = torch.from_numpy(feat_m.todense())
+    path = "../data/freebase/"
+    pap = torch.from_numpy(np.load(path_1)).type(torch.LongTensor)  # paper author paper 将pa ap 两条边合成一条片p-p
+    psp = torch.from_numpy(np.load(path_2)).type(torch.LongTensor)   # paper subject paper
+    oho = torch.from_numpy(np.load(path_3)).type(torch.LongTensor)   # paper subject paper
+    features = sp.eye(3492)
+    features = torch.FloatTensor(preprocess_features(features)).to(args.device)
     label = np.load(path + "labels.npy").astype("int32")  # Y
     train = torch.from_numpy(np.load(path + "train_" + "20" + ".npy"))
     test = torch.from_numpy(np.load(path + "test_" + "20" + ".npy"))
     val = torch.from_numpy(np.load(path + "val_" + "20" + ".npy"))
 
-    return [pap, psp], features, label, train, val, test
+    return [pap, psp,oho], features, label, train, val, test
     # edge_list, features, label, train_idx, val, test_idx
 
 
@@ -83,21 +92,25 @@ def train():
     # edge_index_2 = dropout_adj(data.edge_index, p=drop_edge_rate_2)[0] #adjacency with edge droprate 2
     edge_index_1 = edge_list[0].to(device)  # 邻接矩阵 扰动
     edge_index_2 = edge_list[1].to(device)
+    edge_index_3 = edge_list[2].to(device)
     # edge_index_1 = dropout_adj(edge_index_1, p=drop_edge_rate_1)[0]
     # edge_index_2 = dropout_adj(edge_index_2, p=drop_edge_rate_2)[0]
     # x_1 = drop_feature(features, drop_feature_rate_1)#3
     # x_2 = drop_feature(features, drop_feature_rate_2)#4
     x_1 = features  # 特征矩阵 没有扰动
     x_2 = features
+    x_3 = features
     m = random.randint(2, 6)
     # print(edge_index_1.shape)
     z1 = model(
         x_1, edge_index_1, [2, 4]
     )  # a(axW1)W2, --> a^4(a^2xW1)W2 ->GCN(encoder)  W1,W2两层的参数 A=邻接矩阵 X=特征矩阵
     z2 = model(x_2, edge_index_2, [8, 4])
+    z3 = model(x_3, edge_index_2, [16, 4])
     loss = model.loss(  # GRACE infoNce
         z1,
         z2,
+        z3,
         batch_size=64
         if args.dataset == "Coauthor-Phy" or args.dataset == "ogbn-arxiv"
         else None,
@@ -113,7 +126,8 @@ def test(final=False):
     model.eval()
     z1 = model(features, edge_index_1, [1, 1], final=True)
     z2 = model(features, edge_index_2, [1, 1], final=True)
-    z = z1 + z2
+    z3 = model(features, edge_index_3, [1, 1], final=True)
+    z = z1 + z2 + z3
 
     evaluator = MulticlassEvaluator()
 
@@ -182,6 +196,7 @@ def my_train(
     global edge_index_1, edge_index_2, edge_index_3
     edge_index_1 = edge_list[0]
     edge_index_2 = edge_list[1]
+    edge_index_3 = edge_list[2]
     print("running..")
 
     for epoch in range(1, num_epochs + 1):
@@ -264,7 +279,7 @@ if __name__ == "__main__":
     num_epochs = 10  # para1
     weight_decay = config["weight_decay"]
     rand_layers = config["rand_layers"]
-    patience = config["patience"]
+    patience = config["patience"][0]
     excludes = ["patience"]
     parameter_value = [config[k] for k in config.keys() if k not in excludes]
     for item in product(*parameter_value):
