@@ -172,6 +172,8 @@ def my_train(
     drop_scheme,
     rand_layers,
 ):
+    weight_decay = float(weight_decay)
+    learning_rate = float(learning_rate)
     tmpstring = " - ".join(
             [
                 str(i)
@@ -191,10 +193,12 @@ def my_train(
                     weight_decay,
                     drop_scheme,
                     rand_layers,
+                    seed
                 )
             ]
         )
     print(tmpstring)
+
     with open("result.yaml") as f:
         res=yaml.load(f,Loader=SafeLoader)
         if res is not None:
@@ -203,6 +207,9 @@ def my_train(
                 return 
     global edge_list, features, label, split
     edge_list, features, label, train_idx, val, test_idx = process_data()
+    torch.manual_seed(seed)
+    random.seed(seed)
+    np.random.seed(seed)
     # edge_list[0].shape=[57853,2]
     # edge_list[1].shape= [4338213,2]
     # features.shape=[4019,1902]
@@ -210,7 +217,7 @@ def my_train(
     # train_idx.shape=([60])
     # val.shape=([1000])
     # test_idx.shape=([1000])
-    early = EarlyStopping(patience=patience, verbose=True)
+    # early = EarlyStopping(patience=patience, verbose=True)
     edge_list = [idx.t().to(device) for idx in edge_list]
     # t()=transpose()
     # print("weightdecay", weight_decay)
@@ -250,11 +257,11 @@ def my_train(
             acc = test()
             if "eval" in log:
                 print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc}")
-        early(loss, model)
-        if early.early_stop:
-            print("Early stopping")
-            num_epochs=epoch
-            break
+        # early(loss, model)
+        # if early.early_stop:
+        #     print("Early stopping")
+        #     num_epochs=epoch
+        #     break
 
     acc = test(final=True)
     with open("result.yaml", "a") as f:
@@ -302,6 +309,7 @@ if __name__ == "__main__":
     rand_layers = config["rand_layers"]
     patience = config["patience"][0]
     excludes = ["patience"]
+    seed = config["seeds"]
     parameter_value = [config[k] for k in config.keys() if k not in excludes]
     for item in product(*parameter_value):
         loss = my_train(*item)

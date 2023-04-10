@@ -144,8 +144,45 @@ def my_train(
     weight_decay,
     drop_scheme,
     rand_layers,
+    seed
 ):
     global edge_list, features, label, split
+    torch.manual_seed(seed)
+    weight_decay = float(weight_decay)
+    learning_rate = float(learning_rate)
+    random.seed(seed)
+    np.random.seed(seed)
+    tmpstring = " - ".join(
+            [
+                str(i)
+                for i in (
+                    learning_rate,
+                    num_hidden,
+                    num_proj_hidden,
+                    activation,
+                    base_model,
+                    num_layers,
+                    drop_edge_rate_1,
+                    drop_edge_rate_2,
+                    drop_feature_rate_1,
+                    drop_feature_rate_2,
+                    tau,
+                    num_epochs,
+                    weight_decay,
+                    drop_scheme,
+                    rand_layers,
+                    seed
+                )
+            ]
+        )
+    print(tmpstring)
+
+    with open("result.yaml") as f:
+        res=yaml.load(f,Loader=SafeLoader)
+        if res is not None:
+            res=list(res.keys())
+            if tmpstring in res:
+                return 
     edge_list, features, label, train_idx, val, test_idx = process_data()
     # edge_list[0].shape=[57853,2]
     # edge_list[1].shape= [4338213,2]
@@ -154,7 +191,7 @@ def my_train(
     # train_idx.shape=([60])
     # val.shape=([1000])
     # test_idx.shape=([1000])
-    early = EarlyStopping(patience=patience, verbose=True)
+    # early = EarlyStopping(patience=patience, verbose=True)
     edge_list = [idx.t().to(device) for idx in edge_list]
     # t()=transpose()
     # print("weightdecay", weight_decay)
@@ -194,15 +231,15 @@ def my_train(
             acc = test()
             if "eval" in log:
                 print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc}")
-        early(loss, model)
-        if early.early_stop:
-            num_epochs=epoch
-            print("Early stopping")
-            break
+        # early(loss, model)
+        # if early.early_stop:
+        #     num_epochs=epoch
+        #     print("Early stopping")
+        #     break
 
     acc = test(final=True)
     with open("result.yaml", "a") as f:
-        print("printing to resultç")
+        print("printing to result")
         tmpstring = " - ".join(
             [
                 str(i)
@@ -222,6 +259,7 @@ def my_train(
                     weight_decay,
                     drop_scheme,
                     rand_layers,
+                    seed
                 )
             ]
         )
@@ -237,7 +275,7 @@ if __name__ == "__main__":
     parser.add_argument("--dataset", type=str, default="ACM")
     parser.add_argument("--config", type=str, default="param.yaml")
     parser.add_argument("--seed", type=int, default=0)
-    parser.add_argument("--verbose", type=str, default="train,eval,final")
+    parser.add_argument("--verbose", type=str, default="eval,final")
     parser.add_argument("--save_split", type=str, nargs="?")
     parser.add_argument("--load_split", type=str, nargs="?")
     args = parser.parse_args()
@@ -250,7 +288,7 @@ if __name__ == "__main__":
     random.seed(0)
     np.random.seed(args.seed)
     use_nni = args.config == "nni"
-    learning_rate = config["learning_rate"]  # para2
+    learning_rate = [float(i) for i in config["learning_rate"]]  # para2
     num_hidden = config["num_hidden"]
     num_proj_hidden = config["num_proj_hidden"]
     activation = config["activation"]
@@ -263,9 +301,10 @@ if __name__ == "__main__":
     drop_scheme = config["drop_scheme"]
     tau = config["tau"]
     num_epochs = 10  # para1
-    weight_decay = config["weight_decay"]
+    weight_decay = [float(i) for i in config["weight_decay"]]
     rand_layers = config["rand_layers"]
     patience = config["patience"]
+    seed = config["seed"]
     excludes = ["patience"]
     parameter_value = [config[k] for k in config.keys() if k not in excludes]
     for item in product(*parameter_value):
