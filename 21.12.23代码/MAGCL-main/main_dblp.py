@@ -245,7 +245,7 @@ def my_train(
     print("running..")
 
     for epoch in range(1, num_epochs + 1):
-        print("start of epoch ", epoch)
+        # print("start of epoch ", epoch)
         loss = train()
         if "train" in log:
             print(f"(T) | Epoch={epoch:03d}, loss={loss:.4f}")

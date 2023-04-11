@@ -223,14 +223,14 @@ def my_train(
     print("running..")
 
     for epoch in range(1, num_epochs + 1):
-        print("start of epoch ", epoch)
+        # print("start of epoch ", epoch)
         loss = train()
         if "train" in log:
             print(f"(T) | Epoch={epoch:03d}, loss={loss:.4f}")
         if epoch % 10 == 0:
             acc = test()
             if "eval" in log:
-                print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc}")
+                print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc} , loss = {loss}")
         # early(loss, model)
         # if early.early_stop:
         #     num_epochs=epoch
