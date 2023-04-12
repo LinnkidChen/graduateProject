@@ -19,7 +19,7 @@ from pytorchtools import EarlyStopping
 from torch_geometric.utils import get_laplacian, to_scipy_sparse_matrix
 from simple_param.sp import SimpleParam
 from itertools import product
-from pGRACE.model_2 import Encoder, GRACE, NewGConv, NewEncoder, NewGRACE
+from pGRACE.model import Encoder, GRACE, NewGConv, NewEncoder, NewGRACE
 from pGRACE.functional import (
     drop_feature,
     drop_edge_weighted,
@@ -191,7 +191,7 @@ def my_train(
     # train_idx.shape=([60])
     # val.shape=([1000])
     # test_idx.shape=([1000])
-    # early = EarlyStopping(patience=patience, verbose=True)
+    early = EarlyStopping(patience=patience, verbose=True)
     edge_list = [idx.t().to(device) for idx in edge_list]
     # t()=transpose()
     # print("weightdecay", weight_decay)
@@ -227,15 +227,15 @@ def my_train(
         loss = train()
         if "train" in log:
             print(f"(T) | Epoch={epoch:03d}, loss={loss:.4f}")
-        if epoch % 10 == 0:
+        if epoch % 5 == 0:
             acc = test()
             if "eval" in log:
                 print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc} , loss = {loss}")
-        # early(loss, model)
-        # if early.early_stop:
-        #     num_epochs=epoch
-        #     print("Early stopping")
-        #     break
+            early(acc, model)
+            if early.early_stop:
+                num_epochs=epoch
+                print("Early stopping")
+                break
 
     acc = test(final=True)
     with open("result.yaml", "a") as f:
@@ -263,7 +263,7 @@ def my_train(
                 )
             ]
         )
-        yaml.dump({tmpstring: {"acc": acc, "loss": loss}}, f)
+        yaml.dump({tmpstring: {"acc": acc, "loss": loss,"bestScore":early.best_score}}, f)
     if "final" in log:
         print(f"{acc}")
 

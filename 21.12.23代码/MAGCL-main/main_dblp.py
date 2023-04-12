@@ -116,7 +116,7 @@ def train():
         x_1, edge_index_1, [2, 4]
     )  # a(axW1)W2, --> a^4(a^2xW1)W2 ->GCN(encoder)  W1,W2两层的参数 A=邻接矩阵 X=特征矩阵
     z2 = model(x_2, edge_index_2, [8, 4])
-    z3 = model(x_3, edge_index_3, [8, 4])
+
     loss = model.loss(  # GRACE infoNce
         z1,
         z2,

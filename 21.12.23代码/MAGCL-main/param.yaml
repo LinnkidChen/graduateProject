@@ -217,22 +217,22 @@ Coauthor-Phy:
    weight_decay: [0.00001]
    drop_scheme: ['degree']
    rand_layers: [4]
-ACM:
+ACM: #25-35
    learning_rate: [0.001,0.005,0.002,1e-4,2e-4,5e-4,1e-5,2e-5,5e-5]
    num_hidden: [64,128,256]
    num_proj_hidden: [64,128,256]
    activation: ["rrelu","relu"]
    base_model: ['GCNConv']
-   num_layers: [2,3,4,5]
+   num_layers: [2]
    drop_edge_rate_1: [0.2]
    drop_edge_rate_2: [0.2]
    drop_feature_rate_1: [0.1]
    drop_feature_rate_2: [0.4]
    tau: [0.5]
-   num_epochs: [200,500,1000,1500,2000]
+   num_epochs: [40]
    weight_decay: [1e-4,1e-5,1e-6,0]
    drop_scheme: ['degree']
-   rand_layers: [4]
+   rand_layers: [3]
    patience: 20
    seed: [111,222,333,444]
 
@@ -292,3 +292,22 @@ Aminer:
    rand_layers: [4]
    patience: 20
    seed: [111,222,333,444]
+
+Test:
+    learning_rate: [0.001]
+    num_hidden: [256]
+    num_proj_hidden: [256]
+    activation: ["rrelu","relu"]
+    base_model: ['GCNConv']
+    num_layers: [2]
+    drop_edge_rate_1: [0.2]
+    drop_edge_rate_2: [0.2]
+    drop_feature_rate_1: [0.1]
+    drop_feature_rate_2: [0.4]
+    tau: [0.5]
+    num_epochs: [100]
+    weight_decay: [1e-4]
+    drop_scheme: ['degree']
+    rand_layers: [4]
+    patience: 3
+    seed: [111]
