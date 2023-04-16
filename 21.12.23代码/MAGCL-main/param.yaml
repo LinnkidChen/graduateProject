@@ -232,7 +232,7 @@ ACM: #25-35
    num_epochs: [45]
    weight_decay: [1e-6,0]
    drop_scheme: ['degree']
-   rand_layers: [3]
+   rand_layers: [2]
    patience: 20
    seed: [111,222,333,444,555]
    randNums1: [2,4,5] 
@@ -241,24 +241,27 @@ ACM: #25-35
    randNums4: [6,8,10] 
 
 dblp:
-   learning_rate: [0.001,0.005,0.002,1e-4,2e-4,5e-4,1e-5,2e-5,5e-5]
-   num_hidden: [64,128,256]
-   num_proj_hidden: [64,128,256]
+   learning_rate: [0.001,1e-4,2e-4]
+   num_hidden: [64,128]
+   num_proj_hidden: [64,128]
    activation: ["rrelu","relu"]
    base_model: ['GCNConv']
-   num_layers: [2,3,4,5]
+   num_layers: [2]
    drop_edge_rate_1: [0.2]
    drop_edge_rate_2: [0.2]
    drop_feature_rate_1: [0.1]
    drop_feature_rate_2: [0.4]
    tau: [0.5]
-   num_epochs: [200,500,1000,1500,2000]
-   weight_decay: [1e-4,1e-5,1e-6,0]
+   num_epochs: [500]
+   weight_decay: [1e-6,0]
    drop_scheme: ['degree']
-   rand_layers: [4]
-   patience: 20
-   seed: [111,222,333,444]
-
+   rand_layers: [2]
+   patience: 15
+   seed: [111,222,333,444,555]
+   randNums1: [2,4,5] 
+   randNums2: [2,4,5] 
+   randNums3: [6,8,10] 
+   randNums4: [6,8,10] 
 Freebase:
    learning_rate: [0.001,1e-4,2e-4]
    num_hidden: [64,128,256]
@@ -303,8 +306,8 @@ Aminer: #40
 
 Test:
     learning_rate: [0.001]
-    num_hidden: [256]
-    num_proj_hidden: [256]
+    num_hidden: [64]
+    num_proj_hidden: [64]
     activation: ["rrelu","relu"]
     base_model: ['GCNConv']
     num_layers: [2]

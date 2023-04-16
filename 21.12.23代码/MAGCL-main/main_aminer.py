@@ -117,7 +117,7 @@ def train(R=[2,2,8,8]):
     # x_2 = drop_feature(features, drop_feature_rate_2)#4
     x_1 = features.to(device)  # 特征矩阵 没有扰动
     x_2 = features.to(device)
-
+    
     z1 = model(
         x_1, edge_index_1, [R[0],R[1]]
     )  # a(axW1)W2, --> a^4(a^2xW1)W2 ->GCN(encoder)  W1,W2两层的参数 A=邻接矩阵 X=特征矩阵

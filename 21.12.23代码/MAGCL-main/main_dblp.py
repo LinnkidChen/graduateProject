@@ -97,7 +97,7 @@ def process_data():
     # edge_list, features, label, train_idx, val, test_idx
 
 
-def train():
+def train(R=[2,2,8,8]):
     model.train()
     optimizer.zero_grad()
     # edge_index_1 = dropout_adj(data.edge_index, p=drop_edge_rate_1)[0]
@@ -113,14 +113,17 @@ def train():
     x_2 = features
     x_3 = features
     z1 = model(
-        x_1, edge_index_1, [2, 4]
+        x_1, edge_index_1, [R[0],R[1]]
     )  # a(axW1)W2, --> a^4(a^2xW1)W2 ->GCN(encoder)  W1,W2两层的参数 A=邻接矩阵 X=特征矩阵
-    z2 = model(x_2, edge_index_2, [8, 4])
-
+    m=np.random.randint(2,size=1)[0]
+    if m == 0:
+        edge_index_2 = edge_list[1].to(device)
+    else:
+         edge_index_2 = edge_list[2].to(device)
+    z2 = model(x_2, edge_index_2, [R[2],R[3]])
     loss = model.loss(  # GRACE infoNce
         z1,
         z2,
-        z3,
         batch_size=64
         if args.dataset == "Coauthor-Phy" or args.dataset == "ogbn-arxiv"
         else None,
@@ -136,8 +139,7 @@ def test(final=False):
     model.eval()
     z1 = model(features, edge_index_1, [1, 1], final=True)
     z2 = model(features, edge_index_2, [1, 1], final=True)
-    z3 = model(features, edge_index_3, [1, 1], final=True)
-    z = z1 + z2 + z3
+    z = z1 + z2 
 
     evaluator = MulticlassEvaluator()
 
@@ -167,10 +169,16 @@ def my_train(
     weight_decay,
     drop_scheme,
     rand_layers,
-    seed
+    seed,
+    randnum1,
+    randnum2,
+    randnum3,
+    randnum4
 ):
     weight_decay = float(weight_decay)
     learning_rate = float(learning_rate)
+    random.seed(seed)
+    np.random.seed(seed)
     tmpstring = " - ".join(
             [
                 str(i)
@@ -190,20 +198,17 @@ def my_train(
                     weight_decay,
                     drop_scheme,
                     rand_layers,
-                    seed
+                    seed,
+                    [randnum1,randnum2,randnum3,randnum4]
                 )
             ]
         )
     print(tmpstring)
-    with open("result.yaml") as f:
-        res=yaml.load(f,Loader=SafeLoader)
-        res=list(res.keys())
+    if result_file is not None:
+        res=list(result_file.keys())
         if tmpstring in res:
             return 
     global edge_list, features, label, split
-    torch.manual_seed(seed)
-    random.seed(seed)
-    np.random.seed(seed)
     edge_list, features, label, train_idx, val, test_idx = process_data()
     # edge_list[0].shape=[57853,2]
     # edge_list[1].shape= [4338213,2]
@@ -212,7 +217,7 @@ def my_train(
     # train_idx.shape=([60])
     # val.shape=([1000])
     # test_idx.shape=([1000])
-    # early = EarlyStopping(patience=patience, verbose=True)
+    early = EarlyStopping(patience=patience, verbose=True)
     edge_list = [idx.t().to(device) for idx in edge_list]
     # t()=transpose()
     # print("weightdecay", weight_decay)
@@ -241,29 +246,27 @@ def my_train(
     global edge_index_1, edge_index_2, edge_index_3
     edge_index_1 = edge_list[0]
     edge_index_2 = edge_list[1]
-    edge_index_3 = edge_list[2]
     print("running..")
 
     for epoch in range(1, num_epochs + 1):
         # print("start of epoch ", epoch)
-        loss = train()
+        loss = train([randnum1,randnum2,randnum3,randnum4])
         if "train" in log:
             print(f"(T) | Epoch={epoch:03d}, loss={loss:.4f}")
-        if epoch % 10 == 0:
+        if epoch % 5 == 0:
             acc = test()
             if "eval" in log:
-                print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc}")
-        # early(loss, model)
-        # if early.early_stop:
-        #     print("Early stopping")
-        #     num_epochs=epoch
-        #     break
+                print(f"(E) | Epoch={epoch:04d}, avg_acc = {acc} , loss = {loss}")
+            early(acc, model)
+            if early.early_stop:
+                num_epochs=epoch
+                print("Early stopping")
+                break
 
     acc = test(final=True)
     with open("result.yaml", "a") as f:
-        print("printing to resultç")
-        
-        yaml.dump({tmpstring: {"acc": acc, "loss": loss}}, f)
+        print("printing to result")
+        yaml.dump({tmpstring: {"acc": acc, "loss": loss,"bestScore":early.best_score}}, f)
     if "final" in log:
         print(f"{acc}")
 
@@ -275,7 +278,7 @@ if __name__ == "__main__":
     parser.add_argument("--dataset", type=str, default="ACM")
     parser.add_argument("--config", type=str, default="param.yaml")
     parser.add_argument("--seed", type=int, default=0)
-    parser.add_argument("--verbose", type=str, default="train,eval,final")
+    parser.add_argument("--verbose", type=str, default="eval,final")
     parser.add_argument("--save_split", type=str, nargs="?")
     parser.add_argument("--load_split", type=str, nargs="?")
     args = parser.parse_args()
@@ -288,7 +291,7 @@ if __name__ == "__main__":
     random.seed(0)
     np.random.seed(args.seed)
     use_nni = args.config == "nni"
-    learning_rate = config["learning_rate"]  # para2
+    learning_rate = [float(i) for i in config["learning_rate"]]  # para2
     num_hidden = config["num_hidden"]
     num_proj_hidden = config["num_proj_hidden"]
     activation = config["activation"]
@@ -301,12 +304,14 @@ if __name__ == "__main__":
     drop_scheme = config["drop_scheme"]
     tau = config["tau"]
     num_epochs = 10  # para1
-    weight_decay = config["weight_decay"]
+    weight_decay = [float(i) for i in config["weight_decay"]]
     rand_layers = config["rand_layers"]
-    patience = config["patience"][0]
+    patience = config["patience"]
+    seed = config["seed"]
     excludes = ["patience"]
-    seed=config["seed"]
     parameter_value = [config[k] for k in config.keys() if k not in excludes]
+    print(parameter_value)
+    result_file=yaml.load(open("result.yaml"),Loader=SafeLoader)
     for item in product(*parameter_value):
         loss = my_train(*item)
 
