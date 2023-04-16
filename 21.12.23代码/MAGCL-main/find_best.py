@@ -1,15 +1,15 @@
 import yaml
 
-with open("result_dblp.yaml") as f:
+with open("./apr13_Results/result_acm.yaml") as f:
     result = yaml.load(f, Loader=yaml.SafeLoader)
 acc = -1
 loss = 900
 target_key = None
 for key in result.keys():
     # print(key, result[key])
-    if result[key]["acc"] > acc:
+    if result[key]["bestScore"] > acc:
         target_key = key
-        acc = result[key]["acc"]
+        acc = result[key]["bestScore"]
     # if result[key]["acc"] > acc:
     #     target_key = key
 

@@ -1,0 +1,29 @@
+/root/graduateProject/21.12.23代码/MAGCL-main
+[[0.001], [256], [256], ['rrelu', 'relu'], ['GCNConv'], [2], [0.2], [0.2], [0.1], [0.4], [0.5], [100], ['1e-4'], ['degree'], [4], [111], [2, 4, 5], [2, 4, 5], [6, 8, 10], [6, 8, 10]]
+0.001 - 256 - 256 - rrelu - GCNConv - 2 - 0.2 - 0.2 - 0.1 - 0.4 - 0.5 - 100 - 0.0001 - degree - 4 - 111 - [2, 2, 6, 6]
+running..
+(E) | Epoch=0005, avg_acc = 0.8280000686645508 , loss = 7.953300952911377
+(E) | Epoch=0010, avg_acc = 0.8840000629425049 , loss = 7.683474063873291
+(E) | Epoch=0015, avg_acc = 0.893000066280365 , loss = 7.897307872772217
+(E) | Epoch=0020, avg_acc = 0.893000066280365 , loss = 7.852749824523926
+(E) | Epoch=0025, avg_acc = 0.8940000534057617 , loss = 7.812664985656738
+(E) | Epoch=0030, avg_acc = 0.8940000534057617 , loss = 7.7815141677856445
+(E) | Epoch=0035, avg_acc = 0.8920000195503235 , loss = 7.768314838409424
+EarlyStopping counter: 1 out of 3
+(E) | Epoch=0040, avg_acc = 0.8850000500679016 , loss = 7.6241655349731445
+EarlyStopping counter: 2 out of 3
+(E) | Epoch=0045, avg_acc = 0.8820000290870667 , loss = 7.719115257263184
+EarlyStopping counter: 3 out of 3
+Early stopping
+printing to result
+0.8810000419616699
+0.001 - 256 - 256 - rrelu - GCNConv - 2 - 0.2 - 0.2 - 0.1 - 0.4 - 0.5 - 100 - 0.0001 - degree - 4 - 111 - [2, 2, 6, 8]
+running..
+(E) | Epoch=0005, avg_acc = 0.8280000686645508 , loss = 7.953299522399902
+(E) | Epoch=0010, avg_acc = 0.8880000710487366 , loss = 7.907593727111816
+(E) | Epoch=0015, avg_acc = 0.8910000324249268 , loss = 7.9807515144348145
+(E) | Epoch=0020, avg_acc = 0.8920000195503235 , loss = 7.823094367980957
+(E) | Epoch=0025, avg_acc = 0.8880000710487366 , loss = 7.816411018371582
+EarlyStopping counter: 1 out of 3
+(E) | Epoch=0030, avg_acc = 0.8870000243186951 , loss = 7.762189865112305
+EarlyStopping counter: 2 out of 3

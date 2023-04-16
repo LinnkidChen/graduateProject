@@ -1,0 +1,800 @@
+/root/graduateProject/21.12.23代码/MAGCL-main
+[[0.001], [256], [256], ['rrelu', 'relu'], ['GCNConv'], [2], [0.2], [0.2], [0.1], [0.4], [0.5], [1000], ['1e-4'], ['degree'], [4], [111], [2], [2], [10], [10]]
+0.001 - 256 - 256 - rrelu - GCNConv - 2 - 0.2 - 0.2 - 0.1 - 0.4 - 0.5 - 1000 - 0.0001 - degree - 4 - 111 - [2, 2, 10, 10]
+running..
+(E) | Epoch=0005, avg_acc = 0.5400000214576721 , loss = 8.188305854797363
+(E) | Epoch=0010, avg_acc = 0.7160000205039978 , loss = 7.632983684539795
+(E) | Epoch=0015, avg_acc = 0.7680000066757202 , loss = 7.473194122314453
+(E) | Epoch=0020, avg_acc = 0.7730000615119934 , loss = 7.360992431640625
+(E) | Epoch=0025, avg_acc = 0.7820000648498535 , loss = 7.348818778991699
+(E) | Epoch=0030, avg_acc = 0.781000018119812 , loss = 7.266538143157959
+pping counter: 1 out of 80000
+(E) | Epoch=0035, avg_acc = 0.7580000162124634 , loss = 7.203217506408691
+pping counter: 2 out of 80000
+(E) | Epoch=0040, avg_acc = 0.7630000114440918 , loss = 7.093693733215332
+pping counter: 3 out of 80000
+(E) | Epoch=0045, avg_acc = 0.7630000114440918 , loss = 7.228365898132324
+pping counter: 4 out of 80000
+(E) | Epoch=0050, avg_acc = 0.7690000534057617 , loss = 7.082935333251953
+pping counter: 5 out of 80000
+(E) | Epoch=0055, avg_acc = 0.7700000405311584 , loss = 7.064090251922607
+pping counter: 6 out of 80000
+(E) | Epoch=0060, avg_acc = 0.7670000195503235 , loss = 7.146230697631836
+pping counter: 7 out of 80000
+(E) | Epoch=0065, avg_acc = 0.7550000548362732 , loss = 7.069353103637695
+pping counter: 8 out of 80000
+(E) | Epoch=0070, avg_acc = 0.7620000243186951 , loss = 7.084475517272949
+pping counter: 9 out of 80000
+(E) | Epoch=0075, avg_acc = 0.76500004529953 , loss = 7.039721488952637
+pping counter: 10 out of 80000
+(E) | Epoch=0080, avg_acc = 0.7550000548362732 , loss = 6.995556831359863
+pping counter: 11 out of 80000
+(E) | Epoch=0085, avg_acc = 0.7610000371932983 , loss = 7.01948881149292
+pping counter: 12 out of 80000
+(E) | Epoch=0090, avg_acc = 0.7550000548362732 , loss = 7.011958122253418
+pping counter: 13 out of 80000
+(E) | Epoch=0095, avg_acc = 0.7620000243186951 , loss = 6.987084865570068
+pping counter: 14 out of 80000
+(E) | Epoch=0100, avg_acc = 0.7590000629425049 , loss = 7.066107273101807
+pping counter: 15 out of 80000
+(E) | Epoch=0105, avg_acc = 0.7570000290870667 , loss = 7.018895626068115
+pping counter: 16 out of 80000
+(E) | Epoch=0110, avg_acc = 0.7510000467300415 , loss = 6.994282245635986
+pping counter: 17 out of 80000
+(E) | Epoch=0115, avg_acc = 0.7540000081062317 , loss = 7.001987934112549
+pping counter: 18 out of 80000
+(E) | Epoch=0120, avg_acc = 0.7390000224113464 , loss = 6.998746395111084
+pping counter: 19 out of 80000
+(E) | Epoch=0125, avg_acc = 0.7250000238418579 , loss = 7.027889728546143
+pping counter: 20 out of 80000
+(E) | Epoch=0130, avg_acc = 0.7260000109672546 , loss = 6.988039970397949
+pping counter: 21 out of 80000
+(E) | Epoch=0135, avg_acc = 0.7270000576972961 , loss = 7.210729598999023
+pping counter: 22 out of 80000
+(E) | Epoch=0140, avg_acc = 0.737000048160553 , loss = 6.919463634490967
+pping counter: 23 out of 80000
+(E) | Epoch=0145, avg_acc = 0.7380000352859497 , loss = 7.324942111968994
+pping counter: 24 out of 80000
+(E) | Epoch=0150, avg_acc = 0.7580000162124634 , loss = 7.011262893676758
+pping counter: 25 out of 80000
+(E) | Epoch=0155, avg_acc = 0.7450000643730164 , loss = 7.015613079071045
+pping counter: 26 out of 80000
+(E) | Epoch=0160, avg_acc = 0.7390000224113464 , loss = 6.985825538635254
+pping counter: 27 out of 80000
+(E) | Epoch=0165, avg_acc = 0.7420000433921814 , loss = 6.984704494476318
+pping counter: 28 out of 80000
+(E) | Epoch=0170, avg_acc = 0.737000048160553 , loss = 7.028481483459473
+pping counter: 29 out of 80000
+(E) | Epoch=0175, avg_acc = 0.7360000610351562 , loss = 7.143050193786621
+pping counter: 30 out of 80000
+(E) | Epoch=0180, avg_acc = 0.7350000143051147 , loss = 7.117372512817383
+pping counter: 31 out of 80000
+(E) | Epoch=0185, avg_acc = 0.7280000448226929 , loss = 6.979382038116455
+pping counter: 32 out of 80000
+(E) | Epoch=0190, avg_acc = 0.734000027179718 , loss = 7.049228191375732
+pping counter: 33 out of 80000
+(E) | Epoch=0195, avg_acc = 0.7290000319480896 , loss = 6.964554309844971
+pping counter: 34 out of 80000
+(E) | Epoch=0200, avg_acc = 0.7360000610351562 , loss = 6.937037944793701
+pping counter: 35 out of 80000
+(E) | Epoch=0205, avg_acc = 0.737000048160553 , loss = 6.944850444793701
+pping counter: 36 out of 80000
+(E) | Epoch=0210, avg_acc = 0.7390000224113464 , loss = 6.996051788330078
+pping counter: 37 out of 80000
+(E) | Epoch=0215, avg_acc = 0.7270000576972961 , loss = 7.00234317779541
+pping counter: 38 out of 80000
+(E) | Epoch=0220, avg_acc = 0.7140000462532043 , loss = 6.980103492736816
+pping counter: 39 out of 80000
+(E) | Epoch=0225, avg_acc = 0.7280000448226929 , loss = 7.032787322998047
+pping counter: 40 out of 80000
+(E) | Epoch=0230, avg_acc = 0.7280000448226929 , loss = 7.05225133895874
+pping counter: 41 out of 80000
+(E) | Epoch=0235, avg_acc = 0.7240000367164612 , loss = 6.99390172958374
+pping counter: 42 out of 80000
+(E) | Epoch=0240, avg_acc = 0.7260000109672546 , loss = 6.985032558441162
+pping counter: 43 out of 80000
+(E) | Epoch=0245, avg_acc = 0.7270000576972961 , loss = 6.990198612213135
+pping counter: 44 out of 80000
+(E) | Epoch=0250, avg_acc = 0.7210000157356262 , loss = 6.972451210021973
+pping counter: 45 out of 80000
+(E) | Epoch=0255, avg_acc = 0.7140000462532043 , loss = 7.007888317108154
+pping counter: 46 out of 80000
+(E) | Epoch=0260, avg_acc = 0.706000030040741 , loss = 6.981599807739258
+pping counter: 47 out of 80000
+(E) | Epoch=0265, avg_acc = 0.7050000429153442 , loss = 6.93182897567749
+pping counter: 48 out of 80000
+(E) | Epoch=0270, avg_acc = 0.7350000143051147 , loss = 7.183277130126953
+pping counter: 49 out of 80000
+(E) | Epoch=0275, avg_acc = 0.7460000514984131 , loss = 7.049229621887207
+pping counter: 50 out of 80000
+(E) | Epoch=0280, avg_acc = 0.7600000500679016 , loss = 7.009916305541992
+pping counter: 51 out of 80000
+(E) | Epoch=0285, avg_acc = 0.7520000338554382 , loss = 7.0533447265625
+pping counter: 52 out of 80000
+(E) | Epoch=0290, avg_acc = 0.7440000176429749 , loss = 6.979569911956787
+pping counter: 53 out of 80000
+(E) | Epoch=0295, avg_acc = 0.737000048160553 , loss = 6.965672969818115
+pping counter: 54 out of 80000
+(E) | Epoch=0300, avg_acc = 0.7410000562667847 , loss = 7.063841342926025
+pping counter: 55 out of 80000
+(E) | Epoch=0305, avg_acc = 0.734000027179718 , loss = 7.16386604309082
+pping counter: 56 out of 80000
+(E) | Epoch=0310, avg_acc = 0.7330000400543213 , loss = 6.965264797210693
+pping counter: 57 out of 80000
+(E) | Epoch=0315, avg_acc = 0.7440000176429749 , loss = 6.967708110809326
+pping counter: 58 out of 80000
+(E) | Epoch=0320, avg_acc = 0.7310000061988831 , loss = 6.943400859832764
+pping counter: 59 out of 80000
+(E) | Epoch=0325, avg_acc = 0.7410000562667847 , loss = 6.999413013458252
+pping counter: 60 out of 80000
+(E) | Epoch=0330, avg_acc = 0.734000027179718 , loss = 6.9926066398620605
+pping counter: 61 out of 80000
+(E) | Epoch=0335, avg_acc = 0.7150000333786011 , loss = 6.968441009521484
+pping counter: 62 out of 80000
+(E) | Epoch=0340, avg_acc = 0.7160000205039978 , loss = 7.004367351531982
+pping counter: 63 out of 80000
+(E) | Epoch=0345, avg_acc = 0.7160000205039978 , loss = 6.977777481079102
+pping counter: 64 out of 80000
+(E) | Epoch=0350, avg_acc = 0.7270000576972961 , loss = 6.970687389373779
+pping counter: 65 out of 80000
+(E) | Epoch=0355, avg_acc = 0.7280000448226929 , loss = 6.961862087249756
+pping counter: 66 out of 80000
+(E) | Epoch=0360, avg_acc = 0.7240000367164612 , loss = 6.992642879486084
+pping counter: 67 out of 80000
+(E) | Epoch=0365, avg_acc = 0.7260000109672546 , loss = 6.995607852935791
+pping counter: 68 out of 80000
+(E) | Epoch=0370, avg_acc = 0.7160000205039978 , loss = 7.008532524108887
+pping counter: 69 out of 80000
+(E) | Epoch=0375, avg_acc = 0.7040000557899475 , loss = 6.986752033233643
+pping counter: 70 out of 80000
+(E) | Epoch=0380, avg_acc = 0.718000054359436 , loss = 7.092097759246826
+pping counter: 71 out of 80000
+(E) | Epoch=0385, avg_acc = 0.7420000433921814 , loss = 7.01287317276001
+pping counter: 72 out of 80000
+(E) | Epoch=0390, avg_acc = 0.7480000257492065 , loss = 6.9688310623168945
+pping counter: 73 out of 80000
+(E) | Epoch=0395, avg_acc = 0.7400000095367432 , loss = 6.974122524261475
+pping counter: 74 out of 80000
+(E) | Epoch=0400, avg_acc = 0.7320000529289246 , loss = 6.975282669067383
+pping counter: 75 out of 80000
+(E) | Epoch=0405, avg_acc = 0.7120000123977661 , loss = 6.9619879722595215
+pping counter: 76 out of 80000
+(E) | Epoch=0410, avg_acc = 0.6990000605583191 , loss = 7.01627779006958
+pping counter: 77 out of 80000
+(E) | Epoch=0415, avg_acc = 0.7000000476837158 , loss = 7.0246171951293945
+pping counter: 78 out of 80000
+(E) | Epoch=0420, avg_acc = 0.6990000605583191 , loss = 7.066554546356201
+pping counter: 79 out of 80000
+(E) | Epoch=0425, avg_acc = 0.706000030040741 , loss = 6.971877574920654
+pping counter: 80 out of 80000
+(E) | Epoch=0430, avg_acc = 0.7140000462532043 , loss = 6.974848747253418
+pping counter: 81 out of 80000
+(E) | Epoch=0435, avg_acc = 0.7220000624656677 , loss = 6.960670471191406
+pping counter: 82 out of 80000
+(E) | Epoch=0440, avg_acc = 0.7170000076293945 , loss = 6.931390285491943
+pping counter: 83 out of 80000
+(E) | Epoch=0445, avg_acc = 0.7150000333786011 , loss = 6.962777137756348
+pping counter: 84 out of 80000
+(E) | Epoch=0450, avg_acc = 0.7120000123977661 , loss = 6.949776649475098
+pping counter: 85 out of 80000
+(E) | Epoch=0455, avg_acc = 0.6960000395774841 , loss = 6.945202827453613
+pping counter: 86 out of 80000
+(E) | Epoch=0460, avg_acc = 0.6910000443458557 , loss = 6.969547271728516
+pping counter: 87 out of 80000
+(E) | Epoch=0465, avg_acc = 0.6920000314712524 , loss = 6.944003105163574
+pping counter: 88 out of 80000
+(E) | Epoch=0470, avg_acc = 0.6980000138282776 , loss = 6.988988399505615
+pping counter: 89 out of 80000
+(E) | Epoch=0475, avg_acc = 0.7000000476837158 , loss = 6.9641876220703125
+pping counter: 90 out of 80000
+(E) | Epoch=0480, avg_acc = 0.7010000348091125 , loss = 6.956533432006836
+pping counter: 91 out of 80000
+(E) | Epoch=0485, avg_acc = 0.7120000123977661 , loss = 7.031698226928711
+pping counter: 92 out of 80000
+(E) | Epoch=0490, avg_acc = 0.7280000448226929 , loss = 6.903933048248291
+pping counter: 93 out of 80000
+(E) | Epoch=0495, avg_acc = 0.7350000143051147 , loss = 6.979418754577637
+pping counter: 94 out of 80000
+(E) | Epoch=0500, avg_acc = 0.7330000400543213 , loss = 6.974854946136475
+pping counter: 95 out of 80000
+(E) | Epoch=0505, avg_acc = 0.7220000624656677 , loss = 7.065020561218262
+pping counter: 96 out of 80000
+(E) | Epoch=0510, avg_acc = 0.737000048160553 , loss = 6.997771739959717
+pping counter: 97 out of 80000
+(E) | Epoch=0515, avg_acc = 0.7570000290870667 , loss = 7.010855197906494
+pping counter: 98 out of 80000
+(E) | Epoch=0520, avg_acc = 0.7510000467300415 , loss = 6.906318664550781
+pping counter: 99 out of 80000
+(E) | Epoch=0525, avg_acc = 0.7560000419616699 , loss = 6.967889308929443
+pping counter: 100 out of 80000
+(E) | Epoch=0530, avg_acc = 0.7460000514984131 , loss = 6.981998920440674
+pping counter: 101 out of 80000
+(E) | Epoch=0535, avg_acc = 0.7350000143051147 , loss = 6.987360000610352
+pping counter: 102 out of 80000
+(E) | Epoch=0540, avg_acc = 0.737000048160553 , loss = 6.953293323516846
+pping counter: 103 out of 80000
+(E) | Epoch=0545, avg_acc = 0.7330000400543213 , loss = 7.051334857940674
+pping counter: 104 out of 80000
+(E) | Epoch=0550, avg_acc = 0.734000027179718 , loss = 6.96290922164917
+pping counter: 105 out of 80000
+(E) | Epoch=0555, avg_acc = 0.7430000305175781 , loss = 6.969241142272949
+pping counter: 106 out of 80000
+(E) | Epoch=0560, avg_acc = 0.7500000596046448 , loss = 6.912822246551514
+pping counter: 107 out of 80000
+(E) | Epoch=0565, avg_acc = 0.7490000128746033 , loss = 7.0146379470825195
+pping counter: 108 out of 80000
+(E) | Epoch=0570, avg_acc = 0.7500000596046448 , loss = 7.062609672546387
+pping counter: 109 out of 80000
+(E) | Epoch=0575, avg_acc = 0.7330000400543213 , loss = 6.9742817878723145
+pping counter: 110 out of 80000
+(E) | Epoch=0580, avg_acc = 0.7320000529289246 , loss = 6.959956645965576
+pping counter: 111 out of 80000
+(E) | Epoch=0585, avg_acc = 0.7250000238418579 , loss = 6.905442237854004
+pping counter: 112 out of 80000
+(E) | Epoch=0590, avg_acc = 0.7230000495910645 , loss = 7.000884056091309
+pping counter: 113 out of 80000
+(E) | Epoch=0595, avg_acc = 0.7190000414848328 , loss = 6.991137504577637
+pping counter: 114 out of 80000
+(E) | Epoch=0600, avg_acc = 0.7150000333786011 , loss = 6.932569980621338
+pping counter: 115 out of 80000
+(E) | Epoch=0605, avg_acc = 0.7110000252723694 , loss = 6.937948703765869
+pping counter: 116 out of 80000
+(E) | Epoch=0610, avg_acc = 0.703000009059906 , loss = 6.96468448638916
+pping counter: 117 out of 80000
+(E) | Epoch=0615, avg_acc = 0.7090000510215759 , loss = 6.924464702606201
+pping counter: 118 out of 80000
+(E) | Epoch=0620, avg_acc = 0.7150000333786011 , loss = 6.991891860961914
+pping counter: 119 out of 80000
+(E) | Epoch=0625, avg_acc = 0.7170000076293945 , loss = 6.968518257141113
+pping counter: 120 out of 80000
+(E) | Epoch=0630, avg_acc = 0.7150000333786011 , loss = 6.957127571105957
+pping counter: 121 out of 80000
+(E) | Epoch=0635, avg_acc = 0.7140000462532043 , loss = 7.018538475036621
+pping counter: 122 out of 80000
+(E) | Epoch=0640, avg_acc = 0.7080000042915344 , loss = 6.957847595214844
+pping counter: 123 out of 80000
+(E) | Epoch=0645, avg_acc = 0.7080000042915344 , loss = 6.960353851318359
+pping counter: 124 out of 80000
+(E) | Epoch=0650, avg_acc = 0.7020000219345093 , loss = 6.945801258087158
+pping counter: 125 out of 80000
+(E) | Epoch=0655, avg_acc = 0.6970000267028809 , loss = 6.975301742553711
+pping counter: 126 out of 80000
+(E) | Epoch=0660, avg_acc = 0.7080000042915344 , loss = 7.112703800201416
+pping counter: 127 out of 80000
+(E) | Epoch=0665, avg_acc = 0.7210000157356262 , loss = 6.942193508148193
+pping counter: 128 out of 80000
+(E) | Epoch=0670, avg_acc = 0.7310000061988831 , loss = 6.983919143676758
+pping counter: 129 out of 80000
+(E) | Epoch=0675, avg_acc = 0.7290000319480896 , loss = 6.997147560119629
+pping counter: 130 out of 80000
+(E) | Epoch=0680, avg_acc = 0.7210000157356262 , loss = 6.920177936553955
+pping counter: 131 out of 80000
+(E) | Epoch=0685, avg_acc = 0.6920000314712524 , loss = 6.953546047210693
+pping counter: 132 out of 80000
+(E) | Epoch=0690, avg_acc = 0.6890000104904175 , loss = 7.001500606536865
+pping counter: 133 out of 80000
+(E) | Epoch=0695, avg_acc = 0.6980000138282776 , loss = 6.961604595184326
+pping counter: 134 out of 80000
+(E) | Epoch=0700, avg_acc = 0.7040000557899475 , loss = 6.962976455688477
+pping counter: 135 out of 80000
+(E) | Epoch=0705, avg_acc = 0.7390000224113464 , loss = 7.172958850860596
+pping counter: 136 out of 80000
+(E) | Epoch=0710, avg_acc = 0.7400000095367432 , loss = 6.958291530609131
+pping counter: 137 out of 80000
+(E) | Epoch=0715, avg_acc = 0.7540000081062317 , loss = 7.037335395812988
+pping counter: 138 out of 80000
+(E) | Epoch=0720, avg_acc = 0.7540000081062317 , loss = 7.0971221923828125
+pping counter: 139 out of 80000
+(E) | Epoch=0725, avg_acc = 0.7500000596046448 , loss = 6.959652900695801
+pping counter: 140 out of 80000
+(E) | Epoch=0730, avg_acc = 0.7490000128746033 , loss = 6.958897113800049
+pping counter: 141 out of 80000
+(E) | Epoch=0735, avg_acc = 0.7440000176429749 , loss = 6.974423408508301
+pping counter: 142 out of 80000
+(E) | Epoch=0740, avg_acc = 0.7350000143051147 , loss = 6.994817733764648
+pping counter: 143 out of 80000
+(E) | Epoch=0745, avg_acc = 0.734000027179718 , loss = 6.960031032562256
+pping counter: 144 out of 80000
+(E) | Epoch=0750, avg_acc = 0.7360000610351562 , loss = 6.961633682250977
+pping counter: 145 out of 80000
+(E) | Epoch=0755, avg_acc = 0.7360000610351562 , loss = 6.962378025054932
+pping counter: 146 out of 80000
+(E) | Epoch=0760, avg_acc = 0.7330000400543213 , loss = 6.950930118560791
+pping counter: 147 out of 80000
+(E) | Epoch=0765, avg_acc = 0.7270000576972961 , loss = 6.947997570037842
+pping counter: 148 out of 80000
+(E) | Epoch=0770, avg_acc = 0.7210000157356262 , loss = 6.953192234039307
+pping counter: 149 out of 80000
+(E) | Epoch=0775, avg_acc = 0.7220000624656677 , loss = 6.977672576904297
+pping counter: 150 out of 80000
+(E) | Epoch=0780, avg_acc = 0.7080000042915344 , loss = 6.96088981628418
+pping counter: 151 out of 80000
+(E) | Epoch=0785, avg_acc = 0.7000000476837158 , loss = 7.000475883483887
+pping counter: 152 out of 80000
+(E) | Epoch=0790, avg_acc = 0.7110000252723694 , loss = 7.069729804992676
+pping counter: 153 out of 80000
+(E) | Epoch=0795, avg_acc = 0.718000054359436 , loss = 7.002425193786621
+pping counter: 154 out of 80000
+(E) | Epoch=0800, avg_acc = 0.734000027179718 , loss = 7.187258243560791
+pping counter: 155 out of 80000
+(E) | Epoch=0805, avg_acc = 0.7480000257492065 , loss = 7.049966812133789
+pping counter: 156 out of 80000
+(E) | Epoch=0810, avg_acc = 0.7490000128746033 , loss = 6.963047027587891
+pping counter: 157 out of 80000
+(E) | Epoch=0815, avg_acc = 0.753000020980835 , loss = 7.002267837524414
+pping counter: 158 out of 80000
+(E) | Epoch=0820, avg_acc = 0.7440000176429749 , loss = 6.9853339195251465
+pping counter: 159 out of 80000
+(E) | Epoch=0825, avg_acc = 0.7420000433921814 , loss = 6.942069053649902
+pping counter: 160 out of 80000
+(E) | Epoch=0830, avg_acc = 0.734000027179718 , loss = 6.985445976257324
+pping counter: 161 out of 80000
+(E) | Epoch=0835, avg_acc = 0.7330000400543213 , loss = 6.968954563140869
+pping counter: 162 out of 80000
+(E) | Epoch=0840, avg_acc = 0.734000027179718 , loss = 7.026614665985107
+pping counter: 163 out of 80000
+(E) | Epoch=0845, avg_acc = 0.7330000400543213 , loss = 6.979870319366455
+pping counter: 164 out of 80000
+(E) | Epoch=0850, avg_acc = 0.7250000238418579 , loss = 7.004978179931641
+pping counter: 165 out of 80000
+(E) | Epoch=0855, avg_acc = 0.7410000562667847 , loss = 6.953710556030273
+pping counter: 166 out of 80000
+(E) | Epoch=0860, avg_acc = 0.734000027179718 , loss = 6.962934494018555
+pping counter: 167 out of 80000
+(E) | Epoch=0865, avg_acc = 0.7360000610351562 , loss = 6.952600955963135
+pping counter: 168 out of 80000
+(E) | Epoch=0870, avg_acc = 0.7440000176429749 , loss = 6.99737548828125
+pping counter: 169 out of 80000
+(E) | Epoch=0875, avg_acc = 0.7520000338554382 , loss = 7.028152942657471
+pping counter: 170 out of 80000
+(E) | Epoch=0880, avg_acc = 0.7550000548362732 , loss = 6.986416339874268
+pping counter: 171 out of 80000
+(E) | Epoch=0885, avg_acc = 0.7520000338554382 , loss = 6.962504863739014
+pping counter: 172 out of 80000
+(E) | Epoch=0890, avg_acc = 0.7480000257492065 , loss = 6.9015116691589355
+pping counter: 173 out of 80000
+(E) | Epoch=0895, avg_acc = 0.7410000562667847 , loss = 6.962072849273682
+pping counter: 174 out of 80000
+(E) | Epoch=0900, avg_acc = 0.7500000596046448 , loss = 7.006749629974365
+pping counter: 175 out of 80000
+(E) | Epoch=0905, avg_acc = 0.7410000562667847 , loss = 6.925303936004639
+pping counter: 176 out of 80000
+(E) | Epoch=0910, avg_acc = 0.7360000610351562 , loss = 6.948850154876709
+pping counter: 177 out of 80000
+(E) | Epoch=0915, avg_acc = 0.7320000529289246 , loss = 7.027490615844727
+pping counter: 178 out of 80000
+(E) | Epoch=0920, avg_acc = 0.7270000576972961 , loss = 6.959625720977783
+pping counter: 179 out of 80000
+(E) | Epoch=0925, avg_acc = 0.7320000529289246 , loss = 6.973865032196045
+pping counter: 180 out of 80000
+(E) | Epoch=0930, avg_acc = 0.7280000448226929 , loss = 6.97637414932251
+pping counter: 181 out of 80000
+(E) | Epoch=0935, avg_acc = 0.7250000238418579 , loss = 7.033388137817383
+pping counter: 182 out of 80000
+(E) | Epoch=0940, avg_acc = 0.7250000238418579 , loss = 6.9548468589782715
+pping counter: 183 out of 80000
+(E) | Epoch=0945, avg_acc = 0.7130000591278076 , loss = 6.9089531898498535
+pping counter: 184 out of 80000
+(E) | Epoch=0950, avg_acc = 0.7140000462532043 , loss = 6.952331066131592
+pping counter: 185 out of 80000
+(E) | Epoch=0955, avg_acc = 0.703000009059906 , loss = 6.934085845947266
+pping counter: 186 out of 80000
+(E) | Epoch=0960, avg_acc = 0.6980000138282776 , loss = 6.896661281585693
+pping counter: 187 out of 80000
+(E) | Epoch=0965, avg_acc = 0.6990000605583191 , loss = 6.951991081237793
+pping counter: 188 out of 80000
+(E) | Epoch=0970, avg_acc = 0.690000057220459 , loss = 6.890598773956299
+pping counter: 189 out of 80000
+(E) | Epoch=0975, avg_acc = 0.6670000553131104 , loss = 6.959206581115723
+pping counter: 190 out of 80000
+(E) | Epoch=0980, avg_acc = 0.6840000152587891 , loss = 6.956087112426758
+pping counter: 191 out of 80000
+(E) | Epoch=0985, avg_acc = 0.6970000267028809 , loss = 7.100837230682373
+pping counter: 192 out of 80000
+(E) | Epoch=0990, avg_acc = 0.7100000381469727 , loss = 6.945610046386719
+pping counter: 193 out of 80000
+(E) | Epoch=0995, avg_acc = 0.7260000109672546 , loss = 6.9783453941345215
+pping counter: 194 out of 80000
+(E) | Epoch=1000, avg_acc = 0.737000048160553 , loss = 7.057943820953369
+pping counter: 195 out of 80000
+printing to result
+0.7390000224113464
+0.001 - 256 - 256 - relu - GCNConv - 2 - 0.2 - 0.2 - 0.1 - 0.4 - 0.5 - 1000 - 0.0001 - degree - 4 - 111 - [2, 2, 10, 10]
+running..
+(E) | Epoch=0005, avg_acc = 0.5520000457763672 , loss = 8.1256742477417
+(E) | Epoch=0010, avg_acc = 0.7120000123977661 , loss = 7.595478057861328
+(E) | Epoch=0015, avg_acc = 0.7610000371932983 , loss = 7.497613906860352
+(E) | Epoch=0020, avg_acc = 0.7710000276565552 , loss = 7.337944984436035
+(E) | Epoch=0025, avg_acc = 0.7700000405311584 , loss = 7.421502590179443
+pping counter: 1 out of 80000
+(E) | Epoch=0030, avg_acc = 0.7630000114440918 , loss = 7.263176918029785
+pping counter: 2 out of 80000
+(E) | Epoch=0035, avg_acc = 0.7550000548362732 , loss = 7.213921546936035
+pping counter: 3 out of 80000
+(E) | Epoch=0040, avg_acc = 0.7620000243186951 , loss = 7.105349540710449
+pping counter: 4 out of 80000
+(E) | Epoch=0045, avg_acc = 0.7560000419616699 , loss = 7.286780834197998
+pping counter: 5 out of 80000
+(E) | Epoch=0050, avg_acc = 0.7520000338554382 , loss = 7.115360260009766
+pping counter: 6 out of 80000
+(E) | Epoch=0055, avg_acc = 0.7590000629425049 , loss = 7.0797648429870605
+pping counter: 7 out of 80000
+(E) | Epoch=0060, avg_acc = 0.7480000257492065 , loss = 7.20479679107666
+pping counter: 8 out of 80000
+(E) | Epoch=0065, avg_acc = 0.7380000352859497 , loss = 7.1144866943359375
+pping counter: 9 out of 80000
+(E) | Epoch=0070, avg_acc = 0.7470000386238098 , loss = 7.113699913024902
+pping counter: 10 out of 80000
+(E) | Epoch=0075, avg_acc = 0.7520000338554382 , loss = 7.052838325500488
+pping counter: 11 out of 80000
+(E) | Epoch=0080, avg_acc = 0.7400000095367432 , loss = 7.003873825073242
+pping counter: 12 out of 80000
+(E) | Epoch=0085, avg_acc = 0.7400000095367432 , loss = 7.030200004577637
+pping counter: 13 out of 80000
+(E) | Epoch=0090, avg_acc = 0.7330000400543213 , loss = 7.022955417633057
+pping counter: 14 out of 80000
+(E) | Epoch=0095, avg_acc = 0.7500000596046448 , loss = 6.997135162353516
+pping counter: 15 out of 80000
+(E) | Epoch=0100, avg_acc = 0.7440000176429749 , loss = 7.085319995880127
+pping counter: 16 out of 80000
+(E) | Epoch=0105, avg_acc = 0.7410000562667847 , loss = 7.031507968902588
+pping counter: 17 out of 80000
+(E) | Epoch=0110, avg_acc = 0.7410000562667847 , loss = 7.0006794929504395
+pping counter: 18 out of 80000
+(E) | Epoch=0115, avg_acc = 0.7350000143051147 , loss = 7.007730007171631
+pping counter: 19 out of 80000
+(E) | Epoch=0120, avg_acc = 0.7400000095367432 , loss = 7.003599643707275
+pping counter: 20 out of 80000
+(E) | Epoch=0125, avg_acc = 0.7280000448226929 , loss = 7.0389180183410645
+pping counter: 21 out of 80000
+(E) | Epoch=0130, avg_acc = 0.7350000143051147 , loss = 6.988829135894775
+pping counter: 22 out of 80000
+(E) | Epoch=0135, avg_acc = 0.737000048160553 , loss = 7.090795040130615
+pping counter: 23 out of 80000
+(E) | Epoch=0140, avg_acc = 0.7310000061988831 , loss = 6.92159366607666
+pping counter: 24 out of 80000
+(E) | Epoch=0145, avg_acc = 0.7410000562667847 , loss = 7.200425148010254
+pping counter: 25 out of 80000
+(E) | Epoch=0150, avg_acc = 0.7440000176429749 , loss = 6.990106582641602
+pping counter: 26 out of 80000
+(E) | Epoch=0155, avg_acc = 0.7610000371932983 , loss = 7.0311126708984375
+pping counter: 27 out of 80000
+(E) | Epoch=0160, avg_acc = 0.7450000643730164 , loss = 7.012353897094727
+pping counter: 28 out of 80000
+(E) | Epoch=0165, avg_acc = 0.7560000419616699 , loss = 7.001803874969482
+pping counter: 29 out of 80000
+(E) | Epoch=0170, avg_acc = 0.7550000548362732 , loss = 7.103414058685303
+pping counter: 30 out of 80000
+(E) | Epoch=0175, avg_acc = 0.7560000419616699 , loss = 7.31356143951416
+pping counter: 31 out of 80000
+(E) | Epoch=0180, avg_acc = 0.7560000419616699 , loss = 7.179146766662598
+pping counter: 32 out of 80000
+(E) | Epoch=0185, avg_acc = 0.753000020980835 , loss = 6.98861026763916
+pping counter: 33 out of 80000
+(E) | Epoch=0190, avg_acc = 0.7590000629425049 , loss = 7.0942816734313965
+pping counter: 34 out of 80000
+(E) | Epoch=0195, avg_acc = 0.7610000371932983 , loss = 7.0114054679870605
+pping counter: 35 out of 80000
+(E) | Epoch=0200, avg_acc = 0.7680000066757202 , loss = 6.9431610107421875
+pping counter: 36 out of 80000
+(E) | Epoch=0205, avg_acc = 0.7600000500679016 , loss = 6.969673156738281
+pping counter: 37 out of 80000
+(E) | Epoch=0210, avg_acc = 0.7500000596046448 , loss = 7.0108418464660645
+pping counter: 38 out of 80000
+(E) | Epoch=0215, avg_acc = 0.7490000128746033 , loss = 7.003674507141113
+pping counter: 39 out of 80000
+(E) | Epoch=0220, avg_acc = 0.7490000128746033 , loss = 6.9906392097473145
+pping counter: 40 out of 80000
+(E) | Epoch=0225, avg_acc = 0.7450000643730164 , loss = 7.026745319366455
+pping counter: 41 out of 80000
+(E) | Epoch=0230, avg_acc = 0.7480000257492065 , loss = 7.056612968444824
+pping counter: 42 out of 80000
+(E) | Epoch=0235, avg_acc = 0.7380000352859497 , loss = 7.003230094909668
+pping counter: 43 out of 80000
+(E) | Epoch=0240, avg_acc = 0.7330000400543213 , loss = 6.9858832359313965
+pping counter: 44 out of 80000
+(E) | Epoch=0245, avg_acc = 0.7410000562667847 , loss = 6.989902019500732
+pping counter: 45 out of 80000
+(E) | Epoch=0250, avg_acc = 0.7360000610351562 , loss = 6.975557804107666
+pping counter: 46 out of 80000
+(E) | Epoch=0255, avg_acc = 0.7360000610351562 , loss = 6.991157531738281
+pping counter: 47 out of 80000
+(E) | Epoch=0260, avg_acc = 0.7200000286102295 , loss = 6.989073753356934
+pping counter: 48 out of 80000
+(E) | Epoch=0265, avg_acc = 0.7290000319480896 , loss = 6.925918102264404
+pping counter: 49 out of 80000
+(E) | Epoch=0270, avg_acc = 0.7360000610351562 , loss = 7.123528480529785
+pping counter: 50 out of 80000
+(E) | Epoch=0275, avg_acc = 0.7270000576972961 , loss = 7.010681629180908
+pping counter: 51 out of 80000
+(E) | Epoch=0280, avg_acc = 0.7380000352859497 , loss = 7.016688346862793
+pping counter: 52 out of 80000
+(E) | Epoch=0285, avg_acc = 0.7330000400543213 , loss = 7.063441276550293
+pping counter: 53 out of 80000
+(E) | Epoch=0290, avg_acc = 0.734000027179718 , loss = 6.979109287261963
+pping counter: 54 out of 80000
+(E) | Epoch=0295, avg_acc = 0.7330000400543213 , loss = 6.963743209838867
+pping counter: 55 out of 80000
+(E) | Epoch=0300, avg_acc = 0.734000027179718 , loss = 7.0739216804504395
+pping counter: 56 out of 80000
+(E) | Epoch=0305, avg_acc = 0.7410000562667847 , loss = 7.1861677169799805
+pping counter: 57 out of 80000
+(E) | Epoch=0310, avg_acc = 0.7380000352859497 , loss = 6.967330455780029
+pping counter: 58 out of 80000
+(E) | Epoch=0315, avg_acc = 0.7600000500679016 , loss = 6.971859931945801
+pping counter: 59 out of 80000
+(E) | Epoch=0320, avg_acc = 0.7480000257492065 , loss = 6.957098484039307
+pping counter: 60 out of 80000
+(E) | Epoch=0325, avg_acc = 0.7460000514984131 , loss = 7.02360725402832
+pping counter: 61 out of 80000
+(E) | Epoch=0330, avg_acc = 0.7380000352859497 , loss = 7.010828018188477
+pping counter: 62 out of 80000
+(E) | Epoch=0335, avg_acc = 0.7330000400543213 , loss = 6.971949100494385
+pping counter: 63 out of 80000
+(E) | Epoch=0340, avg_acc = 0.7390000224113464 , loss = 7.034093379974365
+pping counter: 64 out of 80000
+(E) | Epoch=0345, avg_acc = 0.7380000352859497 , loss = 6.995502948760986
+pping counter: 65 out of 80000
+(E) | Epoch=0350, avg_acc = 0.7380000352859497 , loss = 6.9667158126831055
+pping counter: 66 out of 80000
+(E) | Epoch=0355, avg_acc = 0.7380000352859497 , loss = 6.960888385772705
+pping counter: 67 out of 80000
+(E) | Epoch=0360, avg_acc = 0.7420000433921814 , loss = 7.0081562995910645
+pping counter: 68 out of 80000
+(E) | Epoch=0365, avg_acc = 0.7400000095367432 , loss = 6.991856575012207
+pping counter: 69 out of 80000
+(E) | Epoch=0370, avg_acc = 0.7280000448226929 , loss = 7.0125627517700195
+pping counter: 70 out of 80000
+(E) | Epoch=0375, avg_acc = 0.7220000624656677 , loss = 6.985025882720947
+pping counter: 71 out of 80000
+(E) | Epoch=0380, avg_acc = 0.7310000061988831 , loss = 7.110480308532715
+pping counter: 72 out of 80000
+(E) | Epoch=0385, avg_acc = 0.7410000562667847 , loss = 7.027627944946289
+pping counter: 73 out of 80000
+(E) | Epoch=0390, avg_acc = 0.7390000224113464 , loss = 6.978986740112305
+pping counter: 74 out of 80000
+(E) | Epoch=0395, avg_acc = 0.7330000400543213 , loss = 6.984075546264648
+pping counter: 75 out of 80000
+(E) | Epoch=0400, avg_acc = 0.7320000529289246 , loss = 6.994650363922119
+pping counter: 76 out of 80000
+(E) | Epoch=0405, avg_acc = 0.7140000462532043 , loss = 6.976528167724609
+pping counter: 77 out of 80000
+(E) | Epoch=0410, avg_acc = 0.7250000238418579 , loss = 7.033612251281738
+pping counter: 78 out of 80000
+(E) | Epoch=0415, avg_acc = 0.7290000319480896 , loss = 7.064046859741211
+pping counter: 79 out of 80000
+(E) | Epoch=0420, avg_acc = 0.7210000157356262 , loss = 7.104248523712158
+pping counter: 80 out of 80000
+(E) | Epoch=0425, avg_acc = 0.7260000109672546 , loss = 6.989544868469238
+pping counter: 81 out of 80000
+(E) | Epoch=0430, avg_acc = 0.7300000190734863 , loss = 6.987813472747803
+pping counter: 82 out of 80000
+(E) | Epoch=0435, avg_acc = 0.7310000061988831 , loss = 6.967722415924072
+pping counter: 83 out of 80000
+(E) | Epoch=0440, avg_acc = 0.7440000176429749 , loss = 6.949965000152588
+pping counter: 84 out of 80000
+(E) | Epoch=0445, avg_acc = 0.7170000076293945 , loss = 6.975600719451904
+pping counter: 85 out of 80000
+(E) | Epoch=0450, avg_acc = 0.7140000462532043 , loss = 6.958076000213623
+pping counter: 86 out of 80000
+(E) | Epoch=0455, avg_acc = 0.7050000429153442 , loss = 6.951247692108154
+pping counter: 87 out of 80000
+(E) | Epoch=0460, avg_acc = 0.7140000462532043 , loss = 6.979527473449707
+pping counter: 88 out of 80000
+(E) | Epoch=0465, avg_acc = 0.7080000042915344 , loss = 6.940597057342529
+pping counter: 89 out of 80000
+(E) | Epoch=0470, avg_acc = 0.7190000414848328 , loss = 6.9964470863342285
+pping counter: 90 out of 80000
+(E) | Epoch=0475, avg_acc = 0.7010000348091125 , loss = 6.967203617095947
+pping counter: 91 out of 80000
+(E) | Epoch=0480, avg_acc = 0.7000000476837158 , loss = 6.960017204284668
+pping counter: 92 out of 80000
+(E) | Epoch=0485, avg_acc = 0.6840000152587891 , loss = 7.0576605796813965
+pping counter: 93 out of 80000
+(E) | Epoch=0490, avg_acc = 0.687000036239624 , loss = 6.912191390991211
+pping counter: 94 out of 80000
+(E) | Epoch=0495, avg_acc = 0.7190000414848328 , loss = 6.984220027923584
+pping counter: 95 out of 80000
+(E) | Epoch=0500, avg_acc = 0.7120000123977661 , loss = 6.960887908935547
+pping counter: 96 out of 80000
+(E) | Epoch=0505, avg_acc = 0.6990000605583191 , loss = 7.104696750640869
+pping counter: 97 out of 80000
+(E) | Epoch=0510, avg_acc = 0.7140000462532043 , loss = 7.045260906219482
+pping counter: 98 out of 80000
+(E) | Epoch=0515, avg_acc = 0.7430000305175781 , loss = 7.112799167633057
+pping counter: 99 out of 80000
+(E) | Epoch=0520, avg_acc = 0.7550000548362732 , loss = 6.914199352264404
+pping counter: 100 out of 80000
+(E) | Epoch=0525, avg_acc = 0.7600000500679016 , loss = 6.971945285797119
+pping counter: 101 out of 80000
+(E) | Epoch=0530, avg_acc = 0.7510000467300415 , loss = 6.992838382720947
+pping counter: 102 out of 80000
+(E) | Epoch=0535, avg_acc = 0.7520000338554382 , loss = 7.019955158233643
+pping counter: 103 out of 80000
+(E) | Epoch=0540, avg_acc = 0.7470000386238098 , loss = 6.964096546173096
+pping counter: 104 out of 80000
+(E) | Epoch=0545, avg_acc = 0.7560000419616699 , loss = 7.114092826843262
+pping counter: 105 out of 80000
+(E) | Epoch=0550, avg_acc = 0.7580000162124634 , loss = 6.981444358825684
+pping counter: 106 out of 80000
+(E) | Epoch=0555, avg_acc = 0.7600000500679016 , loss = 7.012336254119873
+pping counter: 107 out of 80000
+(E) | Epoch=0560, avg_acc = 0.7630000114440918 , loss = 6.936245441436768
+pping counter: 108 out of 80000
+(E) | Epoch=0565, avg_acc = 0.7780000567436218 , loss = 7.033891201019287
+(E) | Epoch=0570, avg_acc = 0.76500004529953 , loss = 7.108138084411621
+pping counter: 1 out of 80000
+(E) | Epoch=0575, avg_acc = 0.7620000243186951 , loss = 6.99147367477417
+pping counter: 2 out of 80000
+(E) | Epoch=0580, avg_acc = 0.7610000371932983 , loss = 6.9668049812316895
+pping counter: 3 out of 80000
+(E) | Epoch=0585, avg_acc = 0.7540000081062317 , loss = 6.911027908325195
+pping counter: 4 out of 80000
+(E) | Epoch=0590, avg_acc = 0.7480000257492065 , loss = 7.010257720947266
+pping counter: 5 out of 80000
+(E) | Epoch=0595, avg_acc = 0.7430000305175781 , loss = 6.993556976318359
+pping counter: 6 out of 80000
+(E) | Epoch=0600, avg_acc = 0.7400000095367432 , loss = 6.940579414367676
+pping counter: 7 out of 80000
+(E) | Epoch=0605, avg_acc = 0.7330000400543213 , loss = 6.943720817565918
+pping counter: 8 out of 80000
+(E) | Epoch=0610, avg_acc = 0.7300000190734863 , loss = 6.970236301422119
+pping counter: 9 out of 80000
+(E) | Epoch=0615, avg_acc = 0.7300000190734863 , loss = 6.93315315246582
+pping counter: 10 out of 80000
+(E) | Epoch=0620, avg_acc = 0.7300000190734863 , loss = 6.973856449127197
+pping counter: 11 out of 80000
+(E) | Epoch=0625, avg_acc = 0.7200000286102295 , loss = 6.960746765136719
+pping counter: 12 out of 80000
+(E) | Epoch=0630, avg_acc = 0.7050000429153442 , loss = 6.955799102783203
+pping counter: 13 out of 80000
+(E) | Epoch=0635, avg_acc = 0.7150000333786011 , loss = 6.998973369598389
+pping counter: 14 out of 80000
+(E) | Epoch=0640, avg_acc = 0.7040000557899475 , loss = 6.955235004425049
+pping counter: 15 out of 80000
+(E) | Epoch=0645, avg_acc = 0.703000009059906 , loss = 6.961996555328369
+pping counter: 16 out of 80000
+(E) | Epoch=0650, avg_acc = 0.7070000171661377 , loss = 6.93912935256958
+pping counter: 17 out of 80000
+(E) | Epoch=0655, avg_acc = 0.6950000524520874 , loss = 6.966359615325928
+pping counter: 18 out of 80000
+(E) | Epoch=0660, avg_acc = 0.706000030040741 , loss = 7.06575870513916
+pping counter: 19 out of 80000
+(E) | Epoch=0665, avg_acc = 0.7110000252723694 , loss = 6.937234401702881
+pping counter: 20 out of 80000
+(E) | Epoch=0670, avg_acc = 0.7190000414848328 , loss = 6.985892295837402
+pping counter: 21 out of 80000
+(E) | Epoch=0675, avg_acc = 0.7190000414848328 , loss = 7.000615119934082
+pping counter: 22 out of 80000
+(E) | Epoch=0680, avg_acc = 0.6950000524520874 , loss = 6.9236836433410645
+pping counter: 23 out of 80000
+(E) | Epoch=0685, avg_acc = 0.6930000185966492 , loss = 6.954325199127197
+pping counter: 24 out of 80000
+(E) | Epoch=0690, avg_acc = 0.6790000200271606 , loss = 7.0213446617126465
+pping counter: 25 out of 80000
+(E) | Epoch=0695, avg_acc = 0.7080000042915344 , loss = 6.970098495483398
+pping counter: 26 out of 80000
+(E) | Epoch=0700, avg_acc = 0.7080000042915344 , loss = 6.96025276184082
+pping counter: 27 out of 80000
+(E) | Epoch=0705, avg_acc = 0.7200000286102295 , loss = 7.331501483917236
+pping counter: 28 out of 80000
+(E) | Epoch=0710, avg_acc = 0.7450000643730164 , loss = 6.969776153564453
+pping counter: 29 out of 80000
+(E) | Epoch=0715, avg_acc = 0.7440000176429749 , loss = 7.0992889404296875
+pping counter: 30 out of 80000
+(E) | Epoch=0720, avg_acc = 0.7510000467300415 , loss = 7.177137851715088
+pping counter: 31 out of 80000
+(E) | Epoch=0725, avg_acc = 0.7410000562667847 , loss = 6.9702630043029785
+pping counter: 32 out of 80000
+(E) | Epoch=0730, avg_acc = 0.737000048160553 , loss = 6.958644866943359
+pping counter: 33 out of 80000
+(E) | Epoch=0735, avg_acc = 0.734000027179718 , loss = 6.99350118637085
+pping counter: 34 out of 80000
+(E) | Epoch=0740, avg_acc = 0.7280000448226929 , loss = 7.021621227264404
+pping counter: 35 out of 80000
+(E) | Epoch=0745, avg_acc = 0.7310000061988831 , loss = 6.970977783203125
+pping counter: 36 out of 80000
+(E) | Epoch=0750, avg_acc = 0.7260000109672546 , loss = 6.972951412200928
+pping counter: 37 out of 80000
+(E) | Epoch=0755, avg_acc = 0.7240000367164612 , loss = 6.970857620239258
+pping counter: 38 out of 80000
+(E) | Epoch=0760, avg_acc = 0.7020000219345093 , loss = 6.959693431854248
+pping counter: 39 out of 80000
+(E) | Epoch=0765, avg_acc = 0.6960000395774841 , loss = 6.942287921905518
+pping counter: 40 out of 80000
+(E) | Epoch=0770, avg_acc = 0.6990000605583191 , loss = 6.959824562072754
+pping counter: 41 out of 80000
+(E) | Epoch=0775, avg_acc = 0.6810000538825989 , loss = 6.984066009521484
+pping counter: 42 out of 80000
+(E) | Epoch=0780, avg_acc = 0.6770000457763672 , loss = 6.964131832122803
+pping counter: 43 out of 80000
+(E) | Epoch=0785, avg_acc = 0.6730000376701355 , loss = 6.979691982269287
+pping counter: 44 out of 80000
+(E) | Epoch=0790, avg_acc = 0.6690000295639038 , loss = 7.007757663726807
+pping counter: 45 out of 80000
+(E) | Epoch=0795, avg_acc = 0.6670000553131104 , loss = 6.97636604309082
+pping counter: 46 out of 80000
+(E) | Epoch=0800, avg_acc = 0.6740000247955322 , loss = 7.072840690612793
+pping counter: 47 out of 80000
+(E) | Epoch=0805, avg_acc = 0.6980000138282776 , loss = 6.982508659362793
+pping counter: 48 out of 80000
+(E) | Epoch=0810, avg_acc = 0.7170000076293945 , loss = 6.978071212768555
+pping counter: 49 out of 80000
+(E) | Epoch=0815, avg_acc = 0.7200000286102295 , loss = 7.040711879730225
+pping counter: 50 out of 80000
+(E) | Epoch=0820, avg_acc = 0.7050000429153442 , loss = 6.992985725402832
+pping counter: 51 out of 80000
+(E) | Epoch=0825, avg_acc = 0.7160000205039978 , loss = 6.9651899337768555
+pping counter: 52 out of 80000
+(E) | Epoch=0830, avg_acc = 0.7190000414848328 , loss = 7.026741027832031
+pping counter: 53 out of 80000
+(E) | Epoch=0835, avg_acc = 0.7310000061988831 , loss = 7.006239414215088
+pping counter: 54 out of 80000
+(E) | Epoch=0840, avg_acc = 0.7420000433921814 , loss = 7.040942668914795
+pping counter: 55 out of 80000
+(E) | Epoch=0845, avg_acc = 0.734000027179718 , loss = 6.999596118927002
+pping counter: 56 out of 80000
+(E) | Epoch=0850, avg_acc = 0.7320000529289246 , loss = 7.023920059204102
+pping counter: 57 out of 80000
+(E) | Epoch=0855, avg_acc = 0.7350000143051147 , loss = 6.964000225067139
+pping counter: 58 out of 80000
+(E) | Epoch=0860, avg_acc = 0.7250000238418579 , loss = 6.963440895080566
+pping counter: 59 out of 80000
+(E) | Epoch=0865, avg_acc = 0.7350000143051147 , loss = 6.9561967849731445
+pping counter: 60 out of 80000
+(E) | Epoch=0870, avg_acc = 0.7350000143051147 , loss = 7.0186848640441895
+pping counter: 61 out of 80000
+(E) | Epoch=0875, avg_acc = 0.7470000386238098 , loss = 7.034495830535889
+pping counter: 62 out of 80000
+(E) | Epoch=0880, avg_acc = 0.7390000224113464 , loss = 6.995199680328369
+pping counter: 63 out of 80000
+(E) | Epoch=0885, avg_acc = 0.7330000400543213 , loss = 6.9660797119140625
+pping counter: 64 out of 80000
+(E) | Epoch=0890, avg_acc = 0.7380000352859497 , loss = 6.906431674957275
+pping counter: 65 out of 80000
+(E) | Epoch=0895, avg_acc = 0.7310000061988831 , loss = 6.967021465301514
+pping counter: 66 out of 80000
+(E) | Epoch=0900, avg_acc = 0.734000027179718 , loss = 7.003916263580322
+pping counter: 67 out of 80000
+(E) | Epoch=0905, avg_acc = 0.7110000252723694 , loss = 6.921393871307373
+pping counter: 68 out of 80000
+(E) | Epoch=0910, avg_acc = 0.7120000123977661 , loss = 6.951270580291748
+pping counter: 69 out of 80000
+(E) | Epoch=0915, avg_acc = 0.7080000042915344 , loss = 7.002150535583496
+pping counter: 70 out of 80000
+(E) | Epoch=0920, avg_acc = 0.7070000171661377 , loss = 6.949138641357422
+pping counter: 71 out of 80000
+(E) | Epoch=0925, avg_acc = 0.7160000205039978 , loss = 6.969038963317871
+pping counter: 72 out of 80000
+(E) | Epoch=0930, avg_acc = 0.6920000314712524 , loss = 6.976367473602295
+pping counter: 73 out of 80000
+(E) | Epoch=0935, avg_acc = 0.7050000429153442 , loss = 7.001474380493164
+pping counter: 74 out of 80000
+(E) | Epoch=0940, avg_acc = 0.6980000138282776 , loss = 6.957866668701172
+pping counter: 75 out of 80000
+(E) | Epoch=0945, avg_acc = 0.6980000138282776 , loss = 6.908573627471924
+pping counter: 76 out of 80000
+(E) | Epoch=0950, avg_acc = 0.6950000524520874 , loss = 6.954592227935791
+pping counter: 77 out of 80000
+(E) | Epoch=0955, avg_acc = 0.6780000329017639 , loss = 6.9253644943237305
+pping counter: 78 out of 80000
+(E) | Epoch=0960, avg_acc = 0.6910000443458557 , loss = 6.896344184875488
+pping counter: 79 out of 80000
+(E) | Epoch=0965, avg_acc = 0.6890000104904175 , loss = 6.950778961181641
+pping counter: 80 out of 80000
+(E) | Epoch=0970, avg_acc = 0.6800000071525574 , loss = 6.891873359680176
+pping counter: 81 out of 80000
+(E) | Epoch=0975, avg_acc = 0.675000011920929 , loss = 6.956331253051758
+pping counter: 82 out of 80000
+(E) | Epoch=0980, avg_acc = 0.6680000424385071 , loss = 6.950349807739258
+pping counter: 83 out of 80000
+(E) | Epoch=0985, avg_acc = 0.6660000085830688 , loss = 6.960670471191406
+pping counter: 84 out of 80000
+(E) | Epoch=0990, avg_acc = 0.6540000438690186 , loss = 6.891482353210449
+pping counter: 85 out of 80000
+(E) | Epoch=0995, avg_acc = 0.6660000085830688 , loss = 6.951009750366211
+pping counter: 86 out of 80000
+(E) | Epoch=1000, avg_acc = 0.6740000247955322 , loss = 7.065089225769043
+pping counter: 87 out of 80000
+printing to result
+0.6650000214576721

@@ -77,7 +77,7 @@ def process_data():
     # edge_list, features, label, train_idx, val, test_idx
 
 
-def train():
+def train(R=[2,2,8,8]):
     model.train()
     optimizer.zero_grad()
     # edge_index_1 = dropout_adj(data.edge_index, p=drop_edge_rate_1)[0]
@@ -93,9 +93,9 @@ def train():
     m = random.randint(2, 6)
     # print(edge_index_1.shape)
     z1 = model(
-        x_1, edge_index_1, [2, 4]
+        x_1, edge_index_1, [R[0],R[1]]
     )  # a(axW1)W2, --> a^4(a^2xW1)W2 ->GCN(encoder)  W1,W2两层的参数 A=邻接矩阵 X=特征矩阵
-    z2 = model(x_2, edge_index_2, [8, 4])
+    z2 = model(x_2, edge_index_2, [R[2],R[3]])
     loss = model.loss(  # GRACE infoNce
         z1,
         z2,
@@ -144,7 +144,11 @@ def my_train(
     weight_decay,
     drop_scheme,
     rand_layers,
-    seed
+    seed,
+    randnum1,
+    randnum2,
+    randnum3,
+    randnum4
 ):
     global edge_list, features, label, split
     torch.manual_seed(seed)
@@ -171,18 +175,16 @@ def my_train(
                     weight_decay,
                     drop_scheme,
                     rand_layers,
-                    seed
+                    seed,
+                    [randnum1,randnum2,randnum3,randnum4]
                 )
             ]
         )
     print(tmpstring)
-
-    with open("result.yaml") as f:
-        res=yaml.load(f,Loader=SafeLoader)
-        if res is not None:
-            res=list(res.keys())
-            if tmpstring in res:
-                return 
+    if result_file is not None:
+        res=list(result_file.keys())
+        if tmpstring in res:
+            return 
     edge_list, features, label, train_idx, val, test_idx = process_data()
     # edge_list[0].shape=[57853,2]
     # edge_list[1].shape= [4338213,2]
@@ -224,7 +226,7 @@ def my_train(
 
     for epoch in range(1, num_epochs + 1):
         # print("start of epoch ", epoch)
-        loss = train()
+        loss = train([randnum1,randnum2,randnum3,randnum4])
         if "train" in log:
             print(f"(T) | Epoch={epoch:03d}, loss={loss:.4f}")
         if epoch % 5 == 0:
@@ -240,29 +242,6 @@ def my_train(
     acc = test(final=True)
     with open("result.yaml", "a") as f:
         print("printing to result")
-        tmpstring = " - ".join(
-            [
-                str(i)
-                for i in (
-                    learning_rate,
-                    num_hidden,
-                    num_proj_hidden,
-                    activation,
-                    base_model,
-                    num_layers,
-                    drop_edge_rate_1,
-                    drop_edge_rate_2,
-                    drop_feature_rate_1,
-                    drop_feature_rate_2,
-                    tau,
-                    num_epochs,
-                    weight_decay,
-                    drop_scheme,
-                    rand_layers,
-                    seed
-                )
-            ]
-        )
         yaml.dump({tmpstring: {"acc": acc, "loss": loss,"bestScore":early.best_score}}, f)
     if "final" in log:
         print(f"{acc}")
@@ -307,6 +286,8 @@ if __name__ == "__main__":
     seed = config["seed"]
     excludes = ["patience"]
     parameter_value = [config[k] for k in config.keys() if k not in excludes]
+    print(parameter_value)
+    result_file=yaml.load(open("result.yaml"),Loader=SafeLoader)
     for item in product(*parameter_value):
         loss = my_train(*item)
 
