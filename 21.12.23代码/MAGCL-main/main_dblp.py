@@ -103,8 +103,7 @@ def train(R=[2,2,8,8]):
     # edge_index_1 = dropout_adj(data.edge_index, p=drop_edge_rate_1)[0]
     # edge_index_2 = dropout_adj(data.edge_index, p=drop_edge_rate_2)[0] #adjacency with edge droprate 2
     edge_index_1 = edge_list[0].to(device)  # 邻接矩阵 扰动
-    edge_index_2 = edge_list[1].to(device)
-    edge_index_3 = edge_list[2].to(device)
+
     # edge_index_1 = dropout_adj(edge_index_1, p=drop_edge_rate_1)[0]
     # edge_index_2 = dropout_adj(edge_index_2, p=drop_edge_rate_2)[0]
     # x_1 = drop_feature(features, drop_feature_rate_1)#3
@@ -243,7 +242,7 @@ def my_train(
     )
 
     log = args.verbose.split(",")
-    global edge_index_1, edge_index_2, edge_index_3
+    global edge_index_1, edge_index_2
     edge_index_1 = edge_list[0]
     edge_index_2 = edge_list[1]
     print("running..")
