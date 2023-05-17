@@ -19,7 +19,7 @@ from pytorchtools import EarlyStopping
 from torch_geometric.utils import get_laplacian, to_scipy_sparse_matrix
 from simple_param.sp import SimpleParam
 from itertools import product
-from pGRACE.model import Encoder, GRACE, NewGConv, NewEncoder, NewGRACE
+from pGRACE.model_nomod import Encoder, GRACE, NewGConv, NewEncoder, NewGRACE
 from pGRACE.functional import (
     drop_feature,
     drop_edge_weighted,
@@ -171,10 +171,10 @@ def my_train(
     drop_scheme,
     rand_layers,
     seed,
-    randnum1,
-    randnum2,
-    randnum3,
-    randnum4
+    randnum1=2,
+    randnum2=2,
+    randnum3=2,
+    randnum4=2
 ):
     torch.manual_seed(seed)
     weight_decay = float(weight_decay)
@@ -283,9 +283,12 @@ if __name__ == "__main__":
     parser.add_argument("--verbose", type=str, default="eval,final")
     parser.add_argument("--save_split", type=str, nargs="?")
     parser.add_argument("--load_split", type=str, nargs="?")
+    parser.add_argument("--nomod", type=int, default=False)    
     args = parser.parse_args()
     print(os.getcwd())
     config = yaml.load(open(args.config), Loader=SafeLoader)[args.dataset]
+    if args.nomod:
+        config = yaml.load(open("param_nomod.yaml"), Loader=SafeLoader)[args.dataset]
     # config = yaml.load(open("./MAGCL-main/param.yaml"), Loader=SafeLoader)[args.dataset]
     dataset = args.dataset
     device = args.device

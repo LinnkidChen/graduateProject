@@ -235,10 +235,6 @@ ACM: #25-35
    rand_layers: [2]
    patience: 20
    seed: [111,222,333,444,555]
-   randNums1: [2,4,5] 
-   randNums2: [2,4,5] 
-   randNums3: [6,8,10] 
-   randNums4: [6,8,10] 
 
 dblp:
    learning_rate: [0.001,1e-4,2e-4]
@@ -258,10 +254,6 @@ dblp:
    rand_layers: [2]
    patience: 15
    seed: [111,222,333,444,555]
-   randNums1: [2,4,5] 
-   randNums2: [2,4,5] 
-   randNums3: [6,8] 
-   randNums4: [6,8] 
 Freebase:
    learning_rate: [0.001,1e-4,2e-4]
    num_hidden: [64,128]
@@ -280,10 +272,6 @@ Freebase:
    rand_layers: [2]
    patience: 15
    seed: [111,222,333,444,555]
-   randNums1: [2,4,5] 
-   randNums2: [2,4,5] 
-   randNums3: [6,8] 
-   randNums4: [6,8] 
 
 Aminer: #40
    learning_rate: [0.001,1e-4,2e-4]
@@ -303,11 +291,6 @@ Aminer: #40
    rand_layers: [3]
    patience: 20
    seed: [111,222,333,444,555]
-   randNums1: [2,4,5] 
-   randNums2: [2,4,5] 
-   randNums3: [6,8,10] 
-   randNums4: [6,8,10] 
-
 Test:
     learning_rate: [0.001]
     num_hidden: [64]
@@ -324,9 +307,5 @@ Test:
     weight_decay: [1e-4]
     drop_scheme: ['degree']
     rand_layers: [4]
-    patience: 80000
+    patience: 5
     seed: [111]
-    randNums1: [2] 
-    randNums2: [2] 
-    randNums3: [10] 
-    randNums4: [10] 
