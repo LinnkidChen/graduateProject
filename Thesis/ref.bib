@@ -1,155 +1,1991 @@
-% （1）专著中的文献
-% [序号] 作者.专著名称.版本(第１版不加标注).出版者.出版年:参考页码.
-
-@book{唐绪军2013中国新媒体发展报告,
-  title={中国新媒体发展报告No.4(2013)},
-  author={唐绪军 and 吴信训 and 黄楚新 and 刘瑞生},
-  publisher={社会科学文献出版社},
-  year={2013},
-  language = {Chinese}
+@misc{180910341Deep,
+  title = {[1809.10341] {{Deep Graph Infomax}}},
+  urldate = {2022-07-19},
+  howpublished = {https://arxiv.org/abs/1809.10341}
 }
 
-@book{唐绪军2015中国新媒体发展报告,
-  title={中国新媒体发展报告No.6(2015)},
-  author={唐绪军 and 吴信训 and 黄楚新 and 刘瑞生},
-  publisher={社会科学文献出版社},
-  year={2015},
-  language = {Chinese}
+@misc{201205442Bipartite,
+  title = {[2012.05442] {{Bipartite Graph Embedding}} via {{Mutual Information Maximization}}},
+  urldate = {2022-07-18},
+  howpublished = {https://arxiv.org/abs/2012.05442}
 }
 
-@book{Kimmel2004Rumors,
-  title={Rumors and Rumor Control: A Manager's Guide to Understanding and Combatting Rumors},
-  author={Kimmel, Allan J},
-  publisher={Lawrence Erlbaum Associates},
-  year={2004}
+@misc{210108170SUGAR,
+  title = {[2101.08170] {{SUGAR}}: {{Subgraph Neural Network}} with {{Reinforcement Pooling}} and {{Self-Supervised Mutual Information Mechanism}}},
+  urldate = {2022-07-18},
+  howpublished = {https://arxiv.org/abs/2101.08170}
 }
 
-@book{Goodfellow2016DeepLearning,
- author = {Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
- title = {Deep Learning},
- year = {2016},
- publisher = {The MIT Press},
-} 
-
-
-% (2)期刊中的文献
-% [序号] 作者.文献名称.期刊名称.卷号（期号）.年,月:页码范围.
-@article{false_news_spread_2018,
-  title={The spread of true and false news online},
-  author={Vosoughi, Soroush and Roy, Deb and Aral, Sinan},
-  journal={Science},
-  volume={359},
-  number={6380},
-  pages={1146-1151},
-  year={2018},
-  month={3}
+@misc{210207810HDMI,
+  title = {[2102.07810] {{HDMI}}: {{High-order Deep Multiplex Infomax}}},
+  urldate = {2022-07-18},
+  howpublished = {https://arxiv.org/abs/2102.07810}
 }
 
-
-@article{Difonzo2007Rumor,
-  title={Rumor psychology: Social and organizational approaches.},
-  author={Difonzo, Nicholas and Bordia, Prashant},
-  journal={American Psychological Association},
-  year={2007}
+@misc{211208679Are,
+  title = {[2112.08679] {{Are Graph Augmentations Necessary}}? {{Simple Graph Contrastive Learning}} for {{Recommendation}}},
+  urldate = {2022-07-21},
+  howpublished = {https://arxiv.org/abs/2112.08679}
 }
 
-@article{Bengio2006A,
-  title={A neural probabilistic language model.},
-  author={Bengio, Yoshua and Ducharme, Réjean and Vincent, Pascal and Jauvin, Christian and Kandola, Jaz and Hofmann, Thomas and Poggio, Tomaso and Shawetaylor, John},
-  journal={Journal of Machine Learning Research},
-  volume={3},
-  number={6},
-  pages={1137-1155},
-  year={2006},
+@inproceedings{anandUnsupervisedStateRepresentation2019,
+  title = {Unsupervised {{State Representation Learning}} in {{Atari}}},
+  booktitle = {Advances in {{Neural Information Processing Systems}}},
+  author = {Anand, Ankesh and Racah, Evan and Ozair, Sherjil and Bengio, Yoshua and C{\^o}t{\'e}, Marc-Alexandre and Hjelm, R Devon},
+  year = {2019},
+  volume = {32},
+  publisher = {{Curran Associates, Inc.}},
+  urldate = {2023-05-14},
+  lccn = {214},
+  annotation = {214 citations (Google Scholar) [2023-05-14]}
 }
 
-@article{Rumerlhar1986Learning,
-  title={Learning representation by back-propagating errors},
-  author={Rumerlhar, D. E},
-  journal={Nature},
-  volume={323},
-  number={3},
-  pages={533-536},
-  year={1986},
+@article{balcilarBreakingLimitsMessage,
+  title = {Breaking the {{Limits}} of {{Message Passing Graph Neural Networks}}},
+  author = {Balcilar, Muhammet and H{\'e}roux, Pierre and Ga{\"u}z{\`e}re, Benoit and Vasseur, Pascal and Adam, S{\'e}bastien and Honeine, Paul},
+  pages = {10}
 }
 
-% 以下类型未在bst文件中验证过，如果需要请自行修改bst文件……
-
-% (3)论文集
-% [序号] 作者.论文题目.见(英文用In).主编.论文集名.出版地.出版年:页码范围.
-% 本模板没有实现“主编”部分，因为“见”和“论文集名”分离实在是很诡异的事情，且很多事情我们得到的bibTeX不含主编
-% 中文需要加language={Chinese}字段，才会把"In"换成"见"
-@inproceedings{Yang2012Automatic,
-  title={Automatic detection of rumor on Sina Weibo},
-  author={Yang, Fan and Liu, Yang and Yu, Xiaohui and Yang, Min},
-  booktitle={Proceedings of the ACM SIGKDD Workshop on Mining Data Semantics},
-  pages={1--7},
-  year={2012},
-  address = {New York, NY, USA},
-  organization={ACM},
-}
-
-% (4)学位论文（格式已验证）
-% [序号] 作者.题目.[学位论文](英文用[Dissertation]).保存地点.保存单位:年份.
-% 中文需要使用language={Chinese}字段，英文输入language={}
-@masterthesis{周兴2017基于深度学习的谣言检测及模式挖掘,
-  title={基于深度学习的谣言检测及模式挖掘},
-  author={周兴},
-  school={中国科学院大学},
-  year={2017},
-  language={Chinese}
-}
-
-
-% (5)专利
-% [序号] 专利申请者.题目.国别.专利文献种类.专利号.批准日期.
-
-% (6)技术标准
-% [序号] 起草责任者.标准代号.标准顺序号－发布年.标准名称.出版地.出版者.出版年度.
-
-
-%(7)在线资料
-
-@ELECTRONIC{webster_social_media,
-  title = {Social Media},
-  organization = {Merriam-Webster},
+@inproceedings{baranyFindingMissedCompiler2018,
+  title = {Finding Missed Compiler Optimizations by Differential Testing},
+  booktitle = {Proceedings of the 27th {{International Conference}} on {{Compiler Construction}}},
+  author = {Barany, Gerg{\"o}},
   year = {2018},
-  howpublished = {online},
-  refdate = {2018-04-15},
-  url = {http://www.merriam-webster.com/dictionary/social media},
-} 
+  pages = {82--92},
+  publisher = {{ACM}},
+  address = {{Vienna Austria}},
+  urldate = {2022-05-31},
+  isbn = {978-1-4503-5644-2}
+}
 
-@ELECTRONIC{digital_in_2018,
-  title = {Digital in 2018: World's Internet Users Pass the 4 Billion Mark},
-  organization = {We Are Social},
+@inproceedings{baranyFindingMissedCompiler2018a,
+  title = {{Finding missed compiler optimizations by differential testing}},
+  booktitle = {{Proceedings of the 27th International Conference on Compiler Construction}},
+  author = {Barany, Gerg{\"o}},
   year = {2018},
-  howpublished = {online},
-  refdate = {2018-04-15},
-  url = {https://wearesocial.com/uk/blog/2018/01/global-digital-report-2018},
-} 
+  pages = {82--92},
+  publisher = {{ACM}},
+  address = {{Vienna Austria}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-5644-2}
+}
 
-@ELECTRONIC{pew_news_use_2017,
-  title = {News Use Across Social Media Platforms 2017},
-  organization = {Pew Research Center},
+@inproceedings{baranyFindingMissedCompiler2018b,
+  title = {{Finding missed compiler optimizations by differential testing}},
+  booktitle = {{Proceedings of the 27th International Conference on Compiler Construction}},
+  author = {Barany, Gerg{\"o}},
+  year = {2018},
+  pages = {82--92},
+  publisher = {{ACM}},
+  address = {{Vienna Austria}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-5644-2}
+}
+
+@inproceedings{baranyFindingMissedCompiler2018c,
+  title = {{Finding missed compiler optimizations by differential testing}},
+  booktitle = {{Proceedings of the 27th International Conference on Compiler Construction}},
+  author = {Barany, Gerg{\"o}},
+  year = {2018},
+  pages = {82--92},
+  publisher = {{ACM}},
+  address = {{Vienna Austria}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-5644-2}
+}
+
+@inproceedings{baranyFindingMissedCompiler2018d,
+  title = {{Finding missed compiler optimizations by differential testing}},
+  booktitle = {{Proceedings of the 27th International Conference on Compiler Construction}},
+  author = {Barany, Gerg{\"o}},
+  year = {2018},
+  pages = {82--92},
+  publisher = {{ACM}},
+  address = {{Vienna Austria}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-5644-2}
+}
+
+@article{battagliaRelationalInductiveBiases2018,
+  title = {Relational Inductive Biases, Deep Learning, and Graph Networks},
+  author = {Battaglia, Peter W. and Hamrick, Jessica B. and Bapst, Victor and {Sanchez-Gonzalez}, Alvaro and Zambaldi, Vinicius and Malinowski, Mateusz and Tacchetti, Andrea and Raposo, David and Santoro, Adam and Faulkner, Ryan},
+  year = {2018},
+  journal = {arXiv preprint arXiv:1806.01261},
+  eprint = {1806.01261},
+  archiveprefix = {arxiv},
+  lccn = {2622},
+  annotation = {2622 citations (Google Scholar) [2023-04-27]}
+}
+
+@misc{BNSGCNSuiJiBianJieDingDianCaiYangJiaSuFenBuShiGCNXunLianAiDuShuWang,
+  title = {{BNS-GCN: 随机边界顶点采样加速分布式GCN训练 \textendash{} 爱读书网}},
+  shorttitle = {{BNS-GCN}},
+  urldate = {2022-07-18}
+}
+
+@article{bodnarWeisfeilerLehmanGo,
+  title = {Weisfeiler and {{Lehman Go Topological}}: {{Message Passing Simplicial Networks}}},
+  author = {Bodnar, Cristian and Frasca, Fabrizio and Wang, Yu Guang and Otter, Nina},
+  pages = {12}
+}
+
+@article{bronsteinGeometricDeepLearning2017,
+  title = {Geometric Deep Learning: Going beyond Euclidean Data},
+  shorttitle = {Geometric Deep Learning},
+  author = {Bronstein, Michael M. and Bruna, Joan and LeCun, Yann and Szlam, Arthur and Vandergheynst, Pierre},
   year = {2017},
-  howpublished = {online},
-  refdate = {2018-04-15},
-  url = {http://www.journalism.org/2017/09/07/news-use-across-social-media-platforms-2017},
-} 
+  journal = {IEEE Signal Processing Magazine},
+  volume = {34},
+  number = {4},
+  pages = {18--42},
+  publisher = {{IEEE}},
+  lccn = {3010},
+  annotation = {3010 citations (Google Scholar) [2023-04-27]}
+}
 
-@ELECTRONIC{internet_news_2016,
-  title = {2016年中国互联网新闻市场研究报告},
-  organization = {中国互联网络信息中心},
+@misc{brownLanguageModelsAre2020,
+  title = {Language {{Models}} Are {{Few-Shot Learners}}},
+  author = {Brown, Tom B. and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and Agarwal, Sandhini and {Herbert-Voss}, Ariel and Krueger, Gretchen and Henighan, Tom and Child, Rewon and Ramesh, Aditya and Ziegler, Daniel M. and Wu, Jeffrey and Winter, Clemens and Hesse, Christopher and Chen, Mark and Sigler, Eric and Litwin, Mateusz and Gray, Scott and Chess, Benjamin and Clark, Jack and Berner, Christopher and McCandlish, Sam and Radford, Alec and Sutskever, Ilya and Amodei, Dario},
+  year = {2020},
+  number = {arXiv:2005.14165},
+  eprint = {2005.14165},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-05-08},
+  archiveprefix = {arxiv},
+  lccn = {9683},
+  annotation = {9683 citations (Google Scholar) [2023-05-08]}
+}
+
+@incollection{buchwaldOptgenGeneratorLocal2015,
+  title = {Optgen: {{A Generator}} for {{Local Optimizations}}},
+  shorttitle = {Optgen},
+  booktitle = {Compiler {{Construction}}},
+  author = {Buchwald, Sebastian},
+  editor = {Franke, Bj{\"o}rn},
+  year = {2015},
+  volume = {9031},
+  pages = {171--189},
+  publisher = {{Springer Berlin Heidelberg}},
+  address = {{Berlin, Heidelberg}},
+  urldate = {2022-05-31},
+  isbn = {978-3-662-46662-9 978-3-662-46663-6}
+}
+
+@misc{caoBipartiteGraphEmbedding2020,
+  title = {Bipartite {{Graph Embedding}} via {{Mutual Information Maximization}}},
+  author = {Cao, Jiangxia and Lin, Xixun and Guo, Shu and Liu, Luchen and Liu, Tingwen and Wang, Bin},
+  year = {2020},
+  number = {arXiv:2012.05442},
+  eprint = {2012.05442},
+  primaryclass = {cs},
+  institution = {{arXiv}},
+  urldate = {2022-07-18},
+  archiveprefix = {arxiv}
+}
+
+@misc{caoBipartiteGraphEmbedding2020a,
+  title = {Bipartite {{Graph Embedding}} via {{Mutual Information Maximization}}},
+  author = {Cao, Jiangxia and Lin, Xixun and Guo, Shu and Liu, Luchen and Liu, Tingwen and Wang, Bin},
+  year = {2020},
+  number = {arXiv:2012.05442},
+  eprint = {2012.05442},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2022-07-18},
+  archiveprefix = {arxiv}
+}
+
+@misc{caoBipartiteGraphEmbedding2020b,
+  title = {Bipartite {{Graph Embedding}} via {{Mutual Information Maximization}}},
+  author = {Cao, Jiangxia and Lin, Xixun and Guo, Shu and Liu, Luchen and Liu, Tingwen and Wang, Bin},
+  year = {2020},
+  number = {arXiv:2012.05442},
+  eprint = {2012.05442},
+  primaryclass = {cs},
+  institution = {{arXiv}},
+  urldate = {2022-07-18},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{cenPowerfulGraphContrastive2022,
+  title = {Towards {{Powerful Graph Contrastive Learning}} without {{Negative Examples}}},
+  booktitle = {2022 {{International Joint Conference}} on {{Neural Networks}} ({{IJCNN}})},
+  author = {Cen, Keting and Shen, Huawei and Cao, Qi and Xu, Bingbing and Cheng, Xueqi},
+  year = {2022},
+  pages = {1--9},
+  publisher = {{IEEE}},
+  lccn = {0},
+  annotation = {0 citations (Google Scholar) [2023-04-11]}
+}
+
+@article{changMegnnMetapathExtracted2022,
+  title = {Megnn: {{Meta-path}} Extracted Graph Neural Network for Heterogeneous Graph Representation Learning},
+  shorttitle = {Megnn},
+  author = {Chang, Yaomin and Chen, Chuan and Hu, Weibo and Zheng, Zibin and Zhou, Xiaocong and Chen, Shouzhi},
+  year = {2022},
+  journal = {Knowledge-Based Systems},
+  volume = {235},
+  pages = {107611},
+  publisher = {{Elsevier}}
+}
+
+@article{chenDistancewiseGraphContrastive2020,
+  title = {Distance-Wise Graph Contrastive Learning},
+  author = {Chen, Deli and Lin, Yanyai and Li, Lei and Li, Xuancheng Ren and Zhou, Jie and Sun, Xu},
+  year = {2020},
+  journal = {arXiv preprint arXiv:2012.07437},
+  eprint = {2012.07437},
+  archiveprefix = {arxiv},
+  lccn = {12},
+  annotation = {12 citations (Google Scholar) [2023-04-11]}
+}
+
+@article{chenFastgcnFastLearning2018,
+  title = {Fastgcn: Fast Learning with Graph Convolutional Networks via Importance Sampling},
+  shorttitle = {Fastgcn},
+  author = {Chen, Jie and Ma, Tengfei and Xiao, Cao},
+  year = {2018},
+  journal = {arXiv preprint arXiv:1801.10247},
+  eprint = {1801.10247},
+  archiveprefix = {arxiv},
+  lccn = {1260},
+  annotation = {1260 citations (Google Scholar) [2023-04-27]}
+}
+
+@article{chiEnhancingGraphContrastive2022,
+  title = {Enhancing {{Graph Contrastive Learning}} with {{Node Similarity}}},
+  author = {Chi, Hongliang and Ma, Yao},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2208.06743},
+  eprint = {2208.06743},
+  archiveprefix = {arxiv},
+  lccn = {0},
+  annotation = {0 citations (Google Scholar) [2023-04-11]}
+}
+
+@article{cuiEvaluatingModulesGraph2021,
+  title = {Evaluating {{Modules}} in {{Graph Contrastive Learning}}},
+  author = {Cui, Ganqu and Du, Yufeng and Yang, Cheng and Zhou, Jie and Xu, Liang and Wang, Lifeng and Liu, Zhiyuan},
+  year = {2021},
+  journal = {arXiv preprint arXiv:2106.08171},
+  eprint = {2106.08171},
+  archiveprefix = {arxiv},
+  lccn = {1},
+  annotation = {1 citations (Google Scholar) [2023-04-11]}
+}
+
+@misc{DecidabilityPhaseOrdering,
+  title = {On the Decidability of Phase Ordering Problem in Optimizing Compilation | {{Proceedings}} of the 3rd Conference on {{Computing}} Frontiers},
+  urldate = {2022-06-01},
+  howpublished = {https://dl.acm.org/doi/10.1145/1128022.1128042}
+}
+
+@misc{DecidabilityPhaseOrderinga,
+  title = {On the Decidability of Phase Ordering Problem in Optimizing Compilation | {{Proceedings}} of the 3rd Conference on {{Computing}} Frontiers},
+  howpublished = {https://dl.acm.org/doi/10.1145/1128022.1128042}
+}
+
+@article{duanComprehensiveStudyLargescale2022,
+  title = {A Comprehensive Study on Large-Scale Graph Training: {{Benchmarking}} and Rethinking},
+  shorttitle = {A Comprehensive Study on Large-Scale Graph Training},
+  author = {Duan, Keyu and Liu, Zirui and Wang, Peihao and Zheng, Wenqing and Zhou, Kaixiong and Chen, Tianlong and Hu, Xia and Wang, Zhangyang},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2210.07494},
+  eprint = {2210.07494},
+  archiveprefix = {arxiv},
+  lccn = {6},
+  annotation = {6 citations (Google Scholar) [2023-04-11]}
+}
+
+@inproceedings{fanMetapathguidedHeterogeneousGraph2019,
+  title = {Metapath-Guided Heterogeneous Graph Neural Network for Intent Recommendation},
+  booktitle = {Proceedings of the 25th {{ACM SIGKDD}} International Conference on Knowledge Discovery \& Data Mining},
+  author = {Fan, Shaohua and Zhu, Junxiong and Han, Xiaotian and Shi, Chuan and Hu, Linmei and Ma, Biyu and Li, Yongliang},
+  year = {2019},
+  pages = {2478--2486}
+}
+
+@article{fengArielAdversarialGraph2022,
+  title = {Ariel: {{Adversarial}} Graph Contrastive Learning},
+  shorttitle = {Ariel},
+  author = {Feng, Shengyu and Jing, Baoyu and Zhu, Yada and Tong, Hanghang},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2208.06956},
+  eprint = {2208.06956},
+  archiveprefix = {arxiv},
+  lccn = {2},
+  annotation = {2 citations (Google Scholar) [2023-04-11]}
+}
+
+@misc{FindingMissedCompiler,
+  title = {Finding Missed Compiler Optimizations by Differential Testing | {{Proceedings}} of the 27th {{International Conference}} on {{Compiler Construction}}},
+  urldate = {2022-06-01},
+  howpublished = {https://dl.acm.org/doi/10.1145/3178372.3179521}
+}
+
+@inproceedings{fuMAGNNMetapathAggregated2020,
+  title = {{{MAGNN}}: {{Metapath Aggregated Graph Neural Network}} for {{Heterogeneous Graph Embedding}}},
+  shorttitle = {{{MAGNN}}},
+  booktitle = {Proceedings of {{The Web Conference}} 2020},
+  author = {Fu, Xinyu and Zhang, Jiani and Meng, Ziqiao and King, Irwin},
+  year = {2020},
+  pages = {2331--2341},
+  publisher = {{ACM}},
+  address = {{Taipei Taiwan}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-7023-3}
+}
+
+@inproceedings{fuMagnnMetapathAggregated2020,
+  title = {Magnn: {{Metapath}} Aggregated Graph Neural Network for Heterogeneous Graph Embedding},
+  shorttitle = {Magnn},
+  booktitle = {Proceedings of {{The Web Conference}} 2020},
+  author = {Fu, Xinyu and Zhang, Jiani and Meng, Ziqiao and King, Irwin},
+  year = {2020},
+  pages = {2331--2341}
+}
+
+@inproceedings{fuMAGNNMetapathAggregated2020a,
+  title = {{{MAGNN}}: {{Metapath Aggregated Graph Neural Network}} for {{Heterogeneous Graph Embedding}}},
+  shorttitle = {{{MAGNN}}},
+  booktitle = {Proceedings of {{The Web Conference}} 2020},
+  author = {Fu, Xinyu and Zhang, Jiani and Meng, Ziqiao and King, Irwin},
+  year = {2020},
+  pages = {2331--2341},
+  publisher = {{ACM}},
+  address = {{Taipei Taiwan}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-7023-3}
+}
+
+@inproceedings{fuMAGNNMetapathAggregated2020b,
+  title = {{{MAGNN}}: {{Metapath Aggregated Graph Neural Network}} for {{Heterogeneous Graph Embedding}}},
+  shorttitle = {{{MAGNN}}},
+  booktitle = {Proceedings of {{The Web Conference}} 2020},
+  author = {Fu, Xinyu and Zhang, Jiani and Meng, Ziqiao and King, Irwin},
+  year = {2020},
+  pages = {2331--2341},
+  publisher = {{ACM}},
+  address = {{Taipei Taiwan}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-7023-3}
+}
+
+@inproceedings{fuMAGNNMetapathAggregated2020c,
+  title = {{{MAGNN}}: {{Metapath Aggregated Graph Neural Network}} for {{Heterogeneous Graph Embedding}}},
+  shorttitle = {{{MAGNN}}},
+  booktitle = {Proceedings of {{The Web Conference}} 2020},
+  author = {Fu, Xinyu and Zhang, Jiani and Meng, Ziqiao and King, Irwin},
+  year = {2020},
+  eprint = {2002.01680},
+  primaryclass = {cs},
+  pages = {2331--2341},
+  urldate = {2022-11-24},
+  archiveprefix = {arxiv},
+  lccn = {403},
+  annotation = {403 citations (Google Scholar) [2023-04-11] 323 citations (Semantic Scholar/arXiv) [2023-04-11] 324 citations (Semantic Scholar/DOI) [2023-04-11] 175 citations (Crossref) [2023-04-11]}
+}
+
+@inproceedings{gaoWeightAwareGraphContrastive2022,
+  title = {Weight-{{Aware Graph Contrastive Learning}}},
+  booktitle = {Artificial {{Neural Networks}} and {{Machine Learning}}\textendash{{ICANN}} 2022: 31st {{International Conference}} on {{Artificial Neural Networks}}, {{Bristol}}, {{UK}}, {{September}} 6\textendash 9, 2022, {{Proceedings}}, {{Part II}}},
+  author = {Gao, Hang and Li, Jiangmeng and Qiao, Peng and Zheng, Changwen},
+  year = {2022},
+  pages = {719--730},
+  publisher = {{Springer}},
+  lccn = {0},
+  annotation = {0 citations (Google Scholar) [2023-04-11]}
+}
+
+@article{geertsLetAgreeDegree,
+  title = {Let's {{Agree}} to {{Degree}}: {{Comparing Graph Convolutional Networks}} in the {{Message-Passing Framework}}},
+  author = {Geerts, Floris and Mazowiecki, Filip and P{\'e}rez, Guillermo A},
+  pages = {10}
+}
+
+@article{giabbanelliLearningAnalyticsSupport2019,
+  title = {Learning Analytics to Support Teachers' Assessment of Problem Solving: {{A}} Novel Application for Machine Learning and Graph Algorithms},
+  shorttitle = {Learning Analytics to Support Teachers' Assessment of Problem Solving},
+  author = {Giabbanelli, Philippe J. and Tawfik, Andrew A. and Gupta, Vishrant K.},
+  year = {2019},
+  journal = {Utilizing learning analytics to support study success},
+  pages = {175--199},
+  publisher = {{Springer}}
+}
+
+@misc{gongMAGCLModelAugmentation2022,
+  title = {{{MA-GCL}}: {{Model Augmentation Tricks}} for {{Graph Contrastive Learning}}},
+  shorttitle = {{{MA-GCL}}},
+  author = {Gong, Xumeng and Yang, Cheng and Shi, Chuan},
+  year = {2022},
+  number = {arXiv:2212.07035},
+  eprint = {2212.07035},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-04-11},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{groverNode2vecScalableFeature2016,
+  title = {Node2vec: {{Scalable}} Feature Learning for Networks},
+  shorttitle = {Node2vec},
+  booktitle = {Proceedings of the 22nd {{ACM SIGKDD}} International Conference on {{Knowledge}} Discovery and Data Mining},
+  author = {Grover, Aditya and Leskovec, Jure},
+  year = {2016},
+  pages = {855--864},
+  lccn = {9355},
+  annotation = {9355 citations (Google Scholar) [2023-04-27]}
+}
+
+@misc{hafidiGraphCLContrastiveSelfSupervised2020,
+  title = {{{GraphCL}}: {{Contrastive Self-Supervised Learning}} of {{Graph Representations}}},
+  shorttitle = {{{GraphCL}}},
+  author = {Hafidi, Hakim and Ghogho, Mounir and Ciblat, Philippe and Swami, Ananthram},
+  year = {2020},
+  number = {arXiv:2007.08025},
+  eprint = {2007.08025},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-04-17},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{hamiltonInductiveRepresentationLearning2017,
+  title = {Inductive {{Representation Learning}} on {{Large Graphs}}},
+  booktitle = {Advances in {{Neural Information Processing Systems}}},
+  author = {Hamilton, Will and Ying, Zhitao and Leskovec, Jure},
   year = {2017},
-  howpublished = {online},
-  refdate = {2018-04-15},
-  url = {http://www.cnnic.cn/hlwfzyj/hlwxzbg/mtbg/201701/P020170112309068736023.pdf},
-  language = {Chinese}
-} 
+  volume = {30},
+  publisher = {{Curran Associates, Inc.}},
+  urldate = {2022-07-17}
+}
 
-%(8)不属于任何上述类别的资料，指导手册中无规定，使用默认设置
-@misc{thulac,
-  author = {Sun, Maosong and Chen, Xinxiong and Zhang, Kaixu and Guo, Zhipeng and Liu, Zhiyuan},
-  title = {THULAC: An Efficient Lexical Analyzer for Chinese},
-  year = {2016}
+@misc{hamiltonInductiveRepresentationLearning2018,
+  title = {Inductive {{Representation Learning}} on {{Large Graphs}}},
+  author = {Hamilton, William L. and Ying, Rex and Leskovec, Jure},
+  year = {2018},
+  number = {arXiv:1706.02216},
+  eprint = {1706.02216},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-05-03},
+  archiveprefix = {arxiv},
+  lccn = {9945},
+  annotation = {9945 citations (Google Scholar) [2023-05-03]}
+}
+
+@article{hamiltonRepresentationLearningGraphs,
+  title = {Representation {{Learning}} on {{Graphs}}: {{Methods}} and {{Applications}}},
+  author = {Hamilton, William L and Ying, Rex and Leskovec, Jure},
+  pages = {24}
+}
+
+@article{hamiltonRepresentationLearningGraphs2017,
+  title = {Representation Learning on Graphs: {{Methods}} and Applications},
+  shorttitle = {Representation Learning on Graphs},
+  author = {Hamilton, William L. and Ying, Rex and Leskovec, Jure},
+  year = {2017},
+  journal = {arXiv preprint arXiv:1709.05584},
+  eprint = {1709.05584},
+  archiveprefix = {arxiv},
+  lccn = {1937},
+  annotation = {1937 citations (Google Scholar) [2023-04-27]}
+}
+
+@article{hangCollectiveLearningFramework,
+  title = {A {{Collective Learning Framework}} to {{Boost GNN Expressiveness}} for {{Node Classification}}},
+  author = {Hang, Mengyue and Neville, Jennifer and Ribero, Bruno},
+  pages = {11}
+}
+
+@inproceedings{hassaniContrastiveMultiviewRepresentation2020,
+  title = {Contrastive Multi-View Representation Learning on Graphs},
+  booktitle = {International Conference on Machine Learning},
+  author = {Hassani, Kaveh and Khasahmadi, Amir Hosein},
+  year = {2020},
+  pages = {4116--4126},
+  publisher = {{PMLR}}
+}
+
+@misc{hassaniContrastiveMultiViewRepresentation2020,
+  title = {Contrastive {{Multi-View Representation Learning}} on {{Graphs}}},
+  author = {Hassani, Kaveh and Khasahmadi, Amir Hosein},
+  year = {2020},
+  number = {arXiv:2006.05582},
+  eprint = {2006.05582},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-04-21},
+  archiveprefix = {arxiv}
+}
+
+@article{hassaniLearningGraphAugmentations2022,
+  title = {Learning Graph Augmentations to Learn Graph Representations},
+  author = {Hassani, Kaveh and Khasahmadi, Amir Hosein},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2201.09830},
+  eprint = {2201.09830},
+  archiveprefix = {arxiv}
+}
+
+@misc{heMomentumContrastUnsupervised2020,
+  title = {Momentum {{Contrast}} for {{Unsupervised Visual Representation Learning}}},
+  author = {He, Kaiming and Fan, Haoqi and Wu, Yuxin and Xie, Saining and Girshick, Ross},
+  year = {2020},
+  number = {arXiv:1911.05722},
+  eprint = {1911.05722},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-04-21},
+  archiveprefix = {arxiv}
+}
+
+@misc{hjelmLearningDeepRepresentations2019,
+  title = {Learning Deep Representations by Mutual Information Estimation and Maximization},
+  author = {Hjelm, R. Devon and Fedorov, Alex and {Lavoie-Marchildon}, Samuel and Grewal, Karan and Bachman, Phil and Trischler, Adam and Bengio, Yoshua},
+  year = {2019},
+  number = {arXiv:1808.06670},
+  eprint = {1808.06670},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-04-21},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{huAdversarialLearningHeterogeneous2019,
+  title = {Adversarial {{Learning}} on {{Heterogeneous Information Networks}}},
+  booktitle = {Proceedings of the 25th {{ACM SIGKDD International Conference}} on {{Knowledge Discovery}} \& {{Data Mining}}},
+  author = {Hu, Binbin and Fang, Yuan and Shi, Chuan},
+  year = {2019},
+  pages = {120--129},
+  publisher = {{ACM}},
+  address = {{Anchorage AK USA}},
+  urldate = {2023-05-17},
+  isbn = {978-1-4503-6201-6},
+  lccn = {150},
+  annotation = {150 citations (Google Scholar) [2023-05-17]}
+}
+
+@inproceedings{huAdversarialLearningHeterogeneous2019a,
+  title = {Adversarial Learning on Heterogeneous Information Networks},
+  booktitle = {Proceedings of the 25th {{ACM SIGKDD International Conference}} on {{Knowledge Discovery}} \& {{Data Mining}}},
+  author = {Hu, Binbin and Fang, Yuan and Shi, Chuan},
+  year = {2019},
+  pages = {120--129},
+  lccn = {150},
+  annotation = {150 citations (Google Scholar) [2023-05-17]}
+}
+
+@inproceedings{huAdversarialLearningHeterogeneous2019b,
+  title = {Adversarial {{Learning}} on {{Heterogeneous Information Networks}}},
+  booktitle = {Proceedings of the 25th {{ACM SIGKDD International Conference}} on {{Knowledge Discovery}} \& {{Data Mining}}},
+  author = {Hu, Binbin and Fang, Yuan and Shi, Chuan},
+  year = {2019},
+  pages = {120--129},
+  publisher = {{ACM}},
+  address = {{Anchorage AK USA}},
+  urldate = {2023-05-17},
+  isbn = {978-1-4503-6201-6},
+  lccn = {150},
+  annotation = {150 citations (Google Scholar) [2023-05-17]}
+}
+
+@article{huangCOMBININGLABELPROPAGATION2021,
+  title = {{{COMBINING LABEL PROPAGATION AND SIMPLE MOD- ELS OUT-PERFORMS GRAPH NEURAL NETWORKS}}},
+  author = {Huang, Qian and He, Horace and Singh, Abhay and Lim, Ser-Nam and Benson, Austin R},
+  year = {2021},
+  pages = {21}
+}
+
+@article{huangCOMBININGLABELPROPAGATION2021a,
+  title = {{{COMBINING LABEL PROPAGATION AND SIMPLE MOD- ELS OUT-PERFORMS GRAPH NEURAL NETWORKS}}},
+  author = {Huang, Qian and He, Horace and Singh, Abhay and Lim, Ser-Nam and Benson, Austin R},
+  year = {2021},
+  pages = {21}
+}
+
+@article{huContrastiveAdaptivePropagation2021,
+  title = {Contrastive {{Adaptive Propagation Graph Neural Networks}} for {{Efficient Graph Learning}}},
+  author = {Hu, Jun and Qian, Shengsheng and Fang, Quan and Xu, Changsheng},
+  year = {2021},
+  journal = {arXiv preprint arXiv:2112.01110},
+  eprint = {2112.01110},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{huGraphContrastiveLearning2020,
+  title = {Graph Contrastive Learning with Local and Global Mutual Information Maximization},
+  booktitle = {2020 {{The}} 8th {{International Conference}} on {{Information Technology}}: {{IoT}} and {{Smart City}}},
+  author = {Hu, Yifei and Zhang, Ya},
+  year = {2020},
+  pages = {74--78}
+}
+
+@inproceedings{huHeterogeneousGraphTransformer2020,
+  title = {Heterogeneous {{Graph Transformer}}},
+  booktitle = {Proceedings of {{The Web Conference}} 2020},
+  author = {Hu, Ziniu and Dong, Yuxiao and Wang, Kuansan and Sun, Yizhou},
+  year = {2020},
+  pages = {2704--2710},
+  publisher = {{ACM}},
+  address = {{Taipei Taiwan}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-7023-3}
+}
+
+@inproceedings{huHeterogeneousGraphTransformer2020a,
+  title = {Heterogeneous {{Graph Transformer}}},
+  booktitle = {Proceedings of {{The Web Conference}} 2020},
+  author = {Hu, Ziniu and Dong, Yuxiao and Wang, Kuansan and Sun, Yizhou},
+  year = {2020},
+  pages = {2704--2710},
+  publisher = {{ACM}},
+  address = {{Taipei Taiwan}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-7023-3}
+}
+
+@inproceedings{huHeterogeneousGraphTransformer2020b,
+  title = {Heterogeneous {{Graph Transformer}}},
+  booktitle = {Proceedings of {{The Web Conference}} 2020},
+  author = {Hu, Ziniu and Dong, Yuxiao and Wang, Kuansan and Sun, Yizhou},
+  year = {2020},
+  pages = {2704--2710},
+  publisher = {{ACM}},
+  address = {{Taipei Taiwan}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-7023-3}
+}
+
+@article{huOgblscLargescaleChallenge2021,
+  title = {Ogb-Lsc: {{A}} Large-Scale Challenge for Machine Learning on Graphs},
+  shorttitle = {Ogb-Lsc},
+  author = {Hu, Weihua and Fey, Matthias and Ren, Hongyu and Nakata, Maho and Dong, Yuxiao and Leskovec, Jure},
+  year = {2021},
+  journal = {arXiv preprint arXiv:2103.09430},
+  eprint = {2103.09430},
+  archiveprefix = {arxiv}
+}
+
+@article{iwatsujiDetectingMissedArithmetic,
+  title = {Detecting {{Missed Arithmetic Optimization}} in {{C Compilers}} by {{Differential Random Testing}}},
+  author = {Iwatsuji, Mitsuyoshi and Hashimoto, Atsushi and Ishiura, Nagisa},
+  pages = {2}
+}
+
+@inproceedings{jiaoSubgraphContrastScalable2020,
+  title = {Sub-Graph Contrast for Scalable Self-Supervised Graph Representation Learning},
+  booktitle = {2020 {{IEEE}} International Conference on Data Mining ({{ICDM}})},
+  author = {Jiao, Yizhu and Xiong, Yun and Zhang, Jiawei and Zhang, Yao and Zhang, Tianqi and Zhu, Yangyong},
+  year = {2020},
+  pages = {222--231},
+  publisher = {{IEEE}}
+}
+
+@inproceedings{jingXgoalMultiplexHeterogeneous2022,
+  title = {X-Goal: {{Multiplex}} Heterogeneous Graph Prototypical Contrastive Learning},
+  shorttitle = {X-Goal},
+  booktitle = {Proceedings of the 31st {{ACM International Conference}} on {{Information}} \& {{Knowledge Management}}},
+  author = {Jing, Baoyu and Feng, Shengyu and Xiang, Yuejia and Chen, Xi and Chen, Yu and Tong, Hanghang},
+  year = {2022},
+  pages = {894--904}
+}
+
+@inproceedings{jinHeterogeneousGraphNeural2021,
+  title = {Heterogeneous Graph Neural Network via Attribute Completion},
+  booktitle = {Proceedings of the {{Web Conference}} 2021},
+  author = {Jin, Di and Huo, Cuiying and Liang, Chundong and Yang, Liang},
+  year = {2021},
+  pages = {391--400}
+}
+
+@article{kipfSEMISUPERVISEDCLASSIFICATIONGRAPH2017,
+  title = {{{SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS}}},
+  author = {Kipf, Thomas N and Welling, Max},
+  year = {2017},
+  pages = {14}
+}
+
+@misc{kipfSemiSupervisedClassificationGraph2017,
+  title = {Semi-{{Supervised Classification}} with {{Graph Convolutional Networks}}},
+  author = {Kipf, Thomas N. and Welling, Max},
+  year = {2017},
+  number = {arXiv:1609.02907},
+  eprint = {1609.02907},
+  primaryclass = {cs, stat},
+  institution = {{arXiv}},
+  urldate = {2022-10-02},
+  archiveprefix = {arxiv}
+}
+
+@misc{kipfSemiSupervisedClassificationGraph2017a,
+  title = {Semi-{{Supervised Classification}} with {{Graph Convolutional Networks}}},
+  author = {Kipf, Thomas N. and Welling, Max},
+  year = {2017},
+  number = {arXiv:1609.02907},
+  eprint = {1609.02907},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-03-05},
+  archiveprefix = {arxiv}
+}
+
+@misc{kipfSemiSupervisedClassificationGraph2017b,
+  title = {Semi-{{Supervised Classification}} with {{Graph Convolutional Networks}}},
+  author = {Kipf, Thomas N. and Welling, Max},
+  year = {2017},
+  number = {arXiv:1609.02907},
+  eprint = {1609.02907},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-04-10},
+  archiveprefix = {arxiv},
+  lccn = {37},
+  annotation = {37 citations (Google Scholar) [2023-04-11] 9995 citations (Semantic Scholar/arXiv) [2023-04-11]}
+}
+
+@misc{kirillovSegmentAnything2023,
+  title = {Segment {{Anything}}},
+  author = {Kirillov, Alexander and Mintun, Eric and Ravi, Nikhila and Mao, Hanzi and Rolland, Chloe and Gustafson, Laura and Xiao, Tete and Whitehead, Spencer and Berg, Alexander C. and Lo, Wan-Yen and Doll{\'a}r, Piotr and Girshick, Ross},
+  year = {2023},
+  number = {arXiv:2304.02643},
+  eprint = {2304.02643},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-05-09},
+  archiveprefix = {arxiv}
+}
+
+@article{kulatillekeEfficientBlockContrastive2022,
+  title = {Efficient Block Contrastive Learning via Parameter-Free Meta-Node Approximation},
+  author = {Kulatilleke, Gayan K. and Portmann, Marius and Chandra, Shekhar S.},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2209.14067},
+  eprint = {2209.14067},
+  archiveprefix = {arxiv}
+}
+
+@article{liangGraphContrastiveLearning2023,
+  title = {Graph Contrastive Learning with Implicit Augmentations},
+  author = {Liang, Huidong and Du, Xingjian and Zhu, Bilei and Ma, Zejun and Chen, Ke and Gao, Junbin},
+  year = {2023},
+  journal = {Neural Networks},
+  publisher = {{Elsevier}},
+  lccn = {0},
+  annotation = {0 citations (Google Scholar) [2023-04-17]}
+}
+
+@inproceedings{liangInfusingMultisourceKnowledge2021,
+  title = {Infusing Multi-Source Knowledge with Heterogeneous Graph Neural Network for Emotional Conversation Generation},
+  booktitle = {Proceedings of the {{AAAI Conference}} on {{Artificial Intelligence}}},
+  author = {Liang, Yunlong and Meng, Fandong and Zhang, Ying and Chen, Yufeng and Xu, Jinan and Zhou, Jie},
+  year = {2021},
+  volume = {35},
+  pages = {13343--13352}
+}
+
+@inproceedings{liLetInvariantRationale2022,
+  title = {Let Invariant Rationale Discovery Inspire Graph Contrastive Learning},
+  booktitle = {International {{Conference}} on {{Machine Learning}}},
+  author = {Li, Sihang and Wang, Xiang and Zhang, An and Wu, Yingxin and He, Xiangnan and Chua, Tat-Seng},
+  year = {2022},
+  pages = {13052--13065},
+  publisher = {{PMLR}}
+}
+
+@misc{liLeveragingMetapathContexts2021,
+  title = {Leveraging {{Meta-path Contexts}} for {{Classification}} in {{Heterogeneous Information Networks}}},
+  author = {Li, Xiang and Ding, Danhao and Kao, Ben and Sun, Yizhou and Mamoulis, Nikos},
+  year = {2021},
+  number = {arXiv:2012.10024},
+  eprint = {2012.10024},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-05-17},
+  archiveprefix = {arxiv},
+  lccn = {21},
+  annotation = {21 citations (Google Scholar) [2023-05-17]}
+}
+
+@article{linPrototypicalGraphContrastive2022,
+  title = {Prototypical Graph Contrastive Learning},
+  author = {Lin, Shuai and Liu, Chen and Zhou, Pan and Hu, Zi-Yuan and Wang, Shuojia and Zhao, Ruihui and Zheng, Yefeng and Lin, Liang and Xing, Eric and Liang, Xiaodan},
+  year = {2022},
+  journal = {IEEE Transactions on Neural Networks and Learning Systems},
+  publisher = {{IEEE}}
+}
+
+@article{liuGraphSelfsupervisedLearning2022,
+  title = {Graph Self-Supervised Learning: {{A}} Survey},
+  shorttitle = {Graph Self-Supervised Learning},
+  author = {Liu, Yixin and Jin, Ming and Pan, Shirui and Zhou, Chuan and Zheng, Yu and Xia, Feng and Yu, Philip},
+  year = {2022},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  publisher = {{IEEE}}
+}
+
+@article{liuNonLocalGraphNeural2021,
+  title = {Non-{{Local Graph Neural Networks}}},
+  author = {Liu, Meng and Wang, Zhengyang and Ji, Shuiwang},
+  year = {2021},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  pages = {1--1},
+  urldate = {2022-06-01}
+}
+
+@article{liuRevisitingGraphContrastive2022,
+  title = {Revisiting Graph Contrastive Learning from the Perspective of Graph Spectrum},
+  author = {Liu, Nian and Wang, Xiao and Bo, Deyu and Shi, Chuan and Pei, Jian},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2210.02330},
+  eprint = {2210.02330},
+  archiveprefix = {arxiv}
+}
+
+@article{liuSelfsupervisedLearningGenerative2021,
+  title = {Self-Supervised {{Learning}}: {{Generative}} or {{Contrastive}}},
+  shorttitle = {Self-Supervised {{Learning}}},
+  author = {Liu, Xiao and Zhang, Fanjin and Hou, Zhenyu and Wang, Zhaoyu and Mian, Li and Zhang, Jing and Tang, Jie},
+  year = {2021},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  eprint = {2006.08218},
+  primaryclass = {cs, stat},
+  pages = {1--1},
+  urldate = {2022-07-14},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{luoDynamicHeterogeneousGraph2020,
+  title = {Dynamic Heterogeneous Graph Neural Network for Real-Time Event Prediction},
+  booktitle = {Proceedings of the 26th {{ACM SIGKDD}} International Conference on Knowledge Discovery \& Data Mining},
+  author = {Luo, Wenjuan and Zhang, Han and Yang, Xiaodi and Bo, Lin and Yang, Xiaoqing and Li, Zang and Qie, Xiaohu and Ye, Jieping},
+  year = {2020},
+  pages = {3213--3223}
+}
+
+@inproceedings{lvAreWeReally2021,
+  title = {Are We Really Making Much Progress?: {{Revisiting}}, Benchmarking and Refining Heterogeneous Graph Neural Networks},
+  shorttitle = {Are We Really Making Much Progress?},
+  booktitle = {Proceedings of the 27th {{ACM SIGKDD Conference}} on {{Knowledge Discovery}} \& {{Data Mining}}},
+  author = {Lv, Qingsong and Ding, Ming and Liu, Qiang and Chen, Yuxiang and Feng, Wenzheng and He, Siming and Zhou, Chang and Jiang, Jianguo and Dong, Yuxiao and Tang, Jie},
+  year = {2021},
+  pages = {1150--1160},
+  publisher = {{ACM}},
+  address = {{Virtual Event Singapore}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-8332-5}
+}
+
+@inproceedings{lvAreWeReally2021a,
+  title = {Are We Really Making Much Progress?: {{Revisiting}}, Benchmarking and Refining Heterogeneous Graph Neural Networks},
+  shorttitle = {Are We Really Making Much Progress?},
+  booktitle = {Proceedings of the 27th {{ACM SIGKDD Conference}} on {{Knowledge Discovery}} \& {{Data Mining}}},
+  author = {Lv, Qingsong and Ding, Ming and Liu, Qiang and Chen, Yuxiang and Feng, Wenzheng and He, Siming and Zhou, Chang and Jiang, Jianguo and Dong, Yuxiao and Tang, Jie},
+  year = {2021},
+  pages = {1150--1160},
+  publisher = {{ACM}},
+  address = {{Virtual Event Singapore}},
+  urldate = {2022-11-24},
+  isbn = {978-1-4503-8332-5},
+  lccn = {75},
+  annotation = {75 citations (Google Scholar) [2023-04-11] 74 citations (Semantic Scholar/DOI) [2023-04-11] 11 citations (Crossref) [2023-04-11]}
+}
+
+@misc{ManycoreCompilerFuzzing,
+  title = {Many-Core Compiler Fuzzing | {{Proceedings}} of the 36th {{ACM SIGPLAN Conference}} on {{Programming Language Design}} and {{Implementation}}},
+  urldate = {2022-06-01},
+  howpublished = {https://dl.acm.org/doi/10.1145/2737924.2737986}
+}
+
+@misc{ManycoreCompilerFuzzinga,
+  title = {Many-Core Compiler Fuzzing | {{Proceedings}} of the 36th {{ACM SIGPLAN Conference}} on {{Programming Language Design}} and {{Implementation}}},
+  howpublished = {https://dl.acm.org/doi/10.1145/2737924.2737986}
+}
+
+@inproceedings{moSimpleUnsupervisedGraph2022,
+  title = {Simple Unsupervised Graph Representation Learning},
+  booktitle = {Proceedings of the {{AAAI Conference}} on {{Artificial Intelligence}}},
+  author = {Mo, Yujie and Peng, Liang and Xu, Jie and Shi, Xiaoshuang and Zhu, Xiaofeng},
+  year = {2022},
+  volume = {36},
+  pages = {7797--7805},
+  lccn = {23},
+  annotation = {23 citations (Google Scholar) [2023-04-11]}
+}
+
+@inproceedings{moSimpleUnsupervisedGraph2022a,
+  title = {Simple Unsupervised Graph Representation Learning},
+  booktitle = {Proceedings of the {{AAAI Conference}} on {{Artificial Intelligence}}},
+  author = {Mo, Yujie and Peng, Liang and Xu, Jie and Shi, Xiaoshuang and Zhu, Xiaofeng},
+  year = {2022},
+  volume = {36},
+  pages = {7797--7805}
+}
+
+@misc{openaiGPT4TechnicalReport2023,
+  title = {{{GPT-4 Technical Report}}},
+  author = {OpenAI},
+  year = {2023},
+  number = {arXiv:2303.08774},
+  eprint = {2303.08774},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-05-08},
+  archiveprefix = {arxiv},
+  lccn = {5},
+  annotation = {5 citations (Google Scholar) [2023-05-08]}
+}
+
+@misc{PapersCodeDecoupling,
+  title = {Papers with {{Code}} - {{Decoupling}} the {{Depth}} and {{Scope}} of {{Graph Neural Networks}}},
+  urldate = {2022-07-17},
+  howpublished = {https://paperswithcode.com/paper/decoupling-the-depth-and-scope-of-graph-1}
+}
+
+@misc{pengGraphRepresentationLearning2020,
+  title = {Graph {{Representation Learning}} via {{Graphical Mutual Information Maximization}}},
+  author = {Peng, Zhen and Huang, Wenbing and Luo, Minnan and Zheng, Qinghua and Rong, Yu and Xu, Tingyang and Huang, Junzhou},
+  year = {2020},
+  number = {arXiv:2002.01169},
+  eprint = {2002.01169},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-05-11},
+  archiveprefix = {arxiv},
+  lccn = {306},
+  annotation = {306 citations (Google Scholar) [2023-05-11]}
+}
+
+@inproceedings{perozziDeepWalkOnlineLearning2014,
+  title = {{{DeepWalk}}: Online Learning of Social Representations},
+  shorttitle = {{{DeepWalk}}},
+  booktitle = {Proceedings of the 20th {{ACM SIGKDD}} International Conference on {{Knowledge}} Discovery and Data Mining},
+  author = {Perozzi, Bryan and {Al-Rfou}, Rami and Skiena, Steven},
+  year = {2014},
+  pages = {701--710},
+  publisher = {{ACM}},
+  address = {{New York New York USA}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-2956-9}
+}
+
+@inproceedings{perozziDeepWalkOnlineLearning2014a,
+  title = {{{DeepWalk}}: Online Learning of Social Representations},
+  shorttitle = {{{DeepWalk}}},
+  booktitle = {Proceedings of the 20th {{ACM SIGKDD}} International Conference on {{Knowledge}} Discovery and Data Mining},
+  author = {Perozzi, Bryan and {Al-Rfou}, Rami and Skiena, Steven},
+  year = {2014},
+  pages = {701--710},
+  publisher = {{ACM}},
+  address = {{New York New York USA}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-2956-9}
+}
+
+@article{qianCoModalityGraphContrastive2022,
+  title = {Co-{{Modality Graph Contrastive Learning}} for {{Imbalanced Node Classification}}},
+  author = {Qian, Yiyue and Zhang, Chunhui and Zhang, Yiming and Wen, Qianlong and Ye, Yanfang and Zhang, Chuxu},
+  year = {2022},
+  journal = {Advances in Neural Information Processing Systems},
+  volume = {35},
+  pages = {15862--15874}
+}
+
+@article{qiaoDatadrivenGraphConstruction2018,
+  title = {Data-Driven Graph Construction and Graph Learning: {{A}} Review},
+  shorttitle = {Data-Driven Graph Construction and Graph Learning},
+  author = {Qiao, Lishan and Zhang, Limei and Chen, Songcan and Shen, Dinggang},
+  year = {2018},
+  journal = {Neurocomputing},
+  volume = {312},
+  pages = {336--351},
+  publisher = {{Elsevier}}
+}
+
+@inproceedings{qiuGCCGraphContrastive2020,
+  title = {{{GCC}}: {{Graph Contrastive Coding}} for {{Graph Neural Network Pre-Training}}},
+  shorttitle = {{{GCC}}},
+  booktitle = {Proceedings of the 26th {{ACM SIGKDD International Conference}} on {{Knowledge Discovery}} \& {{Data Mining}}},
+  author = {Qiu, Jiezhong and Chen, Qibin and Dong, Yuxiao and Zhang, Jing and Yang, Hongxia and Ding, Ming and Wang, Kuansan and Tang, Jie},
+  year = {2020},
+  eprint = {2006.09963},
+  primaryclass = {cs, stat},
+  pages = {1150--1160},
+  urldate = {2023-05-11},
+  archiveprefix = {arxiv},
+  lccn = {508},
+  annotation = {508 citations (Google Scholar) [2023-05-11]}
+}
+
+@misc{redmonYOLOv3IncrementalImprovement2018,
+  title = {{{YOLOv3}}: {{An Incremental Improvement}}},
+  shorttitle = {{{YOLOv3}}},
+  author = {Redmon, Joseph and Farhadi, Ali},
+  year = {2018},
+  number = {arXiv:1804.02767},
+  eprint = {1804.02767},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-05-08},
+  archiveprefix = {arxiv},
+  lccn = {20013},
+  annotation = {20013 citations (Google Scholar) [2023-05-08]}
+}
+
+@incollection{schlichtkrullModelingRelationalData2018,
+  title = {Modeling {{Relational Data}} with {{Graph Convolutional Networks}}},
+  booktitle = {The {{Semantic Web}}},
+  author = {Schlichtkrull, Michael and Kipf, Thomas N. and Bloem, Peter and {van~den Berg}, Rianne and Titov, Ivan and Welling, Max},
+  editor = {Gangemi, Aldo and Navigli, Roberto and Vidal, Maria-Esther and Hitzler, Pascal and Troncy, Rapha{\"e}l and Hollink, Laura and Tordai, Anna and Alam, Mehwish},
+  year = {2018},
+  volume = {10843},
+  pages = {593--607},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  urldate = {2022-06-01},
+  isbn = {978-3-319-93416-7 978-3-319-93417-4}
+}
+
+@incollection{schlichtkrullModelingRelationalData2018a,
+  title = {Modeling {{Relational Data}} with {{Graph Convolutional Networks}}},
+  booktitle = {The {{Semantic Web}}},
+  author = {Schlichtkrull, Michael and Kipf, Thomas N. and Bloem, Peter and {van~den Berg}, Rianne and Titov, Ivan and Welling, Max},
+  editor = {Gangemi, Aldo and Navigli, Roberto and Vidal, Maria-Esther and Hitzler, Pascal and Troncy, Rapha{\"e}l and Hollink, Laura and Tordai, Anna and Alam, Mehwish},
+  year = {2018},
+  volume = {10843},
+  pages = {593--607},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  urldate = {2022-06-01},
+  isbn = {978-3-319-93416-7 978-3-319-93417-4}
+}
+
+@article{shaoMultilevelGraphContrastive2021,
+  title = {Multi-Level Graph Contrastive Learning},
+  author = {Shao, Pengpeng and Liu, Tong and Zhang, Dawei and Tao, Jianhua and Che, Feihu and Yang, Guohua},
+  year = {2021},
+  journal = {arXiv preprint arXiv:2107.02639},
+  eprint = {2107.02639},
+  archiveprefix = {arxiv}
+}
+
+@article{shenNeighborContrastiveLearning2023,
+  title = {Neighbor {{Contrastive Learning}} on {{Learnable Graph Augmentation}}},
+  author = {Shen, Xiao and Sun, Dewang and Pan, Shirui and Zhou, Xi and Yang, Laurence T.},
+  year = {2023},
+  journal = {arXiv preprint arXiv:2301.01404},
+  eprint = {2301.01404},
+  archiveprefix = {arxiv},
+  lccn = {0},
+  annotation = {0 citations (Google Scholar) [2023-04-17]}
+}
+
+@article{sunUnderstandingMitigatingDimensional2022,
+  title = {On {{Understanding}} and {{Mitigating}} the {{Dimensional Collapse}} of {{Graph Contrastive Learning}}: A {{Non-Maximum Removal Approach}}},
+  shorttitle = {On {{Understanding}} and {{Mitigating}} the {{Dimensional Collapse}} of {{Graph Contrastive Learning}}},
+  author = {Sun, Jiawei and Chen, Ruoxin and Li, Jie and Wu, Chentao and Ding, Yue and Yan, Junchi},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2203.12821},
+  eprint = {2203.12821},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{tangGraphFineGrainedContrastive2022,
+  title = {Graph {{Fine-Grained Contrastive Representation Learning}}},
+  booktitle = {{{ICASSP}} 2022-2022 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal Processing}} ({{ICASSP}})},
+  author = {Tang, Hui and Liang, Xun and Guo, Yuhui and Zheng, Xiangping and Wu, Bo},
+  year = {2022},
+  pages = {3478--3482},
+  publisher = {{IEEE}}
+}
+
+@misc{tervenComprehensiveReviewYOLO2023,
+  title = {A {{Comprehensive Review}} of {{YOLO}}: {{From YOLOv1}} to {{YOLOv8}} and {{Beyond}}},
+  shorttitle = {A {{Comprehensive Review}} of {{YOLO}}},
+  author = {Terven, Juan and {Cordova-Esparza}, Diana},
+  year = {2023},
+  number = {arXiv:2304.00501},
+  eprint = {2304.00501},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-05-08},
+  archiveprefix = {arxiv},
+  lccn = {0},
+  annotation = {0 citations (Google Scholar) [2023-05-08]}
+}
+
+@inproceedings{theodoridisFindingMissedOptimizations2022,
+  title = {Finding Missed Optimizations through the Lens of Dead Code Elimination},
+  booktitle = {Proceedings of the 27th {{ACM International Conference}} on {{Architectural Support}} for {{Programming Languages}} and {{Operating Systems}}},
+  author = {Theodoridis, Theodoros and Rigger, Manuel and Su, Zhendong},
+  year = {2022},
+  pages = {697--709},
+  publisher = {{ACM}},
+  address = {{Lausanne Switzerland}},
+  urldate = {2022-05-27},
+  isbn = {978-1-4503-9205-1}
+}
+
+@inproceedings{theodoridisFindingMissedOptimizations2022a,
+  title = {{Finding missed optimizations through the lens of dead code elimination}},
+  booktitle = {{Proceedings of the 27th ACM International Conference on Architectural Support for Programming Languages and Operating Systems}},
+  author = {Theodoridis, Theodoros and Rigger, Manuel and Su, Zhendong},
+  year = {2022},
+  pages = {697--709},
+  publisher = {{ACM}},
+  address = {{Lausanne Switzerland}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-9205-1}
+}
+
+@inproceedings{theodoridisFindingMissedOptimizations2022b,
+  title = {{Finding missed optimizations through the lens of dead code elimination}},
+  booktitle = {{Proceedings of the 27th ACM International Conference on Architectural Support for Programming Languages and Operating Systems}},
+  author = {Theodoridis, Theodoros and Rigger, Manuel and Su, Zhendong},
+  year = {2022},
+  pages = {697--709},
+  publisher = {{ACM}},
+  address = {{Lausanne Switzerland}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-9205-1}
+}
+
+@inproceedings{theodoridisFindingMissedOptimizations2022c,
+  title = {Finding Missed Optimizations through the Lens of Dead Code Elimination},
+  booktitle = {Proceedings of the 27th {{ACM International Conference}} on {{Architectural Support}} for {{Programming Languages}} and {{Operating Systems}}},
+  author = {Theodoridis, Theodoros and Rigger, Manuel and Su, Zhendong},
+  year = {2022},
+  series = {{{ASPLOS}} 2022},
+  pages = {697--709},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-9205-1}
+}
+
+@article{tongDirectedGraphContrastive2021,
+  title = {Directed Graph Contrastive Learning},
+  author = {Tong, Zekun and Liang, Yuxuan and Ding, Henghui and Dai, Yongxing and Li, Xinke and Wang, Changhu},
+  year = {2021},
+  journal = {Advances in Neural Information Processing Systems},
+  volume = {34},
+  pages = {19580--19593}
+}
+
+@inproceedings{touatiDecidabilityPhaseOrdering2006,
+  title = {On the Decidability of Phase Ordering Problem in Optimizing Compilation},
+  booktitle = {Proceedings of the 3rd Conference on {{Computing}} Frontiers},
+  author = {Touati, Sid-Ahmed-Ali and Barthou, Denis},
+  year = {2006},
+  series = {{{CF}} '06},
+  pages = {147--156},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  urldate = {2022-06-01},
+  isbn = {978-1-59593-302-7}
+}
+
+@inproceedings{triantafyllisCompilerOptimizationspaceExploration2003,
+  title = {Compiler Optimization-Space Exploration},
+  booktitle = {International {{Symposium}} on {{Code Generation}} and {{Optimization}}, 2003. {{CGO}} 2003.},
+  author = {Triantafyllis, S. and Vachharajani, M. and Vachharajani, N. and August, D.I.},
+  year = {2003},
+  pages = {204--215},
+  publisher = {{IEEE Comput. Soc}},
+  address = {{San Francisco, CA, USA}},
+  urldate = {2022-05-31},
+  isbn = {978-0-7695-1913-5}
+}
+
+@article{trivediAnalyzingDatacentricProperties2022,
+  title = {Analyzing Data-Centric Properties for Contrastive Learning on Graphs},
+  author = {Trivedi, Puja and Lubana, Ekdeep Singh and Heimann, Mark and Koutra, Danai and Thiagarajan, Jayaraman J.},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2208.02810},
+  eprint = {2208.02810},
+  archiveprefix = {arxiv}
+}
+
+@article{trivediAnalyzingDatacentricProperties2022a,
+  title = {Analyzing Data-Centric Properties for Graph Contrastive Learning},
+  author = {Trivedi, Puja and Lubana, Ekdeep S. and Heimann, Mark and Koutra, Danai and Thiagarajan, Jayaraman},
+  year = {2022},
+  journal = {Advances in Neural Information Processing Systems},
+  volume = {35},
+  pages = {14030--14043}
+}
+
+@inproceedings{trivediAugmentationsGraphContrastive2022,
+  title = {Augmentations in Graph Contrastive Learning: {{Current}} Methodological Flaws \& towards Better Practices},
+  shorttitle = {Augmentations in Graph Contrastive Learning},
+  booktitle = {Proceedings of the {{ACM Web Conference}} 2022},
+  author = {Trivedi, Puja and Lubana, Ekdeep Singh and Yan, Yujun and Yang, Yaoqing and Koutra, Danai},
+  year = {2022},
+  pages = {1538--1549}
+}
+
+@misc{velickovicDeepGraphInfomax2018,
+  title = {Deep {{Graph Infomax}}},
+  author = {Veli{\v c}kovi{\'c}, Petar and Fedus, William and Hamilton, William L. and Li{\`o}, Pietro and Bengio, Yoshua and Hjelm, R. Devon},
+  year = {2018},
+  number = {arXiv:1809.10341},
+  eprint = {1809.10341},
+  primaryclass = {cs, math, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-04-21},
+  archiveprefix = {arxiv}
+}
+
+@article{velicvkovicGRAPHATTENTIONNETWORKS2018,
+  title = {{{GRAPH ATTENTION NETWORKS}}},
+  author = {Velic{\textasciicaron}kovic, Petar and Cucurull, Guillem and Casanova, Arantxa and Romero, Adriana and Lio, Pietro and Bengio, Yoshua},
+  year = {2018},
+  pages = {12}
+}
+
+@misc{wanBNSGCNEfficientFullGraph2022a,
+  title = {{{BNS-GCN}}: {{Efficient Full-Graph Training}} of {{Graph Convolutional Networks}} with {{Partition-Parallelism}} and {{Random Boundary Node Sampling}}},
+  shorttitle = {{{BNS-GCN}}},
+  author = {Wan, Cheng and Li, Youjie and Li, Ang and Kim, Nam Sung and Lin, Yingyan},
+  year = {2022},
+  number = {arXiv:2203.10983},
+  eprint = {2203.10983},
+  primaryclass = {cs},
+  institution = {{arXiv}},
+  urldate = {2022-07-17},
+  archiveprefix = {arxiv}
+}
+
+@misc{wanContrastiveGenerativeGraph2020,
+  title = {Contrastive and {{Generative Graph Convolutional Networks}} for {{Graph-based Semi-Supervised Learning}}},
+  author = {Wan, Sheng and Pan, Shirui and Yang, Jian and Gong, Chen},
+  year = {2020},
+  number = {arXiv:2009.07111},
+  eprint = {2009.07111},
+  primaryclass = {cs, stat},
+  institution = {{arXiv}},
+  urldate = {2022-07-18},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{wangAdaGCLAdaptiveSubgraph2022,
+  title = {{{AdaGCL}}: {{Adaptive Subgraph Contrastive Learning}} to {{Generalize Large-scale Graph Training}}},
+  shorttitle = {{{AdaGCL}}},
+  booktitle = {Proceedings of the 31st {{ACM International Conference}} on {{Information}} \& {{Knowledge Management}}},
+  author = {Wang, Yili and Zhou, Kaixiong and Miao, Rui and Liu, Ninghao and Wang, Xin},
+  year = {2022},
+  pages = {2046--2055}
+}
+
+@article{wangAugmentationfreeGraphContrastive2022,
+  title = {Augmentation-Free Graph Contrastive Learning},
+  author = {Wang, Haonan and Zhang, Jieyu and Zhu, Qi and Huang, Wei},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2204.04874},
+  eprint = {2204.04874},
+  archiveprefix = {arxiv}
+}
+
+@article{wangBayesianRobustGraph2022,
+  title = {Bayesian {{Robust Graph Contrastive Learning}}},
+  author = {Wang, Yancheng and Yang, Yingzhen},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2205.14109},
+  eprint = {2205.14109},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{wangClusterSCLClusterawareSupervised2022,
+  title = {{{ClusterSCL}}: Cluster-Aware Supervised Contrastive Learning on Graphs},
+  shorttitle = {{{ClusterSCL}}},
+  booktitle = {Proceedings of the {{ACM Web Conference}} 2022},
+  author = {Wang, Yanling and Zhang, Jing and Li, Haoyang and Dong, Yuxiao and Yin, Hongzhi and Li, Cuiping and Chen, Hong},
+  year = {2022},
+  pages = {1611--1621}
+}
+
+@article{wangCrossviewGraphContrastive2022,
+  title = {Cross-View {{Graph Contrastive Representation Learning}} on {{Partially Aligned Multi-view Data}}},
+  author = {Wang, Yiming and Chang, Dongxia and Fu, Zhiqiang and Wen, Jie and Zhao, Yao},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2211.04906},
+  eprint = {2211.04906},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{wangHeterogeneousGraphAttention2019,
+  title = {Heterogeneous {{Graph Attention Network}}},
+  booktitle = {The {{World Wide Web Conference}}},
+  author = {Wang, Xiao and Ji, Houye and Shi, Chuan and Wang, Bai and Ye, Yanfang and Cui, Peng and Yu, Philip S},
+  year = {2019},
+  pages = {2022--2032},
+  publisher = {{ACM}},
+  address = {{San Francisco CA USA}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-6674-8}
+}
+
+@inproceedings{wangHeterogeneousGraphAttention2019a,
+  title = {Heterogeneous {{Graph Attention Network}}},
+  booktitle = {The {{World Wide Web Conference}}},
+  author = {Wang, Xiao and Ji, Houye and Shi, Chuan and Wang, Bai and Ye, Yanfang and Cui, Peng and Yu, Philip S},
+  year = {2019},
+  pages = {2022--2032},
+  publisher = {{ACM}},
+  address = {{San Francisco CA USA}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-6674-8}
+}
+
+@inproceedings{wangHeterogeneousGraphAttention2019b,
+  title = {Heterogeneous {{Graph Attention Network}}},
+  booktitle = {The {{World Wide Web Conference}}},
+  author = {Wang, Xiao and Ji, Houye and Shi, Chuan and Wang, Bai and Ye, Yanfang and Cui, Peng and Yu, Philip S},
+  year = {2019},
+  pages = {2022--2032},
+  publisher = {{ACM}},
+  address = {{San Francisco CA USA}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-6674-8}
+}
+
+@inproceedings{wangHeterogeneousGraphAttention2019c,
+  title = {Heterogeneous {{Graph Attention Network}}},
+  booktitle = {The {{World Wide Web Conference}}},
+  author = {Wang, Xiao and Ji, Houye and Shi, Chuan and Wang, Bai and Ye, Yanfang and Cui, Peng and Yu, Philip S},
+  year = {2019},
+  pages = {2022--2032},
+  publisher = {{ACM}},
+  address = {{San Francisco CA USA}},
+  urldate = {2022-11-24},
+  isbn = {978-1-4503-6674-8},
+  lccn = {1404},
+  annotation = {1404 citations (Google Scholar) [2023-04-11] 1169 citations (Semantic Scholar/DOI) [2023-04-11] 702 citations (Crossref) [2023-04-11]}
+}
+
+@article{wangHeterogeneousGraphContrastive2022,
+  title = {Heterogeneous {{Graph Contrastive Multi-view Learning}}},
+  author = {Wang, Zehong and Li, Qi and Yu, Donghua and Han, Xiaolong and Gao, Xiao-Zhi and Shen, Shigen},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2210.00248},
+  eprint = {2210.00248},
+  archiveprefix = {arxiv}
+}
+
+@article{wangINDUCTIVEREPRESENTATIONLEARNING2021,
+  title = {{{INDUCTIVE REPRESENTATION LEARNING IN TEMPO- RAL NETWORKS VIA CAUSAL ANONYMOUS WALKS}}},
+  author = {Wang, Yanbang and Chang, Yen-Yu and Liu, Yunyu and Leskovec, Jure and Li, Pan},
+  year = {2021},
+  pages = {22}
+}
+
+@article{wangSCFGCLSelfadaptiveClusterbased2023,
+  title = {{{SC-FGCL}}: {{Self-adaptive Cluster-based Federal Graph Contrastive Learning}}},
+  shorttitle = {{{SC-FGCL}}},
+  author = {Wang, Tingqi and Zheng, Xu and Gao, Lei and Wan, Tianqi and Tian, Ling},
+  year = {2023},
+  journal = {IEEE Open Journal of the Computer Society},
+  publisher = {{IEEE}},
+  lccn = {0},
+  annotation = {0 citations (Google Scholar) [2023-04-17]}
+}
+
+@inproceedings{wangSelfsupervisedHeterogeneousGraph2021,
+  title = {Self-Supervised {{Heterogeneous Graph Neural Network}} with {{Co-contrastive Learning}}},
+  booktitle = {Proceedings of the 27th {{ACM SIGKDD Conference}} on {{Knowledge Discovery}} \& {{Data Mining}}},
+  author = {Wang, Xiao and Liu, Nian and Han, Hui and Shi, Chuan},
+  year = {2021},
+  pages = {1726--1736},
+  publisher = {{ACM}},
+  address = {{Virtual Event Singapore}},
+  urldate = {2022-11-24},
+  isbn = {978-1-4503-8332-5}
+}
+
+@inproceedings{wangSelfsupervisedHeterogeneousGraph2021a,
+  title = {Self-Supervised Heterogeneous Graph Neural Network with Co-Contrastive Learning},
+  booktitle = {Proceedings of the 27th {{ACM SIGKDD}} Conference on Knowledge Discovery \& Data Mining},
+  author = {Wang, Xiao and Liu, Nian and Han, Hui and Shi, Chuan},
+  year = {2021},
+  pages = {1726--1736}
+}
+
+@misc{wangSelfsupervisedHeterogeneousGraph2021b,
+  title = {Self-Supervised {{Heterogeneous Graph Neural Network}} with {{Co-contrastive Learning}}},
+  author = {Wang, Xiao and Liu, Nian and Han, Hui and Shi, Chuan},
+  year = {2021},
+  number = {arXiv:2105.09111},
+  eprint = {2105.09111},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-04-12},
+  archiveprefix = {arxiv},
+  lccn = {113},
+  annotation = {113 citations (Google Scholar) [2023-04-12]}
+}
+
+@article{weiAugmentationsHypergraphContrastive2022,
+  title = {Augmentations in {{Hypergraph Contrastive Learning}}: {{Fabricated}} and {{Generative}}},
+  shorttitle = {Augmentations in {{Hypergraph Contrastive Learning}}},
+  author = {Wei, Tianxin and You, Yuning and Chen, Tianlong and Shen, Yang and He, Jingrui and Wang, Zhangyang},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2210.03801},
+  eprint = {2210.03801},
+  archiveprefix = {arxiv}
+}
+
+@article{wenAdversarialCrossViewDisentangled2022,
+  title = {Adversarial {{Cross-View Disentangled Graph Contrastive Learning}}},
+  author = {Wen, Qianlong and Ouyang, Zhongyu and Zhang, Chunhui and Qian, Yiyue and Ye, Yanfang and Zhang, Chuxu},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2209.07699},
+  eprint = {2209.07699},
+  archiveprefix = {arxiv}
+}
+
+@article{wuComprehensiveSurveyGraph2021,
+  title = {A {{Comprehensive Survey}} on {{Graph Neural Networks}}},
+  author = {Wu, Zonghan and Pan, Shirui and Chen, Fengwen and Long, Guodong and Zhang, Chengqi and Yu, Philip S.},
+  year = {2021},
+  journal = {IEEE Transactions on Neural Networks and Learning Systems},
+  volume = {32},
+  number = {1},
+  eprint = {1901.00596},
+  primaryclass = {cs, stat},
+  pages = {4--24},
+  urldate = {2023-05-11},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{wuSelfsupervisedGraphLearning2021,
+  title = {Self-Supervised Graph Learning for Recommendation},
+  booktitle = {Proceedings of the 44th International {{ACM SIGIR}} Conference on Research and Development in Information Retrieval},
+  author = {Wu, Jiancan and Wang, Xiang and Feng, Fuli and He, Xiangnan and Chen, Liang and Lian, Jianxun and Xie, Xing},
+  year = {2021},
+  pages = {726--735}
+}
+
+@article{xiaDebiasedGraphContrastive2021,
+  title = {Debiased Graph Contrastive Learning},
+  author = {Xia, Jun and Wu, Lirong and Chen, Jintao and Wang, Ge and Li, Stan Z.},
+  year = {2021},
+  journal = {arXiv preprint arXiv:2110.02027},
+  eprint = {2110.02027},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{xiaSimGRACESimpleFramework2022,
+  title = {{{SimGRACE}}: {{A Simple Framework}} for {{Graph Contrastive Learning}} without {{Data Augmentation}}},
+  shorttitle = {{{SimGRACE}}},
+  booktitle = {Proceedings of the {{ACM Web Conference}} 2022},
+  author = {Xia, Jun and Wu, Lirong and Chen, Jintao and Hu, Bozhen and Li, Stan Z.},
+  year = {2022},
+  series = {{{WWW}} '22},
+  pages = {1070--1079},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  urldate = {2022-07-20},
+  isbn = {978-1-4503-9096-5}
+}
+
+@inproceedings{xiaSimgraceSimpleFramework2022,
+  title = {Simgrace: {{A}} Simple Framework for Graph Contrastive Learning without Data Augmentation},
+  shorttitle = {Simgrace},
+  booktitle = {Proceedings of the {{ACM Web Conference}} 2022},
+  author = {Xia, Jun and Wu, Lirong and Chen, Jintao and Hu, Bozhen and Li, Stan Z.},
+  year = {2022},
+  pages = {1070--1079}
+}
+
+@inproceedings{xiaSimGRACESimpleFramework2022a,
+  title = {{{SimGRACE}}: {{A Simple Framework}} for {{Graph Contrastive Learning}} without {{Data Augmentation}}},
+  shorttitle = {{{SimGRACE}}},
+  booktitle = {Proceedings of the {{ACM Web Conference}} 2022},
+  author = {Xia, Jun and Wu, Lirong and Chen, Jintao and Hu, Bozhen and Li, Stan Z.},
+  year = {2022},
+  eprint = {2202.03104},
+  primaryclass = {cs},
+  pages = {1070--1079},
+  urldate = {2023-05-03},
+  archiveprefix = {arxiv},
+  lccn = {48},
+  annotation = {48 citations (Google Scholar) [2023-05-03]}
+}
+
+@misc{xieSelfSupervisedLearningGraph2022,
+  title = {Self-{{Supervised Learning}} of {{Graph Neural Networks}}: {{A Unified Review}}},
+  shorttitle = {Self-{{Supervised Learning}} of {{Graph Neural Networks}}},
+  author = {Xie, Yaochen and Xu, Zhao and Zhang, Jingtun and Wang, Zhengyang and Ji, Shuiwang},
+  year = {2022},
+  number = {arXiv:2102.10757},
+  eprint = {2102.10757},
+  primaryclass = {cs},
+  institution = {{arXiv}},
+  urldate = {2022-07-17},
+  archiveprefix = {arxiv}
+}
+
+@article{xieSelfsupervisedLearningGraph2022,
+  title = {Self-Supervised Learning of Graph Neural Networks: {{A}} Unified Review},
+  shorttitle = {Self-Supervised Learning of Graph Neural Networks},
+  author = {Xie, Yaochen and Xu, Zhao and Zhang, Jingtun and Wang, Zhengyang and Ji, Shuiwang},
+  year = {2022},
+  journal = {IEEE transactions on pattern analysis and machine intelligence},
+  publisher = {{IEEE}}
+}
+
+@article{xuHOWPOWERFULARE2019,
+  title = {{{HOW POWERFUL ARE GRAPH NEURAL NETWORKS}}?},
+  author = {Xu, Keyulu and Hu, Weihua and Leskovec, Jure and Jegelka, Stefanie},
+  year = {2019},
+  pages = {17}
+}
+
+@article{xuInfogclInformationawareGraph2021,
+  title = {Infogcl: {{Information-aware}} Graph Contrastive Learning},
+  shorttitle = {Infogcl},
+  author = {Xu, Dongkuan and Cheng, Wei and Luo, Dongsheng and Chen, Haifeng and Zhang, Xiang},
+  year = {2021},
+  journal = {Advances in Neural Information Processing Systems},
+  volume = {34},
+  pages = {30414--30425}
+}
+
+@article{xuInfogclInformationawareGraph2021a,
+  title = {Infogcl: {{Information-aware}} Graph Contrastive Learning},
+  shorttitle = {Infogcl},
+  author = {Xu, Dongkuan and Cheng, Wei and Luo, Dongsheng and Chen, Haifeng and Zhang, Xiang},
+  year = {2021},
+  journal = {Advances in Neural Information Processing Systems},
+  volume = {34},
+  pages = {30414--30425}
+}
+
+@article{xuSelfsupervisedGraphlevelRepresentation,
+  title = {Self-Supervised {{Graph-level Representation Learning}}  with {{Local}} and {{Global Structure}}},
+  author = {Xu, Minghao and Wang, Hang and Ni, Bingbing and Guo, Hongyu and Tang, Jian},
+  pages = {14}
+}
+
+@inproceedings{yangDualSpaceGraph2022,
+  title = {Dual Space Graph Contrastive Learning},
+  booktitle = {Proceedings of the {{ACM Web Conference}} 2022},
+  author = {Yang, Haoran and Chen, Hongxu and Pan, Shirui and Li, Lin and Yu, Philip S. and Xu, Guandong},
+  year = {2022},
+  pages = {1238--1247}
+}
+
+@inproceedings{yangGraphAdversarialSelfSupervised2021,
+  title = {Graph {{Adversarial Self-Supervised Learning}}},
+  booktitle = {Advances in {{Neural Information Processing Systems}}},
+  author = {Yang, Longqi and Zhang, Liangliang and Yang, Wenjing},
+  year = {2021},
+  volume = {34},
+  pages = {14887--14899},
+  publisher = {{Curran Associates, Inc.}},
+  urldate = {2022-09-09}
+}
+
+@inproceedings{yinAutogclAutomatedGraph2022,
+  title = {Autogcl: {{Automated}} Graph Contrastive Learning via Learnable View Generators},
+  shorttitle = {Autogcl},
+  booktitle = {Proceedings of the {{AAAI Conference}} on {{Artificial Intelligence}}},
+  author = {Yin, Yihang and Wang, Qingzhong and Huang, Siyu and Xiong, Haoyi and Zhang, Xiang},
+  year = {2022},
+  volume = {36},
+  pages = {8892--8900},
+  lccn = {20},
+  annotation = {20 citations (Google Scholar) [2023-04-11] 3 citations (Crossref) [2023-04-11]}
+}
+
+@article{yingGNNExplainerTool2017,
+  title = {{{GNN Explainer}}: {{A Tool}} for {{Post-hoc Explanation}} of {{Graph Neural Networks}}},
+  author = {Ying, Rex and Bourgeois, Dylan and You, Jiaxuan and Zitnik, Marinka and Leskovec, Jure},
+  year = {2017},
+  pages = {11}
+}
+
+@article{yingGNNExplainerTool2017a,
+  title = {{{GNN Explainer}}: {{A Tool}} for {{Post-hoc Explanation}} of {{Graph Neural Networks}}},
+  author = {Ying, Rex and Bourgeois, Dylan and You, Jiaxuan and Zitnik, Marinka and Leskovec, Jure},
+  year = {2017},
+  pages = {11}
+}
+
+@article{yingGNNExplainerTool2017b,
+  title = {{{GNN Explainer}}: {{A Tool}} for {{Post-hoc Explanation}} of {{Graph Neural Networks}}},
+  author = {Ying, Rex and Bourgeois, Dylan and You, Jiaxuan and Zitnik, Marinka and Leskovec, Jure},
+  year = {2017},
+  pages = {11}
+}
+
+@article{youGraphContrastiveLearning2020,
+  title = {Graph Contrastive Learning with Augmentations},
+  author = {You, Yuning and Chen, Tianlong and Sui, Yongduo and Chen, Ting and Wang, Zhangyang and Shen, Yang},
+  year = {2020},
+  journal = {Advances in neural information processing systems},
+  volume = {33},
+  pages = {5812--5823}
+}
+
+@article{youGraphContrastiveLearning2020a,
+  title = {Graph Contrastive Learning with Augmentations},
+  author = {You, Yuning and Chen, Tianlong and Sui, Yongduo and Chen, Ting and Wang, Zhangyang and Shen, Yang},
+  year = {2020},
+  journal = {Advances in neural information processing systems},
+  volume = {33},
+  pages = {5812--5823}
+}
+
+@inproceedings{youGraphContrastiveLearning2021,
+  title = {Graph Contrastive Learning Automated},
+  booktitle = {International {{Conference}} on {{Machine Learning}}},
+  author = {You, Yuning and Chen, Tianlong and Shen, Yang and Wang, Zhangyang},
+  year = {2021},
+  pages = {12121--12132},
+  publisher = {{PMLR}}
+}
+
+@misc{yuAreGraphAugmentations2022,
+  title = {Are {{Graph Augmentations Necessary}}? {{Simple Graph Contrastive Learning}} for {{Recommendation}}},
+  shorttitle = {Are {{Graph Augmentations Necessary}}?},
+  author = {Yu, Junliang and Yin, Hongzhi and Xia, Xin and Chen, Tong and Cui, Lizhen and Nguyen, Quoc Viet Hung},
+  year = {2022},
+  number = {arXiv:2112.08679},
+  eprint = {2112.08679},
+  primaryclass = {cs},
+  institution = {{arXiv}},
+  urldate = {2022-07-21},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{yuAreGraphAugmentations2022a,
+  title = {Are Graph Augmentations Necessary? Simple Graph Contrastive Learning for Recommendation},
+  shorttitle = {Are Graph Augmentations Necessary?},
+  booktitle = {Proceedings of the 45th {{International ACM SIGIR Conference}} on {{Research}} and {{Development}} in {{Information Retrieval}}},
+  author = {Yu, Junliang and Yin, Hongzhi and Xia, Xin and Chen, Tong and Cui, Lizhen and Nguyen, Quoc Viet Hung},
+  year = {2022},
+  pages = {1294--1303}
+}
+
+@article{yueLabelinvariantAugmentationSemiSupervised2022,
+  title = {Label-Invariant {{Augmentation}} for {{Semi-Supervised Graph Classification}}},
+  author = {Yue, Han and Zhang, Chunhui and Zhang, Chuxu and Liu, Hongfu},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2205.09802},
+  eprint = {2205.09802},
+  archiveprefix = {arxiv}
+}
+
+@article{yuGraphLearningFake2022,
+  title = {Graph Learning for Fake Review Detection},
+  author = {Yu, Shuo and Ren, Jing and Li, Shihao and Naseriparsa, Mehdi and Xia, Feng},
+  year = {2022},
+  journal = {Frontiers in Artificial Intelligence},
+  volume = {5},
+  publisher = {{Frontiers Media SA}}
+}
+
+@article{yuGraphLearningFake2022a,
+  title = {Graph {{Learning}} for {{Fake Review Detection}}},
+  author = {Yu, Shuo and Ren, Jing and Li, Shihao and Naseriparsa, Mehdi and Xia, Feng},
+  year = {2022},
+  journal = {Frontiers in Artificial Intelligence},
+  volume = {5},
+  urldate = {2023-05-10}
+}
+
+@article{yuHeterogeneousGraphContrastive2022,
+  title = {Heterogeneous {{Graph Contrastive Learning}} with {{Meta-path Contexts}} and {{Weighted Negative Samples}}},
+  author = {Yu, Jianxiang and Li, Xiang},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2212.13847},
+  eprint = {2212.13847},
+  archiveprefix = {arxiv}
+}
+
+@article{yunGraphTransformerNetworks,
+  title = {Graph {{Transformer Networks}}},
+  author = {Yun, Seongjun and Jeong, Minbyul and Kim, Raehyun and Kang, Jaewoo and Kim, Hyunwoo J},
+  pages = {11}
+}
+
+@article{yunGraphTransformerNetworksa,
+  title = {Graph {{Transformer Networks}}},
+  author = {Yun, Seongjun and Jeong, Minbyul and Kim, Raehyun and Kang, Jaewoo and Kim, Hyunwoo J},
+  pages = {11}
+}
+
+@inproceedings{yuSailSelfaugmentedGraph2022,
+  title = {Sail: {{Self-augmented}} Graph Contrastive Learning},
+  shorttitle = {Sail},
+  booktitle = {Proceedings of the {{AAAI Conference}} on {{Artificial Intelligence}}},
+  author = {Yu, Lu and Pei, Shichao and Ding, Lizhong and Zhou, Jun and Li, Longfei and Zhang, Chuxu and Zhang, Xiangliang},
+  year = {2022},
+  volume = {36},
+  pages = {8927--8935},
+  lccn = {19},
+  annotation = {19 citations (Google Scholar) [2023-04-11]}
+}
+
+@misc{zengContrastiveSelfsupervisedLearning2020,
+  title = {Contrastive {{Self-supervised Learning}} for {{Graph Classification}}},
+  author = {Zeng, Jiaqi and Xie, Pengtao},
+  year = {2020},
+  number = {arXiv:2009.05923},
+  eprint = {2009.05923},
+  primaryclass = {cs, stat},
+  institution = {{arXiv}},
+  urldate = {2022-07-18},
+  archiveprefix = {arxiv}
+}
+
+@article{zengImGCLRevisitingGraph2022,
+  title = {{{ImGCL}}: {{Revisiting Graph Contrastive Learning}} on {{Imbalanced Node Classification}}},
+  shorttitle = {{{ImGCL}}},
+  author = {Zeng, Liang and Li, Lanqing and Gao, Ziqi and Zhao, Peilin and Li, Jian},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2205.11332},
+  eprint = {2205.11332},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{zhangCOSTACovariancePreservingFeature2022,
+  title = {{{COSTA}}: {{Covariance-Preserving Feature Augmentation}} for {{Graph Contrastive Learning}}},
+  shorttitle = {{{COSTA}}},
+  booktitle = {Proceedings of the 28th {{ACM SIGKDD Conference}} on {{Knowledge Discovery}} and {{Data Mining}}},
+  author = {Zhang, Yifei and Zhu, Hao and Song, Zixing and Koniusz, Piotr and King, Irwin},
+  year = {2022},
+  pages = {2524--2534}
+}
+
+@article{zhangGraphContrastiveLearning2022,
+  title = {Graph Contrastive Learning with Personalized Augmentation},
+  author = {Zhang, Xin and Tan, Qiaoyu and Huang, Xiao and Li, Bo},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2209.06560},
+  eprint = {2209.06560},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{zhangHeterogeneousGraphNeural2019,
+  title = {Heterogeneous {{Graph Neural Network}}},
+  booktitle = {Proceedings of the 25th {{ACM SIGKDD International Conference}} on {{Knowledge Discovery}} \& {{Data Mining}}},
+  author = {Zhang, Chuxu and Song, Dongjin and Huang, Chao and Swami, Ananthram and Chawla, Nitesh V.},
+  year = {2019},
+  pages = {793--803},
+  publisher = {{ACM}},
+  address = {{Anchorage AK USA}},
+  urldate = {2022-06-01},
+  isbn = {978-1-4503-6201-6}
+}
+
+@inproceedings{zhangHeterogeneousGraphNeural2019a,
+  title = {Heterogeneous Graph Neural Network},
+  booktitle = {Proceedings of the 25th {{ACM SIGKDD}} International Conference on Knowledge Discovery \& Data Mining},
+  author = {Zhang, Chuxu and Song, Dongjin and Huang, Chao and Swami, Ananthram and Chawla, Nitesh V.},
+  year = {2019},
+  pages = {793--803}
+}
+
+@article{zhangSpectralFeatureAugmentation2022,
+  title = {Spectral {{Feature Augmentation}} for {{Graph Contrastive Learning}} and {{Beyond}}},
+  author = {Zhang, Yifei and Zhu, Hao and Song, Zixing and Koniusz, Piotr and King, Irwin},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2212.01026},
+  eprint = {2212.01026},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{zhangUnsupervisedFeatureLearning2019,
+  title = {Unsupervised Feature Learning for Point Cloud Understanding by Contrasting and Clustering Using Graph Convolutional Neural Networks},
+  booktitle = {2019 International Conference on {{3D}} Vision ({{3DV}})},
+  author = {Zhang, Ling and Zhu, Zhigang},
+  year = {2019},
+  pages = {395--404},
+  publisher = {{IEEE}}
+}
+
+@article{zhaoCoarsetoFineContrastiveLearning2023,
+  title = {Coarse-to-{{Fine Contrastive Learning}} on {{Graphs}}},
+  author = {Zhao, Peiyao and Pan, Yuangang and Li, Xin and Chen, Xu and Tsang, Ivor W. and Liao, Lejian},
+  year = {2023},
+  journal = {IEEE Transactions on Neural Networks and Learning Systems},
+  publisher = {{IEEE}},
+  lccn = {0},
+  annotation = {0 citations (Google Scholar) [2023-04-17]}
+}
+
+@inproceedings{zhaoNetworkSchemaPreserving2020,
+  title = {Network Schema Preserving Heterogeneous Information Network Embedding},
+  booktitle = {International {{Joint Conference}} on {{Artificial Intelligence}} ({{IJCAI}})},
+  author = {Zhao, Jianan and Wang, Xiao and Shi, Chuan and Liu, Zekuan and Ye, Yanfang},
+  year = {2020},
+  lccn = {64},
+  annotation = {64 citations (Google Scholar) [2023-05-17]}
+}
+
+@article{zhaoRepresentationIterativeFusion2021,
+  title = {Representation Iterative Fusion Based on Heterogeneous Graph Neural Network for Joint Entity and Relation Extraction},
+  author = {Zhao, Kang and Xu, Hua and Cheng, Yue and Li, Xiaoteng and Gao, Kai},
+  year = {2021},
+  journal = {Knowledge-Based Systems},
+  volume = {219},
+  pages = {106888},
+  publisher = {{Elsevier}}
+}
+
+@article{zhengRethinkingScalingGraph2022,
+  title = {Rethinking and Scaling up Graph Contrastive Learning: {{An}} Extremely Efficient Approach with Group Discrimination},
+  shorttitle = {Rethinking and Scaling up Graph Contrastive Learning},
+  author = {Zheng, Yizhen and Pan, Shirui and Lee, Vincent and Zheng, Yu and Yu, Philip S.},
+  year = {2022},
+  journal = {Advances in Neural Information Processing Systems},
+  volume = {35},
+  pages = {10809--10820}
+}
+
+@article{zhouAdaptiveLabelSmoothing2021,
+  title = {Adaptive {{Label Smoothing To Regularize Large-Scale Graph Training}}},
+  author = {Zhou, Kaixiong and Liu, Ninghao and Yang, Fan and Liu, Zirui and Chen, Rui and Li, Li and Choi, Soo-Hyun and Hu, Xia},
+  year = {2021},
+  journal = {arXiv preprint arXiv:2108.13555},
+  eprint = {2108.13555},
+  archiveprefix = {arxiv}
+}
+
+@misc{zhuDeepGraphContrastive2020,
+  title = {Deep {{Graph Contrastive Representation Learning}}},
+  author = {Zhu, Yanqiao and Xu, Yichen and Yu, Feng and Liu, Qiang and Wu, Shu and Wang, Liang},
+  year = {2020},
+  number = {arXiv:2006.04131},
+  eprint = {2006.04131},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-04-21},
+  archiveprefix = {arxiv}
+}
+
+@misc{zhuDeepGraphContrastive2020a,
+  title = {Deep {{Graph Contrastive Representation Learning}}},
+  author = {Zhu, Yanqiao and Xu, Yichen and Yu, Feng and Liu, Qiang and Wu, Shu and Wang, Liang},
+  year = {2020},
+  number = {arXiv:2006.04131},
+  eprint = {2006.04131},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  urldate = {2023-05-03},
+  archiveprefix = {arxiv},
+  lccn = {340},
+  annotation = {340 citations (Google Scholar) [2023-05-03]}
+}
+
+@article{zhuEmpiricalStudyGraph2021,
+  title = {An Empirical Study of Graph Contrastive Learning},
+  author = {Zhu, Yanqiao and Xu, Yichen and Liu, Qiang and Wu, Shu},
+  year = {2021},
+  journal = {arXiv preprint arXiv:2109.01116},
+  eprint = {2109.01116},
+  archiveprefix = {arxiv}
+}
+
+@misc{zhuEmpiricalStudyGraph2021a,
+  title = {An {{Empirical Study}} of {{Graph Contrastive Learning}}},
+  author = {Zhu, Yanqiao and Xu, Yichen and Liu, Qiang and Wu, Shu},
+  year = {2021},
+  number = {arXiv:2109.01116},
+  eprint = {2109.01116},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-04-17},
+  archiveprefix = {arxiv}
+}
+
+@article{zhuEmpiricalStudyGraph2021b,
+  title = {An Empirical Study of Graph Contrastive Learning},
+  author = {Zhu, Yanqiao and Xu, Yichen and Liu, Qiang and Wu, Shu},
+  year = {2021},
+  journal = {arXiv preprint arXiv:2109.01116},
+  eprint = {2109.01116},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{zhuGraphContrastiveLearning2021,
+  title = {Graph {{Contrastive Learning}} with {{Adaptive Augmentation}}},
+  booktitle = {Proceedings of the {{Web Conference}} 2021},
+  author = {Zhu, Yanqiao and Xu, Yichen and Yu, Feng and Liu, Qiang and Wu, Shu and Wang, Liang},
+  year = {2021},
+  eprint = {2010.14945},
+  primaryclass = {cs},
+  pages = {2069--2080},
+  urldate = {2022-07-18},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{zhuGraphContrastiveLearning2021a,
+  title = {Graph Contrastive Learning with Adaptive Augmentation},
+  booktitle = {Proceedings of the {{Web Conference}} 2021},
+  author = {Zhu, Yanqiao and Xu, Yichen and Yu, Feng and Liu, Qiang and Wu, Shu and Wang, Liang},
+  year = {2021},
+  pages = {2069--2080}
+}
+
+@inproceedings{zhuGraphContrastiveLearning2021b,
+  title = {Graph {{Contrastive Learning}} with {{Adaptive Augmentation}}},
+  booktitle = {Proceedings of the {{Web Conference}} 2021},
+  author = {Zhu, Yanqiao and Xu, Yichen and Yu, Feng and Liu, Qiang and Wu, Shu and Wang, Liang},
+  year = {2021},
+  series = {{{WWW}} '21},
+  pages = {2069--2080},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  urldate = {2023-04-21},
+  isbn = {978-1-4503-8312-7}
+}
+
+@inproceedings{zhuRelationStructureawareHeterogeneous2019,
+  title = {Relation Structure-Aware Heterogeneous Graph Neural Network},
+  booktitle = {2019 {{IEEE}} International Conference on Data Mining ({{ICDM}})},
+  author = {Zhu, Shichao and Zhou, Chuan and Pan, Shirui and Zhu, Xingquan and Wang, Bin},
+  year = {2019},
+  pages = {1534--1539},
+  publisher = {{IEEE}}
+}
+
+@article{zhuRoSARobustSelfAligned2022,
+  title = {{{RoSA}}: {{A Robust Self-Aligned Framework}} for {{Node-Node Graph Contrastive Learning}}},
+  shorttitle = {{{RoSA}}},
+  author = {Zhu, Yun and Guo, Jianhao and Wu, Fei and Tang, Siliang},
+  year = {2022},
+  journal = {arXiv preprint arXiv:2204.13846},
+  eprint = {2204.13846},
+  archiveprefix = {arxiv}
+}
+
+@inproceedings{zhuStructureenhancedHeterogeneousGraph2022,
+  title = {Structure-Enhanced Heterogeneous Graph Contrastive Learning},
+  booktitle = {Proceedings of the 2022 {{SIAM International Conference}} on {{Data Mining}} ({{SDM}})},
+  author = {Zhu, Yanqiao and Xu, Yichen and Cui, Hejie and Yang, Carl and Liu, Qiang and Wu, Shu},
+  year = {2022},
+  pages = {82--90},
+  publisher = {{SIAM}}
+}
+
+@article{zhuWhenContrastiveLearning2020,
+  title = {When Contrastive Learning Meets Active Learning: {{A}} Novel Graph Active Learning Paradigm with Self-Supervision},
+  shorttitle = {When Contrastive Learning Meets Active Learning},
+  author = {Zhu, Yanqiao and Xu, Weizhi and Liu, Qiang and Wu, Shu},
+  year = {2020},
+  journal = {arXiv preprint arXiv:2010.16091},
+  eprint = {2010.16091},
+  archiveprefix = {arxiv}
+}
+
+@misc{zotero-undefined,
+  type = {Misc}
+}
+
+@book{zotero-undefineda,
+  type = {Book}
 }
