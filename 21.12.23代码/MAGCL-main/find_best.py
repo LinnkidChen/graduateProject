@@ -1,6 +1,6 @@
 import yaml
 
-with open("./apr13_Results/result_acm.yaml") as f:
+with open("./apr13_Results/result_aminer.yaml") as f:
     result = yaml.load(f, Loader=yaml.SafeLoader)
 acc = -1
 loss = 900
