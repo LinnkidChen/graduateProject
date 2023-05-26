@@ -19,7 +19,7 @@ from pytorchtools import EarlyStopping
 from torch_geometric.utils import get_laplacian, to_scipy_sparse_matrix
 from simple_param.sp import SimpleParam
 from itertools import product
-from pGRACE.model_nomod import Encoder, GRACE, NewGConv, NewEncoder, NewGRACE
+from pGRACE.model import Encoder, GRACE, NewGConv, NewEncoder, NewGRACE
 from pGRACE.functional import (
     drop_feature,
     drop_edge_weighted,
@@ -268,7 +268,12 @@ def my_train(
         yaml.dump({tmpstring: {"acc": acc, "loss": loss,"bestScore":early.best_score}}, f)
     if "final" in log:
         print(f"{acc}")
-
+    del edge_list
+    del features
+    del encoder
+    del model
+    torch.cuda.empty_cache()
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -316,5 +321,7 @@ if __name__ == "__main__":
     result_file=yaml.load(open("result.yaml"),Loader=SafeLoader)
     for item in product(*parameter_value):
         loss = my_train(*item)
+        torch.cuda.empty_cache()
+
 
     device = torch.device(args.device)

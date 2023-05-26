@@ -1,4 +1,4 @@
 for i in {1..100}
 do 
-python main_freebase.py --dataset Freebase >>freebaseLog.txt 
+python main_acm.py --dataset ACM >>ACMLog.txt 
 done

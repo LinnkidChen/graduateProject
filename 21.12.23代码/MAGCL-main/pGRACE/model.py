@@ -384,7 +384,6 @@ class NewEncoder(nn.Module):
         feat = x
         x = self.activation(self.conv[0](feat, edge_index, K1))
         x = self.conv[1](x, edge_index, K2)
-
         return x
         # 这又是在干什么？
 
